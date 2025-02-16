@@ -1,0 +1,35 @@
+services:
+  django:
+    build:
+      context: ./foundly
+      dockerfile: Dockerfile
+    container_name: django_app
+    restart: always
+    volumes:
+      - ./foundly:/foundly
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DB_NAME: postgres
+      DB_USER: postgres
+      DB_PASSWORD: 12345
+      DB_HOST: db
+      DB_PORT: 5432
+
+  db:
+    image: postgres:17
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:

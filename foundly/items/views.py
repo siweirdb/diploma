@@ -7,6 +7,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from .serializers import RegisterSerializer, CustomTokenObtainPairSerializer
 
 
+
 class RegisterView(APIView):
     permission_classes = [permissions.AllowAny]
 
@@ -24,3 +25,9 @@ class RegisterView(APIView):
 
 class CustomTokenObtainPairView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer
+
+
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Men qotaq soram!")

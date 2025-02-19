@@ -6,6 +6,8 @@ from rest_framework import status, permissions
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.tokens import RefreshToken
+
+from .models import VerificationCode
 from .serializers import RegisterSerializer, LoginSerializer, UserSerializer
 from django.shortcuts import redirect
 from rest_framework.authentication import TokenAuthentication, get_authorization_header
@@ -19,13 +21,15 @@ class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
 
 
+
+
 class LoginView(generics.GenericAPIView):
     serializer_class = LoginSerializer
 
     def post(self, request, *args, **kwargs):
-        username = request.data['username']
+        email = request.data['email']
         password = request.data['password']
-        user = authenticate(username=username, password=password)
+        user = authenticate(email=email, password=password)
 
         if user is not None:
             refresh = RefreshToken.for_user(user)
@@ -38,6 +42,21 @@ class LoginView(generics.GenericAPIView):
             })
         else:
             return Response({'detail': 'Invalid credentials'}, status=401)
+
+class VerifyEmailView(APIView):
+    def post(self, request):
+        email = request.data.get('email')
+        code = request.data.get('code')
+
+        try:
+            user = User.objects.get(email=email)
+            verification = VerificationCode.objects.get(user=user, code=code)
+            user.is_active = True
+            user.save()
+            verification.delete()
+            return Response({"message": "Email verified successfully"}, status=status.HTTP_200_OK)
+        except (User.DoesNotExist, VerificationCode.DoesNotExist):
+            return Response({"error": "Invalid code or email"}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class ProfileView(APIView):

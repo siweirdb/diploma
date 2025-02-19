@@ -164,8 +164,8 @@ SIMPLE_JWT = {
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_HOST_USER = 'foundly@yandex.kz'
-EMAIL_HOST_PASSWORD = 'e278u2vFat9dnzDEur'
+EMAIL_HOST_PASSWORD = 'vlvjfsufmqmrrjku'
 EMAIL_PORT = 465
-EMAIL_USE_TLS = True
+EMAIL_USE_SSL = True
 EMAIL_USE_TLS = False
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

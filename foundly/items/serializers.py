@@ -19,9 +19,12 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'first_name', 'last_name', 'password', 'password2')
+        fields = ('email', 'first_name', 'last_name', 'password', 'password2')
 
     def validate(self, data):
+        if User.objects.filter(email=data.get("email")).exists():
+            raise serializers.ValidationError({"email": "This email is already in use."})
+
         password = data.get("password")
         password2 = data.get("password2")
 
@@ -42,17 +45,20 @@ class RegisterSerializer(serializers.ModelSerializer):
         return data
 
     def create(self, validated_data):
+        email = validated_data['email']
+        username = email.split('@')[0]
         user = User.objects.create_user(
-            username=validated_data['username'],
+            username=username,
             email=validated_data['email'],
             password=validated_data['password'],
             first_name=validated_data.get('first_name', ''),
-            last_name=validated_data.get('last_name', '')
+            last_name=validated_data.get('last_name', ''),
+            is_active=False  # User is inactive until email is verified
         )
 
         verification_code = str(random.randint(100000, 999999))
         VerificationCode.objects.create(user=user, code=verification_code)
-
+        print('ffdfd', user.email)
         send_mail(
             'Email Verification - Foundly',
             f'Your verification code is: {verification_code}',
@@ -60,6 +66,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             [user.email],
             fail_silently=False,
         )
+        print('ffefef')
 
         return user
 

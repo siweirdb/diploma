@@ -53,7 +53,7 @@ class VerifyEmailView(APIView):
             verification = VerificationCode.objects.get(user=user, code=code)
             user.is_active = True
             user.save()
-            verification.delete()
+            verification.delete()  # Delete code after successful verification
             return Response({"message": "Email verified successfully"}, status=status.HTTP_200_OK)
         except (User.DoesNotExist, VerificationCode.DoesNotExist):
             return Response({"error": "Invalid code or email"}, status=status.HTTP_400_BAD_REQUEST)

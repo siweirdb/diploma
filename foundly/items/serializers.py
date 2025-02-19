@@ -5,7 +5,7 @@ import re
 import random
 from django.core.mail import send_mail
 
-from foundly.items.models import VerificationCode
+from items.models import VerificationCode
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -64,7 +64,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         return user
 
 class LoginSerializer(serializers.Serializer):
-    username = serializers.CharField(required=True)
+    email = serializers.CharField(required=True)
     password = serializers.CharField(required=True, write_only=True)
 
 

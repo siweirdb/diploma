@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import path
-from items.views import RegisterView, LoginView, ProfileView
+from items.views import RegisterView, LoginView, ProfileView, VerifyEmailView
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,

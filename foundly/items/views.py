@@ -10,13 +10,13 @@ from django.utils.timezone import now
 from datetime import timedelta
 
 from .models import VerificationCode
-from .serializers import RegisterSerializer, LoginSerializer, UserSerializer
+from .serializers import RegisterSerializer, LoginSerializer, UserSerializer, ForgotPasswordSerializer, VerifyResetCodeSerializer, ResetPasswordSerializer
 from django.shortcuts import redirect
 from rest_framework.authentication import TokenAuthentication, get_authorization_header
 from rest_framework.permissions import IsAuthenticated
-from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import csrf_exempt
+from django.core.mail import send_mail
 from rest_framework import generics
+import random
 
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
@@ -90,3 +90,72 @@ class ProfileView(APIView):
         user = request.user
         user_serializer = UserSerializer(user)
         return Response({'user_information': user_serializer.data},200)
+
+
+class ForgotPasswordView(APIView):
+    permission_classes = [permissions.AllowAny]
+    serializer_class = ForgotPasswordSerializer
+    def post(self, request):
+        email = request.data.get('email')
+
+        user = User.objects.filter(email=email).first()
+        if not user:
+            return Response({"error": "User with this email does not exist"}, status=status.HTTP_404_NOT_FOUND)
+
+        # Generate a random 6-digit reset code
+        reset_code = str(random.randint(100000, 999999))
+
+        # Store the reset code
+        VerificationCode.objects.create(user=user, code=reset_code)
+
+        # Send the reset code via email
+        send_mail(
+            "Password Reset Code - Foundly",
+            f"Your password reset code is: {reset_code}",
+            "foundly@yandex.kz",
+            [user.email],
+            fail_silently=False,
+        )
+
+        return Response({"message": "Reset code sent to email"}, status=status.HTTP_200_OK)
+
+class VerifyResetCodeView(APIView):
+    permission_classes = [permissions.AllowAny]
+    serializer_class = VerifyResetCodeSerializer
+
+    def post(self, request):
+        email = request.data.get('email')
+        code = request.data.get('code')
+
+        if not email or not code:
+            return Response({"error": "Email and code are required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        user = User.objects.filter(email=email).first()  # Now correctly placed
+        if not user:
+            return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        verification = VerificationCode.objects.filter(user=user, code=code).first()
+        if not verification:
+            return Response({"error": "Invalid or expired reset code"}, status=status.HTTP_400_BAD_REQUEST)
+
+        if verification.created_at < now() - EXPIRE_TIME:
+            verification.delete()
+            return Response({"error": "Reset code has expired"}, status=status.HTTP_400_BAD_REQUEST)
+
+        return Response({"message": "Code verified successfully"}, status=status.HTTP_200_OK)
+
+
+class ResetPasswordView(APIView):
+    permission_classes = [permissions.AllowAny]
+    serializer_class = ResetPasswordSerializer
+    def post(self, request):
+        email = request.data.get('email')
+        new_password = request.data.get('new_password')
+
+        user = User.objects.filter(email=email).first()
+
+        user.set_password(new_password)
+        user.save()
+
+        return Response({"message": "Password reset successfully"}, status=status.HTTP_200_OK)
+

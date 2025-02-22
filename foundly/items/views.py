@@ -152,6 +152,8 @@ class VerifyResetCodeView(APIView):
             verification.delete()
             return Response({"error": "Reset code has expired"}, status=status.HTTP_400_BAD_REQUEST)
 
+        verification.delete()
+
         return Response({"message": "Code verified successfully"}, status=status.HTTP_200_OK)
 
 

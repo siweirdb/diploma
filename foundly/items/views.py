@@ -95,9 +95,21 @@ class VerifyEmailView(APIView):
 
 class ProfileView(APIView):
     permission_classes = (IsAuthenticated,)
+
     def get(self, request):
         user = request.user
-        return Response({'user_information': user},200)
+        return Response({
+            'user_information': {
+                'id': user.id,
+                'username': user.username,
+                'email': user.email,
+                'first_name': user.first_name,
+                'last_name': user.last_name,
+                'phone_number': user.phone_number,
+                'profile_picture': user.profile_picture.url,
+                'birthday': user.birthday,
+            }
+        }, status=200)
 
 
 class ForgotPasswordView(APIView):

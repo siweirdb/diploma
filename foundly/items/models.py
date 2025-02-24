@@ -6,11 +6,10 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    phone_number = models.CharField(max_length=20, unique=True)
-    birthday = models.DateField(null=True, blank=True)  # Fix the typo and make it optional
+    phone_number = models.CharField(max_length=20, unique=True,null=True, blank=True)
+    birthday = models.DateField(null=True, blank=True)
     profile_picture = models.ImageField(upload_to='media/profile_photo/')
 
-    # Fix conflicts by adding `related_name`
     groups = models.ManyToManyField(
         "auth.Group",
         related_name="custom_user_set",

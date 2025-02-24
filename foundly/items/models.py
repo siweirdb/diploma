@@ -8,7 +8,7 @@ class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     phone_number = models.CharField(max_length=20, default='', unique=False, null=True, blank=True)
     birthday = models.DateField(null=True, blank=True)
-    profile_picture = models.ImageField(upload_to='media/profile_photo/', default='media/profile_photo/photo_2025-02-24 23.37.57.jpeg')
+    profile_picture = models.ImageField(upload_to='profile_photo/', default='profile_photo/photo_2025-02-24 23.37.57.jpeg')
 
     groups = models.ManyToManyField(
         "auth.Group",
@@ -88,7 +88,7 @@ class Item(models.Model):
 class ItemPhoto(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name="photos")
-    image = models.ImageField(upload_to="media/item_photos/")
+    image = models.ImageField(upload_to="item_photos/")
 
     def __str__(self):
         return f"Photo for {self.item.title}"

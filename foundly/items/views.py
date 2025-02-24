@@ -3,13 +3,12 @@ from django.http import HttpResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, permissions
-from django.contrib.auth.models import User
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.utils.timezone import now
 from datetime import timedelta
 
-from .models import VerificationCode
+from .models import VerificationCode, User
 from .serializers import RegisterSerializer, LoginSerializer, UserSerializer, ForgotPasswordSerializer, VerifyResetCodeSerializer, ResetPasswordSerializer, LogoutSerializer
 from django.shortcuts import redirect
 from rest_framework.authentication import TokenAuthentication, get_authorization_header
@@ -98,8 +97,7 @@ class ProfileView(APIView):
     permission_classes = (IsAuthenticated,)
     def get(self, request):
         user = request.user
-        user_serializer = UserSerializer(user)
-        return Response({'user_information': user_serializer.data},200)
+        return Response({'user_information': user},200)
 
 
 class ForgotPasswordView(APIView):
@@ -170,4 +168,8 @@ class ResetPasswordView(APIView):
         user.save()
 
         return Response({"message": "Password reset successfully"}, status=status.HTTP_200_OK)
+
+
+
+
 

@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from items.views import RegisterView, LoginView, ProfileView, VerifyEmailView, ForgotPasswordView, VerifyResetCodeView, ResetPasswordView, LogoutView
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -36,5 +38,8 @@ urlpatterns = [
     path('verify-reset-code/', VerifyResetCodeView.as_view(), name='verify-reset-code'),
     path('reset-password/', ResetPasswordView.as_view(), name='reset-password'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

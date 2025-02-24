@@ -54,7 +54,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             password=validated_data['password'],
             first_name=validated_data.get('first_name', ''),
             last_name=validated_data.get('last_name', ''),
-            is_active=False  # User is inactive until email is verified
+            is_active=False
         )
 
         verification_code = str(random.randint(100000, 999999))

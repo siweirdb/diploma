@@ -19,7 +19,7 @@ from django.urls import path
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from items.views import RegisterView, LoginView, ProfileView, VerifyEmailView, ForgotPasswordView, VerifyResetCodeView, ResetPasswordView, LogoutView
+from items.views import RegisterView, LoginView, ProfileView, VerifyEmailView, ForgotPasswordView, VerifyResetCodeView, ResetPasswordView, LogoutView, Item
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -37,6 +37,8 @@ urlpatterns = [
     path('forgot-password/', ForgotPasswordView.as_view(), name='forgot-password'),
     path('verify-reset-code/', VerifyResetCodeView.as_view(), name='verify-reset-code'),
     path('reset-password/', ResetPasswordView.as_view(), name='reset-password'),
+    path('item/', Item.as_view(), name='item'),
+
 ]
 
 if settings.DEBUG:

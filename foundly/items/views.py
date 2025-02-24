@@ -23,6 +23,26 @@ class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
 
 
+class Item(APIView):
+    permission_classes = (permissions.AllowAny,)
+
+    def get(self, request):
+        return Response({
+                    "id": "550e8400-e29b-41d4-a716-446655440000",
+                    "title": "Lost Wallet",
+                    "item_type": "Lost",
+                    "description": "Black leather wallet with ID inside",
+                    "latitude": 76.808493,
+                    "longitude": 43.210872,
+                    "date": "2024-02-25T12:34:56.789Z",
+                    "status": "active",
+                    "user": "Boombl4",
+                    "category": "electronic",
+                    "subcategory": "simple",
+                    "subsubcategory": "mOnesy"
+        }, status=200)
+
+
 class LogoutView(generics.GenericAPIView):
     serializer_class = LogoutSerializer
     permission_classes = (permissions.IsAuthenticated,)

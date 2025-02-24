@@ -6,9 +6,9 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    phone_number = models.CharField(max_length=20, unique=True,null=True, blank=True)
+    phone_number = models.CharField(max_length=20, default='', unique=False)
     birthday = models.DateField(null=True, blank=True)
-    profile_picture = models.ImageField(upload_to='media/profile_photo/')
+    profile_picture = models.ImageField(upload_to='media/profile_photo/', default='media/profile_photo/photo_2025-02-24 23.37.57.jpeg')
 
     groups = models.ManyToManyField(
         "auth.Group",

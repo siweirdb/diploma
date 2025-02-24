@@ -14,12 +14,20 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('username', 'email', 'first_name', 'last_name', 'password')
 
 
+
+
 class RegisterSerializer(serializers.ModelSerializer):
     password2 = serializers.CharField(write_only=True, required=True)
 
     class Meta:
         model = User
-        fields = ('email', 'first_name', 'last_name', 'password', 'password2')
+        fields = ('email', 'first_name', 'last_name', 'password', 'password2', 'phone_number')
+
+        extra_kwargs = {
+            'password': {'write_only': True},
+            'phone_number': {'required': False},
+        }
+
 
     def validate(self, data):
         if User.objects.filter(email=data.get("email")).exists():
@@ -45,6 +53,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         return data
 
     def create(self, validated_data):
+
         email = validated_data['email']
         username = email.split('@')[0]
         user = User.objects.create_user(
@@ -53,12 +62,13 @@ class RegisterSerializer(serializers.ModelSerializer):
             password=validated_data['password'],
             first_name=validated_data.get('first_name', ''),
             last_name=validated_data.get('last_name', ''),
+            phone_number=validated_data.get('phone_number'),  # Optional field
             is_active=False
         )
 
         verification_code = str(random.randint(100000, 999999))
         VerificationCode.objects.create(user=user, code=verification_code)
-        print('ffdfd', user.email)
+
         send_mail(
             'Email Verification - Foundly',
             f'Your verification code is: {verification_code}',
@@ -66,7 +76,6 @@ class RegisterSerializer(serializers.ModelSerializer):
             [user.email],
             fail_silently=False,
         )
-        print('ffefef')
 
         return user
 

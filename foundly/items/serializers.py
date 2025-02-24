@@ -1,6 +1,5 @@
-from django.contrib.auth.models import User
+from .models import User
 from rest_framework import serializers
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 import re
 import random
 from django.core.mail import send_mail

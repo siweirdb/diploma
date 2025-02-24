@@ -167,8 +167,8 @@ from datetime import timedelta
 SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": ("Bearer",),
     "AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=3),
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=365*100),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=365*100),
 }
 
 

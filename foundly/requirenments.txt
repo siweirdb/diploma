@@ -4,3 +4,4 @@ psycopg2
 gunicorn
 djangorestframework-simplejwt
 django-allauth
+Pillow>=10.0.0

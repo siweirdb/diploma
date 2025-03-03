@@ -8,14 +8,27 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.utils.timezone import now
 from datetime import timedelta
 
-from .models import VerificationCode, User, Category, Subcategory, Subsubcategory
+from .models import VerificationCode, User, Category, Subcategory, Subsubcategory, Item
 from .serializers import RegisterSerializer, LoginSerializer, UserSerializer, ForgotPasswordSerializer, VerifyResetCodeSerializer, ResetPasswordSerializer, LogoutSerializer, CreateItemSerializer
-from .serializers import CategorySerializer, SubcategorySerializer, SubsubcategorySerializer
+from .serializers import CategorySerializer, SubcategorySerializer, SubsubcategorySerializer, ItemSerializer
 from rest_framework.authentication import TokenAuthentication, get_authorization_header
 from rest_framework.permissions import IsAuthenticated
 from django.core.mail import send_mail
 from rest_framework import generics
 import random
+
+
+
+class MapView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request, *args, **kwargs):
+        items = Item.objects.all()
+
+        return Response({
+            'items': ItemSerializer(items, many=True).data,
+        })
+
 
 class RegisterView(generics.CreateAPIView):
     permission_classes = [permissions.AllowAny]
@@ -42,24 +55,6 @@ class CreateItemView(generics.CreateAPIView):
 
 
 
-class Item(APIView):
-    permission_classes = (permissions.AllowAny,)
-
-    def get(self, request):
-        return Response({
-                    "id": "550e8400-e29b-41d4-a716-446655440000",
-                    "title": "Lost Wallet",
-                    "item_type": "Lost",
-                    "description": "Black leather wallet with ID inside",
-                    "latitude": 76.808493,
-                    "longitude": 43.210872,
-                    "date": "2024-02-25T12:34:56.789Z",
-                    "status": "active",
-                    "user": "Boombl4",
-                    "category": "electronic",
-                    "subcategory": "simple",
-                    "subsubcategory": "mOnesy"
-        }, status=200)
 
 
 class LogoutView(generics.GenericAPIView):

@@ -1,19 +1,42 @@
-from .models import User
+from .models import User, ItemPhoto
 from rest_framework import serializers
 import re
 import random
 from django.core.mail import send_mail
 
-from items.models import VerificationCode
+from items.models import VerificationCode, Item
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('username', 'email', 'first_name', 'last_name', 'password')
+        fields = ('username', 'email', 'first_name', 'last_name', 'password', 'phone_number','profile_picture', 'birthday')
 
 
+class CreateItemSerializer(serializers.ModelSerializer):
+    photos = serializers.ListField(
+        child=serializers.ImageField(), required=False, write_only=True
+    )
+
+    class Meta:
+        model = Item
+        fields = '__all__'
+        extra_kwargs = {'user': {'read_only': True}}
+
+    def create(self, validated_data):
+        photos = validated_data.pop("photos", [])
+        user = self.context["request"].user
+
+        item = Item.objects.create(user=user, **validated_data)
+
+        if not photos:
+            ItemPhoto.objects.create(item=item, image="item_photos/default.jpg")
+        else:
+            for photo in photos:
+                ItemPhoto.objects.create(item=item, image=photo)
+
+        return item
 
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -62,7 +85,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             password=validated_data['password'],
             first_name=validated_data.get('first_name', ''),
             last_name=validated_data.get('last_name', ''),
-            phone_number=validated_data.get('phone_number'),  # Optional field
+            phone_number=validated_data.get('phone_number'),
             is_active=False
         )
 
@@ -110,6 +133,16 @@ class LogoutSerializer(serializers.Serializer):
 
         except TokenError:
             self.fail('invalid_token')
+
+# class CreateItemSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Item
+#         fields = ('email', 'first_name', 'last_name', 'password', 'password2', 'phone_number')
+#
+#         extra_kwargs = {
+#             'password': {'write_only': True},
+#             'phone_number': {'required': False},
+#         }
 
 
 

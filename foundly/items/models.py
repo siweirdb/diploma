@@ -74,6 +74,7 @@ class Item(models.Model):
     latitude = models.FloatField()
     longitude = models.FloatField()
     date = models.DateTimeField(auto_now_add=True)
+    address = models.CharField(max_length=255)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="active")
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="items")
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="items")

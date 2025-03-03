@@ -9,7 +9,7 @@ from django.utils.timezone import now
 from datetime import timedelta
 
 from .models import VerificationCode, User
-from .serializers import RegisterSerializer, LoginSerializer, UserSerializer, ForgotPasswordSerializer, VerifyResetCodeSerializer, ResetPasswordSerializer, LogoutSerializer
+from .serializers import RegisterSerializer, LoginSerializer, UserSerializer, ForgotPasswordSerializer, VerifyResetCodeSerializer, ResetPasswordSerializer, LogoutSerializer, CreateItemSerializer
 from django.shortcuts import redirect
 from rest_framework.authentication import TokenAuthentication, get_authorization_header
 from rest_framework.permissions import IsAuthenticated
@@ -19,8 +19,16 @@ import random
 
 class RegisterView(generics.CreateAPIView):
     permission_classes = [permissions.AllowAny]
-    queryset = User.objects.all()
     serializer_class = RegisterSerializer
+
+
+class CreateItemView(generics.CreateAPIView):
+    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = CreateItemSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
 
 
 class Item(APIView):
@@ -65,12 +73,10 @@ class LoginView(generics.GenericAPIView):
         print(email, password)
         if user is not None:
             refresh = RefreshToken.for_user(user)
-            user_serializer = UserSerializer(user)
 
             return Response({
                 'refresh': str(refresh),
                 'access': str(refresh.access_token),
-                'user': user_serializer.data,
             })
         else:
             return Response({'detail': 'Invalid credentials'}, status=401)
@@ -118,18 +124,8 @@ class ProfileView(APIView):
 
     def get(self, request):
         user = request.user
-        return Response({
-            'user_information': {
-                'id': user.id,
-                'username': user.username,
-                'email': user.email,
-                'first_name': user.first_name,
-                'last_name': user.last_name,
-                'phone_number': user.phone_number,
-                'profile_picture': user.profile_picture.url,
-                'birthday': user.birthday,
-            }
-        }, status=200)
+        serializer = UserSerializer(user)
+        return Response(serializer.data, status=200)
 
 
 class ForgotPasswordView(APIView):
@@ -200,6 +196,8 @@ class ResetPasswordView(APIView):
         user.save()
 
         return Response({"message": "Password reset successfully"}, status=status.HTTP_200_OK)
+
+
 
 
 

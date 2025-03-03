@@ -4,8 +4,28 @@ import re
 import random
 from django.core.mail import send_mail
 
-from items.models import VerificationCode, Item
+from items.models import VerificationCode, Item, Category, Subcategory, Subsubcategory
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
+
+class ItemSerializer(serializers.ModelSerializer):
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'
+
+
+class SubcategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Subcategory
+        fields = '__all__'
+
+
+class SubsubcategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Subsubcategory
+        fields = '__all__'
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -27,8 +47,20 @@ class CreateItemSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         photos = validated_data.pop("photos", [])
         user = self.context["request"].user
-
-        item = Item.objects.create(user=user, **validated_data)
+        print(user)
+        item = Item.objects.create(
+            title = validated_data["title"],
+            item_type = validated_data["item_type"],
+            description = validated_data["description"],
+            latitude = validated_data["latitude"],
+            longitude = validated_data["longitude"],
+            address = validated_data["address"],
+            status = validated_data["status"],
+            user = user,
+            category = validated_data["category"],
+            subcategory = validated_data["subcategory"],
+            subsubcategory = validated_data["subsubcategory"],
+        )
 
         if not photos:
             ItemPhoto.objects.create(item=item, image="item_photos/default.jpg")

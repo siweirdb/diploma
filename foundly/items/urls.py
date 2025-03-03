@@ -5,6 +5,7 @@ from items.views import CreateItemView
 
 urlpatterns = [
     path('create/', CreateItemView.as_view(), name='create_item'),
+    path('map/', CreateItemView.as_view(), name='create_item'),
 ]
 
 if settings.DEBUG:

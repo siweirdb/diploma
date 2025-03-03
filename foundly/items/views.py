@@ -8,9 +8,9 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.utils.timezone import now
 from datetime import timedelta
 
-from .models import VerificationCode, User
+from .models import VerificationCode, User, Category, Subcategory, Subsubcategory
 from .serializers import RegisterSerializer, LoginSerializer, UserSerializer, ForgotPasswordSerializer, VerifyResetCodeSerializer, ResetPasswordSerializer, LogoutSerializer, CreateItemSerializer
-from django.shortcuts import redirect
+from .serializers import CategorySerializer, SubcategorySerializer, SubsubcategorySerializer
 from rest_framework.authentication import TokenAuthentication, get_authorization_header
 from rest_framework.permissions import IsAuthenticated
 from django.core.mail import send_mail
@@ -29,8 +29,16 @@ class CreateItemView(generics.CreateAPIView):
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
-    # def get(self):
-    #
+    def get(self, request, *args, **kwargs):
+        categories = Category.objects.all()
+        subcategories = Subcategory.objects.all()
+        subsubcategories = Subsubcategory.objects.all()
+
+        return Response({
+            'category': CategorySerializer(categories, many=True).data,
+            'subcategory': SubcategorySerializer(subcategories, many=True).data,
+            'subsubcategory': SubsubcategorySerializer(subsubcategories, many=True).data,
+        })
 
 
 

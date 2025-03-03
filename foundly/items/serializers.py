@@ -11,7 +11,7 @@ from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('username', 'email', 'first_name', 'last_name', 'password', 'phone_number','profile_picture', 'birthday')
+        fields = ('username', 'email', 'first_name', 'last_name', 'phone_number','profile_picture', 'birthday')
 
 
 class CreateItemSerializer(serializers.ModelSerializer):

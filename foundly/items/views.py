@@ -29,6 +29,9 @@ class CreateItemView(generics.CreateAPIView):
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
+    # def get(self):
+    #
+
 
 
 class Item(APIView):

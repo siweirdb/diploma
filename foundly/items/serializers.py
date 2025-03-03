@@ -39,7 +39,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 class CreateItemSerializer(serializers.ModelSerializer):
     photos = serializers.ListField(
-        child=serializers.ImageField(), required=False, write_only=True
+        child=serializers.CharField(), required=False, write_only=True
     )
 
     class Meta:

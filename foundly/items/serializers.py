@@ -7,7 +7,7 @@ from django.core.mail import send_mail
 from items.models import VerificationCode, Item, Category, Subcategory, Subsubcategory
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 
-class ItemSerializer(serializers.ModelSerializer):
+# class ItemSerializer(serializers.ModelSerializer):
 
 
 class CategorySerializer(serializers.ModelSerializer):

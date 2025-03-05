@@ -18,6 +18,14 @@ from rest_framework import generics
 import random
 
 
+class ItemDetailView(APIView):
+    permission_classes = [permissions.AllowAny]
+    serializer_class = ItemSerializer
+    def get(self, request, *args, **kwargs):
+        item_id = self.kwargs.get('id')
+        item = Item.objects.get(id=item_id)
+        serializer = self.serializer_class(item)
+        return Response(serializer.data)
 
 class MapView(APIView):
     permission_classes = [permissions.AllowAny]

@@ -80,6 +80,10 @@ class Item(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="items")
     subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE, related_name="items")
     subsubcategory = models.ForeignKey(Subsubcategory, on_delete=models.CASCADE, related_name="items")
+    phone_number = models.CharField(max_length=20, unique=False, null=True, blank=True)
+
+
+
 
 
 

@@ -74,6 +74,7 @@ class CreateItemSerializer(serializers.ModelSerializer):
             item_type = validated_data["item_type"],
             description = validated_data["description"],
             latitude = validated_data["latitude"],
+            date = validated_data["date"],
             longitude = validated_data["longitude"],
             address = validated_data["address"],
             status = validated_data["status"],
@@ -81,6 +82,7 @@ class CreateItemSerializer(serializers.ModelSerializer):
             category = validated_data["category"],
             subcategory = validated_data["subcategory"],
             subsubcategory = validated_data["subsubcategory"],
+            phone_number = validated_data["phone_number"],
         )
         print(photos)
         if not photos:

@@ -56,7 +56,7 @@ services:
       DB_HOST: db
       DB_PORT: 5432
     command: >
-       sh -c "python manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py makemigrations && python manage.py migrate --noinput && python manage.py loaddata initial_data.json"
 
 volumes:
   pg_data:

@@ -34,6 +34,7 @@ services:
       DB_PASSWORD: 12345
       DB_HOST: db
       DB_PORT: 5432
+    restart: "no"
 
   django:
     build:

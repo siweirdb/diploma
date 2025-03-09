@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     'items',
+    'chat',
 
     'rest_framework',
     'rest_framework_simplejwt',
@@ -52,6 +55,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
 ]
+
+ASGI_APPLICATION = 'foundly.asgi.application'
 
 
 AUTHENTICATION_BACKENDS = (
@@ -100,6 +105,7 @@ DATABASES = {
         'NAME': 'foundly',
         'USER': 'postgres',
         'PASSWORD': '12345',
+        # 'HOST': 'localhost',
         'HOST': 'db',
         'PORT': '5432',
     }

@@ -73,13 +73,15 @@ class Item(models.Model):
     description = models.TextField()
     latitude = models.FloatField()
     longitude = models.FloatField()
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField()
     address = models.CharField(max_length=255)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="active")
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="items")
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="items")
     subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE, related_name="items")
     subsubcategory = models.ForeignKey(Subsubcategory, on_delete=models.CASCADE, related_name="items")
+
+
 
     def __str__(self):
         return f"{self.title} ({self.category.name} -> {self.subcategory.name})"

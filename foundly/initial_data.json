@@ -871,6 +871,84 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 68,
+  "fields": {
+    "action_time": "2025-03-09T14:45:35.757Z",
+    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "content_type": 17,
+    "object_id": "eb5da2ce-44a4-4a3e-b3d3-fe08bd65066a",
+    "object_repr": "Photo for sdofsdjf",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 69,
+  "fields": {
+    "action_time": "2025-03-09T15:05:32.446Z",
+    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "content_type": 17,
+    "object_id": "7d5b9eb6-1045-4f5a-aff7-160819ccdab3",
+    "object_repr": "Photo for sdofsdjf",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 70,
+  "fields": {
+    "action_time": "2025-03-09T15:05:32.446Z",
+    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "content_type": 17,
+    "object_id": "54ab8bd5-f215-4f99-becd-aa1e139b91c0",
+    "object_repr": "Photo for sdofsdjf",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 71,
+  "fields": {
+    "action_time": "2025-03-09T16:21:17.952Z",
+    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "content_type": 16,
+    "object_id": "f86a2d49-2600-44fa-9893-9f94d4db2f21",
+    "object_repr": "sdofsdjf (Электроника -> Аудио и видео)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 72,
+  "fields": {
+    "action_time": "2025-03-09T16:21:17.952Z",
+    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "content_type": 16,
+    "object_id": "e3cd8143-07ce-4b6e-9323-7e501d69fd55",
+    "object_repr": "edfed (Электроника -> Мобильные устройства)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 73,
+  "fields": {
+    "action_time": "2025-03-09T18:28:14.073Z",
+    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "content_type": 16,
+    "object_id": "f86a2d49-2600-44fa-9893-9f94d4db2f21",
+    "object_repr": "sdofsdjf (Электроника -> Аудио и видео)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -1760,6 +1838,27 @@
 },
 {
   "model": "items.user",
+  "pk": "71ab09a5-15e9-45d3-a866-b4cb9a53183a",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$NRlN7rLMYRqEzgNDYKQc3Z$H9tzF9YZgLDyI+Upc4lO/N7pETKC2zbfI9XCBAjFOHE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "abdullovadlet",
+    "first_name": "Adilet",
+    "last_name": "Abdullov",
+    "email": "abdullovadlet@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-03-09T15:58:21.740Z",
+    "phone_number": "",
+    "birthday": null,
+    "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "items.user",
   "pk": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
   "fields": {
     "password": "pbkdf2_sha256$870000$I02px6pUpslSVZ0CYgDqM9$2t4pUKY9nsl27zFQbobwz/uD2BAtAgKVYrEzwcQe0BM=",
@@ -2315,29 +2414,14 @@
   }
 },
 {
-  "model": "items.item",
-  "pk": "f86a2d49-2600-44fa-9893-9f94d4db2f21",
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 1,
   "fields": {
-    "title": "sdofsdjf",
-    "item_type": "lost_item",
-    "description": "dffdsf",
-    "latitude": 7.0,
-    "longitude": 7.0,
-    "date": "2025-03-09T14:24:35.850Z",
-    "address": "adnaskjnd",
-    "status": "active",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "category": "c6af0975-2903-4faf-aed9-7165afd2d49c",
-    "subcategory": "951a58ce-1ff2-4799-9383-6c45f761e3ee",
-    "subsubcategory": "5520c663-913c-469b-a4e3-dc5a191387ef"
-  }
-},
-{
-  "model": "items.itemphoto",
-  "pk": "eb5da2ce-44a4-4a3e-b3d3-fe08bd65066a",
-  "fields": {
-    "item": "f86a2d49-2600-44fa-9893-9f94d4db2f21",
-    "image": "item_photos/915NPMLKRDL._SL1500.jpg"
+    "user": "71ab09a5-15e9-45d3-a866-b4cb9a53183a",
+    "jti": "ebdd67e084ac4a10ab0ba6ca667eeb15",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5NTEzNjAzMiwiaWF0IjoxNzQxNTM2MDMyLCJqdGkiOiJlYmRkNjdlMDg0YWM0YTEwYWIwYmE2Y2E2NjdlZWIxNSIsInVzZXJfaWQiOiI3MWFiMDlhNS0xNWU5LTQ1ZDMtYTg2Ni1iNGNiOWE1MzE4M2EifQ._nzaY-ZGeny3cTC8AOSmHU3IT2e2b2j9x5nHn2ppBYc",
+    "created_at": "2025-03-09T16:00:32.602Z",
+    "expires_at": "2125-02-13T16:00:32Z"
   }
 },
 {

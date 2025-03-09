@@ -14,6 +14,7 @@ class ImageSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def create(self, validated_data):
+        print(validated_data["item"])
         photo = ItemPhoto.objects.create(
             item = validated_data["item"],
             image = validated_data["image"],
@@ -81,7 +82,7 @@ class CreateItemSerializer(serializers.ModelSerializer):
             subcategory = validated_data["subcategory"],
             subsubcategory = validated_data["subsubcategory"],
         )
-
+        print(photos)
         if not photos:
             ItemPhoto.objects.create(item=item, image="item_photos/default.jpg")
         else:
@@ -185,17 +186,6 @@ class LogoutSerializer(serializers.Serializer):
 
         except TokenError:
             self.fail('invalid_token')
-
-# class CreateItemSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Item
-#         fields = ('email', 'first_name', 'last_name', 'password', 'password2', 'phone_number')
-#
-#         extra_kwargs = {
-#             'password': {'write_only': True},
-#             'phone_number': {'required': False},
-#         }
-
 
 
 

@@ -12,9 +12,10 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 5s
       retries: 5
+      timeout: 3s
 
   migration:
     build:
@@ -22,7 +23,7 @@ services:
       dockerfile: Dockerfile
     container_name: django_migration
     command: >
-      sh -c "python manage.py makemigrations && python manage.py migrate --noinput"
+      sh -c "python manage.py migrate --noinput"
     volumes:
       - ./foundly:/foundly
     depends_on:
@@ -57,7 +58,9 @@ services:
       DB_HOST: db
       DB_PORT: 5432
     command: >
-      sh -c "python manage.py makemigrations && python manage.py migrate --noinput && python manage.py loaddata initial_data.json"
+      sh -c "python manage.py migrate --noinput && python manage.py loaddata initial_data.json && python manage.py runserver 0.0.0.0:8000"
+#    sh -c "python manage.py migrate --noinput && python manage.py runserver 0.0.0.0:8000"
+
 
 volumes:
   pg_data:

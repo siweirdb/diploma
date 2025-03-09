@@ -43,6 +43,9 @@ services:
     restart: always
     volumes:
       - ./foundly:/foundly
+      - ./media:/foundly/media
+      - ./static:/foundly/static
+      - ./staticfiles:/foundly/staticfiles
     ports:
       - "8000:8000"
     depends_on:

@@ -949,6 +949,32 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 74,
+  "fields": {
+    "action_time": "2025-03-09T19:39:30.188Z",
+    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "content_type": 16,
+    "object_id": "8c9bf331-6389-488b-86f8-ddb253d1d3a6",
+    "object_repr": "edfed (Электроника -> Мобильные устройства)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 75,
+  "fields": {
+    "action_time": "2025-03-09T19:40:13.018Z",
+    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "content_type": 16,
+    "object_id": "8b5a7490-0231-4de0-a86c-e16e37509047",
+    "object_repr": "edfed (Электроника -> Мобильные устройства)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {

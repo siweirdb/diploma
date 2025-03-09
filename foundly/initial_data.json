@@ -845,6 +845,32 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 66,
+  "fields": {
+    "action_time": "2025-03-09T14:08:46.334Z",
+    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "content_type": 12,
+    "object_id": "28f1d0c5-7e69-4e7a-ae29-eb5cb17f11e0",
+    "object_repr": "abdullovadlet",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 67,
+  "fields": {
+    "action_time": "2025-03-09T14:24:35.862Z",
+    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "content_type": 16,
+    "object_id": "f86a2d49-2600-44fa-9893-9f94d4db2f21",
+    "object_repr": "sdofsdjf (Электроника -> Аудио и видео)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -2286,6 +2312,32 @@
     "category": "0e5bef4b-fc46-4f52-b10c-639af072feb3",
     "subcategory": "25d886cf-0f7d-4465-9d89-e6b6cccd670b",
     "name": "Косметика"
+  }
+},
+{
+  "model": "items.item",
+  "pk": "f86a2d49-2600-44fa-9893-9f94d4db2f21",
+  "fields": {
+    "title": "sdofsdjf",
+    "item_type": "lost_item",
+    "description": "dffdsf",
+    "latitude": 7.0,
+    "longitude": 7.0,
+    "date": "2025-03-09T14:24:35.850Z",
+    "address": "adnaskjnd",
+    "status": "active",
+    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "category": "c6af0975-2903-4faf-aed9-7165afd2d49c",
+    "subcategory": "951a58ce-1ff2-4799-9383-6c45f761e3ee",
+    "subsubcategory": "5520c663-913c-469b-a4e3-dc5a191387ef"
+  }
+},
+{
+  "model": "items.itemphoto",
+  "pk": "eb5da2ce-44a4-4a3e-b3d3-fe08bd65066a",
+  "fields": {
+    "item": "f86a2d49-2600-44fa-9893-9f94d4db2f21",
+    "image": "item_photos/915NPMLKRDL._SL1500.jpg"
   }
 },
 {

@@ -4,8 +4,25 @@ import re
 import random
 from django.core.mail import send_mail
 
-from items.models import VerificationCode, Item, Category, Subcategory, Subsubcategory
+from items.models import VerificationCode, Item, Category, Subcategory, Subsubcategory, ItemPhoto
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
+
+
+class ImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ItemPhoto
+        fields = '__all__'
+
+    def create(self, validated_data):
+        photo = ItemPhoto.objects.create(
+            item = validated_data["item"],
+            image = validated_data["image"],
+        )
+
+        return photo
+
+
+
 
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:

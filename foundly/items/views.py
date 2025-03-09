@@ -9,7 +9,8 @@ from django.utils.timezone import now
 from datetime import timedelta
 
 from .models import VerificationCode, User, Category, Subcategory, Subsubcategory, Item
-from .serializers import RegisterSerializer, LoginSerializer, UserSerializer, ForgotPasswordSerializer, VerifyResetCodeSerializer, ResetPasswordSerializer, LogoutSerializer, CreateItemSerializer
+from .serializers import RegisterSerializer, LoginSerializer, UserSerializer, ForgotPasswordSerializer, \
+    VerifyResetCodeSerializer, ResetPasswordSerializer, LogoutSerializer, CreateItemSerializer, ImageSerializer
 from .serializers import CategorySerializer, SubcategorySerializer, SubsubcategorySerializer, ItemSerializer
 from rest_framework.authentication import TokenAuthentication, get_authorization_header
 from rest_framework.permissions import IsAuthenticated
@@ -17,6 +18,10 @@ from django.core.mail import send_mail
 from rest_framework import generics
 import random
 
+
+class ImageFieldView(generics.CreateAPIView):
+    serializer_class = ImageSerializer
+    permission_classes = [permissions.AllowAny]
 
 class ItemDetailView(APIView):
     permission_classes = [permissions.AllowAny]

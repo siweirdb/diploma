@@ -2,7 +2,7 @@ import os
 import django
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "foundly.settings")
-django.setup()  # This ensures Django apps are loaded
+django.setup()
 
 from django.core.asgi import get_asgi_application
 from channels.routing import ProtocolTypeRouter, URLRouter

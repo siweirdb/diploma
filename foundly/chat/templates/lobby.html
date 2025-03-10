@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: auto; }
+        #chat-box { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: auto; margin-bottom: 10px; }
+        .message { margin: 5px 0; padding: 5px; border-radius: 5px; }
+        .sent { background: #dcf8c6; text-align: right; }
+        .received { background: #f1f1f1; text-align: left; }
+    </style>
+</head>
+<body>
+
+    <h2>Chat App</h2>
+
+    <label for="userId">Your User ID:</label>
+    <input type="text" id="userId" placeholder="Enter your UUID">
+
+    <label for="receiverId">Receiver ID:</label>
+    <input type="text" id="receiverId" placeholder="Enter receiver UUID">
+
+    <button onclick="connectWebSocket()">Connect</button>
+
+    <h3>Messages</h3>
+    <div id="chat-box"></div>
+
+    <input type="text" id="message" placeholder="Type a message">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        let socket;
+
+        function connectWebSocket() {
+            const userId = document.getElementById("userId").value;
+            if (!userId) {
+                alert("Please enter your User ID");
+                return;
+            }
+
+            socket = new WebSocket("ws://127.0.0.1:8000/ws/chat/");
+
+            socket.onopen = function() {
+                console.log("Connected to WebSocket");
+            };
+
+            socket.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                displayMessage(data.message, data.sender_id);
+            };
+
+            socket.onclose = function() {
+                console.log("WebSocket disconnected");
+            };
+        }
+
+        function sendMessage() {
+            const senderId = document.getElementById("userId").value;
+            const receiverId = document.getElementById("receiverId").value;
+            const message = document.getElementById("message").value;
+
+            if (!senderId || !receiverId || !message) {
+                alert("Fill in all fields!");
+                return;
+            }
+
+            const data = { sender_id: senderId, receiver_id: receiverId, message: message };
+            socket.send(JSON.stringify(data));
+            displayMessage(message, senderId, true);
+            document.getElementById("message").value = "";
+        }
+
+        function displayMessage(message, senderId, isSent = false) {
+            const chatBox = document.getElementById("chat-box");
+            const messageDiv = document.createElement("div");
+            messageDiv.classList.add("message", isSent ? "sent" : "received");
+            messageDiv.textContent = `${isSent ? "You" : senderId}: ${message}`;
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+
+</body>
+</html>

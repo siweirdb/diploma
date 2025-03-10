@@ -38,6 +38,7 @@ urlpatterns = [
     path('reset-password/', ResetPasswordView.as_view(), name='reset-password'),
     path('item/', include('items.urls')),
     path('photo/', ImageFieldView.as_view(), name='photo'),
+    path('', include('chat.urls'))
 
 ]
 

@@ -7,7 +7,6 @@ from channels.db import database_sync_to_async
 
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):
-        """Handles WebSocket connection"""
         print("WebSocket scope:", self.scope)
         self.user = self.scope["user"]
 
@@ -19,12 +18,10 @@ class ChatConsumer(AsyncWebsocketConsumer):
             await self.accept()
 
     async def disconnect(self, close_code):
-        """Handles WebSocket disconnection"""
         if hasattr(self, "room_name"):
             await self.channel_layer.group_discard(self.room_name, self.channel_name)
 
     async def receive(self, text_data):
-        """Handles incoming messages"""
         try:
             data = json.loads(text_data)
             receiver_id = data.get("receiver_id")
@@ -40,7 +37,6 @@ class ChatConsumer(AsyncWebsocketConsumer):
                 sender=sender, receiver=receiver, message=message
             )
 
-            # Unique chat room for sender and receiver
             room_name = f"chat_{min(str(sender.id), str(receiver_id))}_{max(str(sender.id), str(receiver_id))}"
 
             await self.channel_layer.group_send(
@@ -57,5 +53,4 @@ class ChatConsumer(AsyncWebsocketConsumer):
             print(f"[WebSocket] Error processing message: {e}")
 
     async def chat_message(self, event):
-        """Sends messages to WebSocket"""
         await self.send(text_data=json.dumps(event))

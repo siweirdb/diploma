@@ -2,7 +2,7 @@ from django.contrib import admin
 from items.models import VerificationCode, Category, Subcategory, Subsubcategory, User, Item, ItemPhoto
 
 admin.site.register(VerificationCode)
-admin.site.register(Category)
+# admin.site.register(Category)
 admin.site.register(Subcategory)
 admin.site.register(Subsubcategory)
 admin.site.register(Item)

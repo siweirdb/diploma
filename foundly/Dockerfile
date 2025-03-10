@@ -9,5 +9,5 @@ RUN pip install --no-cache-dir -r requirenments.txt
 COPY . /foundly/
 EXPOSE 8000
 
-# No need to run collectstatic since you don't want admin CSS/JS
-CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+#CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["daphne", "-b", "0.0.0.0", "-p", "8000", "foundly.asgi:application"]

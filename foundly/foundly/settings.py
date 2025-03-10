@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'channels',
-    
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,8 +45,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
-    'items',
     'chat',
+    'items',
 
     'rest_framework',
     'rest_framework_simplejwt',
@@ -57,6 +57,14 @@ INSTALLED_APPS = [
 ]
 
 ASGI_APPLICATION = 'foundly.asgi.application'
+
+
+CHANNEL_LAYERS = {
+    'default':{
+        'BACKEND':'channels.layers.InMemoryChannelLayer'
+    }
+}
+
 
 
 AUTHENTICATION_BACKENDS = (
@@ -105,8 +113,8 @@ DATABASES = {
         'NAME': 'foundly',
         'USER': 'postgres',
         'PASSWORD': '12345',
-        # 'HOST': 'localhost',
-        'HOST': 'db',
+        'HOST': 'localhost',
+        # 'HOST': 'db',
         'PORT': '5432',
     }
 }

@@ -6,3 +6,4 @@ djangorestframework-simplejwt
 django-allauth
 Pillow>=10.0.0
 channels
+daphne

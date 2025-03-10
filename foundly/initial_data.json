@@ -975,6 +975,32 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 76,
+  "fields": {
+    "action_time": "2025-03-10T15:30:02.678Z",
+    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "content_type": 12,
+    "object_id": "70956ae8-8994-4884-ad68-85f7fe55fa76",
+    "object_repr": "jonsnow",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 77,
+  "fields": {
+    "action_time": "2025-03-10T15:33:04.917Z",
+    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "content_type": 21,
+    "object_id": "77c0449f-b33a-471d-aa3c-96d2c352a76c",
+    "object_repr": "abdullovadlet -> jonsnow: Hello Jon!",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -1695,6 +1721,42 @@
   }
 },
 {
+  "model": "auth.permission",
+  "pk": 81,
+  "fields": {
+    "name": "Can add chat message",
+    "content_type": 21,
+    "codename": "add_chatmessage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 82,
+  "fields": {
+    "name": "Can change chat message",
+    "content_type": 21,
+    "codename": "change_chatmessage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 83,
+  "fields": {
+    "name": "Can delete chat message",
+    "content_type": 21,
+    "codename": "delete_chatmessage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 84,
+  "fields": {
+    "name": "Can view chat message",
+    "content_type": 21,
+    "codename": "view_chatmessage"
+  }
+},
+{
   "model": "contenttypes.contenttype",
   "pk": 1,
   "fields": {
@@ -1855,11 +1917,73 @@
   }
 },
 {
+  "model": "contenttypes.contenttype",
+  "pk": 21,
+  "fields": {
+    "app_label": "chat",
+    "model": "chatmessage"
+  }
+},
+{
   "model": "sessions.session",
   "pk": "x336ayy3akzgewwoytnw6o16eokt3igl",
   "fields": {
     "session_data": ".eJxVjDkOwjAQRe_imliejFdKes4QzdgewqJEylIh7k4ipYDuS--9_1YdrUvfrXOduntRZ8U1MFiMTTEGGsstNuQlNdW1mTE5F6pRp9-MKT_rsLflQcNt1HkclunOelf0QWd9HUt9XQ7376Cnud9qEBJvTG6tqRlRHPsYUrQhEbBEYcBsIUGp3jNykMyctmGIAjKI-nwB2F1BkA:1trAVm:UShNzIoZ5bkc_OPNfQublRu3vMyF7gQlp3i7zKnE0IA",
     "expire_date": "2025-03-23T06:51:46.056Z"
+  }
+},
+{
+  "model": "chat.chatmessage",
+  "pk": "4350f3ae-b057-402e-a045-6f2a3bd5764c",
+  "fields": {
+    "sender": "71ab09a5-15e9-45d3-a866-b4cb9a53183a",
+    "receiver": "70956ae8-8994-4884-ad68-85f7fe55fa76",
+    "message": "Hello, this is a test!",
+    "timestamp": "2025-03-10T16:00:46.880Z",
+    "is_read": false
+  }
+},
+{
+  "model": "chat.chatmessage",
+  "pk": "77c0449f-b33a-471d-aa3c-96d2c352a76c",
+  "fields": {
+    "sender": "71ab09a5-15e9-45d3-a866-b4cb9a53183a",
+    "receiver": "70956ae8-8994-4884-ad68-85f7fe55fa76",
+    "message": "Hello Jon!",
+    "timestamp": "2025-03-10T15:33:04.915Z",
+    "is_read": false
+  }
+},
+{
+  "model": "chat.chatmessage",
+  "pk": "bd146f91-398e-4e26-9251-d9124945392d",
+  "fields": {
+    "sender": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "receiver": "70956ae8-8994-4884-ad68-85f7fe55fa76",
+    "message": "Hello, this is a test!",
+    "timestamp": "2025-03-10T16:15:34.032Z",
+    "is_read": false
+  }
+},
+{
+  "model": "items.user",
+  "pk": "70956ae8-8994-4884-ad68-85f7fe55fa76",
+  "fields": {
+    "password": "12345",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "jonsnow",
+    "first_name": "Jon",
+    "last_name": "Snow",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-03-10T15:26:40Z",
+    "phone_number": null,
+    "birthday": null,
+    "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
+    "groups": [],
+    "user_permissions": []
   }
 },
 {
@@ -2448,6 +2572,17 @@
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5NTEzNjAzMiwiaWF0IjoxNzQxNTM2MDMyLCJqdGkiOiJlYmRkNjdlMDg0YWM0YTEwYWIwYmE2Y2E2NjdlZWIxNSIsInVzZXJfaWQiOiI3MWFiMDlhNS0xNWU5LTQ1ZDMtYTg2Ni1iNGNiOWE1MzE4M2EifQ._nzaY-ZGeny3cTC8AOSmHU3IT2e2b2j9x5nHn2ppBYc",
     "created_at": "2025-03-09T16:00:32.602Z",
     "expires_at": "2125-02-13T16:00:32Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 2,
+  "fields": {
+    "user": "71ab09a5-15e9-45d3-a866-b4cb9a53183a",
+    "jti": "1671d459e64041e29f9a53b814295ed2",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5NTIyNDkyOCwiaWF0IjoxNzQxNjI0OTI4LCJqdGkiOiIxNjcxZDQ1OWU2NDA0MWUyOWY5YTUzYjgxNDI5NWVkMiIsInVzZXJfaWQiOiI3MWFiMDlhNS0xNWU5LTQ1ZDMtYTg2Ni1iNGNiOWE1MzE4M2EifQ.96HogdORr7lm3Q5QOgJ7FEJbeYNhtlDTtv2_41xSSAI",
+    "created_at": "2025-03-10T16:42:08.153Z",
+    "expires_at": "2125-02-14T16:42:08Z"
   }
 },
 {

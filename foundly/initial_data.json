@@ -1836,14 +1836,7 @@
     "model": "socialtoken"
   }
 },
-{
-  "model": "contenttypes.contenttype",
-  "pk": 11,
-  "fields": {
-    "app_label": "items",
-    "model": "category"
-  }
-},
+
 {
   "model": "contenttypes.contenttype",
   "pk": 12,

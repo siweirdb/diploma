@@ -8,13 +8,9 @@ from channels.db import database_sync_to_async
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         self.user = self.scope["user"]
-        self.receiver_id = self.scope["url_route"]["kwargs"].get("receiver_id")
-
-        if self.user.is_anonymous or not self.receiver_id:
+        if self.user.is_anonymous:
             await self.close()
         else:
-            self.room_name = f"chat_{min(str(self.user.id), self.receiver_id)}_{max(str(self.user.id), self.receiver_id)}"
-            await self.channel_layer.group_add(self.room_name, self.channel_name)
             await self.accept()
 
     async def disconnect(self, close_code):

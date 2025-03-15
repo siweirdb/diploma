@@ -6,7 +6,7 @@ from channels.auth import AuthMiddlewareStack
 from channels.middleware import BaseMiddleware
 from asgiref.sync import sync_to_async
 
-User = get_user_model()
+from items.models import User
 
 class JWTAuthMiddleware(BaseMiddleware):
     async def __call__(self, scope, receive, send):

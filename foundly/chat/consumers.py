@@ -3,15 +3,35 @@ from channels.generic.websocket import AsyncWebsocketConsumer
 from items.models import User
 from .models import ChatMessage
 from channels.db import database_sync_to_async
-
-
+import uuid
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         self.user = self.scope["user"]
-        if self.user.is_anonymous:
+        self.receiver_id = self.scope["url_route"]["kwargs"].get("receiver_id")  # Ensure receiver_id is retrieved
+
+        if self.user.is_anonymous or not self.receiver_id:
             await self.close()
-        else:
-            await self.accept()
+            return
+
+        # Convert UUID to string if needed
+        sender_id = str(self.user.id)
+        receiver_id = str(self.receiver_id)
+
+        # Ensure UUID is correctly formatted
+        try:
+            sender_id = uuid.UUID(sender_id)
+            receiver_id = uuid.UUID(receiver_id)
+        except ValueError:
+            print("[WebSocket] Invalid UUID format")
+            await self.close()
+            return
+
+        # Create a unique chat room name
+        self.room_name = f"chat_{min(sender_id, receiver_id)}_{max(sender_id, receiver_id)}"
+
+        # Join the room
+        await self.channel_layer.group_add(self.room_name, self.channel_name)
+        await self.accept()
 
     async def disconnect(self, close_code):
         if hasattr(self, "room_name"):
@@ -47,4 +67,5 @@ class ChatConsumer(AsyncWebsocketConsumer):
             print(f"[WebSocket] Error processing message: {e}")
 
     async def chat_message(self, event):
+        """ Send message event to WebSocket client """
         await self.send(text_data=json.dumps(event))

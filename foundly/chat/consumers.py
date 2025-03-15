@@ -7,13 +7,13 @@ from channels.db import database_sync_to_async
 
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):
-        print("WebSocket scope:", self.scope)
         self.user = self.scope["user"]
+        self.receiver_id = self.scope["url_route"]["kwargs"].get("receiver_id")
 
-        if self.user.is_anonymous:
+        if self.user.is_anonymous or not self.receiver_id:
             await self.close()
         else:
-            self.room_name = f"chat_{self.user.id}"
+            self.room_name = f"chat_{min(str(self.user.id), self.receiver_id)}_{max(str(self.user.id), self.receiver_id)}"
             await self.channel_layer.group_add(self.room_name, self.channel_name)
             await self.accept()
 
@@ -24,28 +24,26 @@ class ChatConsumer(AsyncWebsocketConsumer):
     async def receive(self, text_data):
         try:
             data = json.loads(text_data)
-            receiver_id = data.get("receiver_id")
             message = data.get("message")
 
-            if not receiver_id or not message:
+            if not self.receiver_id or not message:
                 return  # Ignore incomplete messages
 
-            sender = self.user  # Ensure authenticated user is the sender
-            receiver = await database_sync_to_async(User.objects.get)(id=receiver_id)
+            sender = self.user
+            receiver = await database_sync_to_async(User.objects.get)(id=self.receiver_id)
 
             chat_message = await database_sync_to_async(ChatMessage.objects.create)(
                 sender=sender, receiver=receiver, message=message
             )
 
-            room_name = f"chat_{min(str(sender.id), str(receiver_id))}_{max(str(sender.id), str(receiver_id))}"
-
+            # Send message to the correct WebSocket room
             await self.channel_layer.group_send(
-                room_name,
+                self.room_name,
                 {
                     "type": "chat_message",
                     "message": message,
                     "sender_id": str(sender.id),
-                    "receiver_id": str(receiver_id),
+                    "receiver_id": str(self.receiver_id),
                     "timestamp": str(chat_message.timestamp),
                 },
             )

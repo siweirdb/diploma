@@ -22,6 +22,9 @@
     <label for="receiverId">Receiver ID:</label>
     <input type="text" id="receiverId" placeholder="Enter receiver UUID">
 
+    <label for="token">Auth Token:</label>
+    <input type="text" id="token" placeholder="Enter your JWT token">
+
     <button onclick="connectWebSocket()">Connect</button>
 
     <h3>Messages</h3>
@@ -34,39 +37,52 @@
         let socket;
 
         function connectWebSocket() {
-            const userId = document.getElementById("userId").value;
-            if (!userId) {
-                alert("Please enter your User ID");
+            const userId = document.getElementById("userId").value.trim();
+            const receiverId = document.getElementById("receiverId").value.trim();
+            const token = document.getElementById("token").value.trim();
+
+            if (!userId || !receiverId || !token) {
+                alert("Please enter User ID, Receiver ID, and Token");
                 return;
             }
 
-            socket = new WebSocket("ws://127.0.0.1:8000/ws/chat/");
+            const wsUrl = `ws://127.0.0.1:8000/ws/chat/${receiverId}/?token=${token}`;
+            socket = new WebSocket(wsUrl);
 
-            socket.onopen = function() {
-                console.log("Connected to WebSocket");
+            socket.onopen = function () {
+                console.log("✅ Connected to WebSocket");
             };
 
-            socket.onmessage = function(event) {
+            socket.onmessage = function (event) {
                 const data = JSON.parse(event.data);
                 displayMessage(data.message, data.sender_id);
             };
 
-            socket.onclose = function() {
-                console.log("WebSocket disconnected");
+            socket.onerror = function (error) {
+                console.error("❌ WebSocket error:", error);
+            };
+
+            socket.onclose = function () {
+                console.log("❌ WebSocket disconnected");
             };
         }
 
         function sendMessage() {
-            const senderId = document.getElementById("userId").value;
-            const receiverId = document.getElementById("receiverId").value;
-            const message = document.getElementById("message").value;
+            if (!socket || socket.readyState !== WebSocket.OPEN) {
+                alert("WebSocket is not connected!");
+                return;
+            }
+
+            const senderId = document.getElementById("userId").value.trim();
+            const receiverId = document.getElementById("receiverId").value.trim();
+            const message = document.getElementById("message").value.trim();
 
             if (!senderId || !receiverId || !message) {
                 alert("Fill in all fields!");
                 return;
             }
 
-            const data = { sender_id: senderId, receiver_id: receiverId, message: message };
+            const data = { message: message };
             socket.send(JSON.stringify(data));
             displayMessage(message, senderId, true);
             document.getElementById("message").value = "";

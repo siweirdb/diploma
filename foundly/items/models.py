@@ -6,10 +6,12 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    email = models.EmailField(unique=True)
     phone_number = models.CharField(max_length=20, default='', unique=False, null=True, blank=True)
     birthday = models.DateField(null=True, blank=True)
     profile_picture = models.ImageField(upload_to='profile_photo/', default='profile_photo/photo_2025-02-24 23.37.57.jpeg')
-
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["username"]
     groups = models.ManyToManyField(
         "auth.Group",
         related_name="custom_user_set",

@@ -85,20 +85,25 @@ class LoginView(generics.GenericAPIView):
     serializer_class = LoginSerializer
 
     def post(self, request, *args, **kwargs):
-        email = request.data['email']
-        password = request.data['password']
-        username = email.split('@')[0]
-        user = authenticate(username=username, password=password)
+        email = request.data.get("email")
+        password = request.data.get("password")
+
+        if not email or not password:
+            return Response({"detail": "Email and password are required"}, status=400)
+
         print(email, password)
+
+        user = authenticate(request, username=email, password=password)  # Authenticate with email
+
         if user is not None:
             refresh = RefreshToken.for_user(user)
-
             return Response({
-                'refresh': str(refresh),
-                'access': str(refresh.access_token),
+                "refresh": str(refresh),
+                "access": str(refresh.access_token),
             })
-        else:
-            return Response({'detail': 'Invalid credentials'}, status=401)
+        return Response({"detail": "Invalid credentials"}, status=401)
+
+
 
 EXPIRE_TIME = timedelta(minutes=10)
 

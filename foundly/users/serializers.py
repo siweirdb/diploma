@@ -11,7 +11,7 @@ from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('username', 'email', 'first_name', 'last_name', 'phone_number','profile_picture', 'birthday')
+        fields = ('username', 'email', 'first_name', 'last_name', 'phone_number','profile_picture', 'birthday', 'qr_code')
 
 
 
@@ -64,6 +64,9 @@ class RegisterSerializer(serializers.ModelSerializer):
             phone_number=validated_data.get('phone_number'),
             is_active=False
         )
+
+        user.generate_qr_code()
+        user.save()
 
         verification_code = str(random.randint(100000, 999999))
         VerificationCode.objects.create(user=user, code=verification_code)

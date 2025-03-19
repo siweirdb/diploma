@@ -1,3 +1,7 @@
+System check identified some issues:
+
+WARNINGS:
+[33;1m?: (staticfiles.W004) The directory '/foundly/static' in the STATICFILES_DIRS setting does not exist.[0m
 [
 {
   "model": "admin.logentry",
@@ -816,6 +820,32 @@
     "object_repr": "Дом и быт -> Косметика и уход -> Косметика",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 64,
+  "fields": {
+    "action_time": "2025-03-19T20:18:33.354Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "2623072f-5206-4488-9582-2232a2065ee3",
+    "object_repr": "abdullovadlet@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 65,
+  "fields": {
+    "action_time": "2025-03-19T20:23:20.968Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "aaa39368-0f00-42ab-b4d2-59918bc2698c",
+    "object_repr": "abdullovadlet@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
   }
 },
 {
@@ -2302,6 +2332,29 @@
     "phone_number": "",
     "birthday": null,
     "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
+    "qr_code": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": "9d0b4688-94bf-46dd-a172-88bee89b56bf",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$diOWtC9mKnupDMidmdkwXG$SU7NAQwbzrvQ1rYa9gK9E2ENSSUEEnTNfA3VcvajMbQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "abdullovadlet",
+    "first_name": "Sirius",
+    "last_name": "Weirden",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-03-19T20:28:45.970Z",
+    "email": "abdullovadlet@gmail.com",
+    "phone_number": "",
+    "birthday": null,
+    "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
+    "qr_code": "qr_codes/qr_9d0b4688-94bf-46dd-a172-88bee89b56bf_YG69AEl.png",
     "groups": [],
     "user_permissions": []
   }
@@ -2323,8 +2376,42 @@
     "phone_number": "",
     "birthday": null,
     "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
+    "qr_code": "",
     "groups": [],
     "user_permissions": []
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 1,
+  "fields": {
+    "user": null,
+    "jti": "6f9185c9703e4588bb20951d0b421da9",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5NjAxNTA4MSwiaWF0IjoxNzQyNDE1MDgxLCJqdGkiOiI2ZjkxODVjOTcwM2U0NTg4YmIyMDk1MWQwYjQyMWRhOSIsInVzZXJfaWQiOiIyNjIzMDcyZi01MjA2LTQ0ODgtOTU4Mi0yMjMyYTIwNjVlZTMifQ.-cwEl64pfQWsF1lJEMBF1hlgWHi8wi-IV6J2mS9lhjU",
+    "created_at": "2025-03-19T20:11:21.574Z",
+    "expires_at": "2125-02-23T20:11:21Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 2,
+  "fields": {
+    "user": null,
+    "jti": "c24a08cc629e49ebb9335f87fbb1323b",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5NjAxNTYyMSwiaWF0IjoxNzQyNDE1NjIxLCJqdGkiOiJjMjRhMDhjYzYyOWU0OWViYjkzMzVmODdmYmIxMzIzYiIsInVzZXJfaWQiOiJhYWEzOTM2OC0wZjAwLTQyYWItYjRkMi01OTkxOGJjMjY5OGMifQ.dELGPlTar4qVV3vOlcnZiXpEbSbdq4cdWHSa24-KcvI",
+    "created_at": "2025-03-19T20:20:21.470Z",
+    "expires_at": "2125-02-23T20:20:21Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 3,
+  "fields": {
+    "user": "9d0b4688-94bf-46dd-a172-88bee89b56bf",
+    "jti": "d1b5ea8ae3df4acd95a67abf57f75a2b",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5NjAxNjI1OCwiaWF0IjoxNzQyNDE2MjU4LCJqdGkiOiJkMWI1ZWE4YWUzZGY0YWNkOTVhNjdhYmY1N2Y3NWEyYiIsInVzZXJfaWQiOiI5ZDBiNDY4OC05NGJmLTQ2ZGQtYTE3Mi04OGJlZTg5YjU2YmYifQ.hdBzaeP1ijNay6wLWofef4DstFMWHvjtmmKiV4SCI-0",
+    "created_at": "2025-03-19T20:30:58.714Z",
+    "expires_at": "2125-02-23T20:30:58Z"
   }
 },
 {

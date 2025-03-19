@@ -8,3 +8,4 @@ Pillow>=10.0.0
 channels
 daphne
 whitenoise
+qrcode

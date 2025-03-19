@@ -5,6 +5,8 @@ from rest_framework import status, permissions
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.utils.timezone import now
 from datetime import timedelta
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 
 from .models import VerificationCode, User
 from .serializers import RegisterSerializer, LoginSerializer, UserSerializer, ForgotPasswordSerializer, \
@@ -171,5 +173,16 @@ class ResetPasswordView(APIView):
         user.save()
 
         return Response({"message": "Password reset successfully"}, status=status.HTTP_200_OK)
+
+
+def qr_code_view(request, user_id):
+    user = get_object_or_404(User, id=user_id)
+    return JsonResponse({
+        "id": str(user.id),
+        "email": user.email,
+        "phone_number": user.phone_number,
+        "birthday": user.birthday.strftime("%Y-%m-%d") if user.birthday else None,
+        "profile_picture": request.build_absolute_uri(user.profile_picture.url) if user.profile_picture else None
+    })
 
 

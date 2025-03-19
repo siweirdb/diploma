@@ -1,5 +1,6 @@
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
+from users.models import User
 from .models import ChatMessage
 from channels.db import database_sync_to_async
 import uuid

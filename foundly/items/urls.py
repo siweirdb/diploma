@@ -1,7 +1,7 @@
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from items.views import CreateItemView, MapView, ItemDetailView
+from .views import CreateItemView, MapView, ItemDetailView
 
 
 

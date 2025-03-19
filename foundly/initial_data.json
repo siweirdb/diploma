@@ -3,11 +3,11 @@
   "model": "admin.logentry",
   "pk": 1,
   "fields": {
-    "action_time": "2025-03-09T06:51:54.320Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:05:11.616Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 11,
-    "object_id": "25e45981-2fed-40d1-9fd2-45fe746a3499",
-    "object_repr": "electronic",
+    "object_id": "5d44599c-99ad-4275-9b50-cecf9df57138",
+    "object_repr": "Личные вещи",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -16,24 +16,24 @@
   "model": "admin.logentry",
   "pk": 2,
   "fields": {
-    "action_time": "2025-03-09T11:07:07.845Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:05:21.789Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 11,
-    "object_id": "25e45981-2fed-40d1-9fd2-45fe746a3499",
-    "object_repr": "electronic",
-    "action_flag": 3,
-    "change_message": ""
+    "object_id": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "object_repr": "Электроника",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
   }
 },
 {
   "model": "admin.logentry",
   "pk": 3,
   "fields": {
-    "action_time": "2025-03-09T11:07:47.965Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:05:30.127Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 11,
-    "object_id": "905dc346-bffb-49e4-9781-f1f334fc03c3",
-    "object_repr": "Личные вещи",
+    "object_id": "5c886012-5ca8-4596-a94d-b223796f618b",
+    "object_repr": "Документы",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -42,11 +42,11 @@
   "model": "admin.logentry",
   "pk": 4,
   "fields": {
-    "action_time": "2025-03-09T11:08:02.687Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:05:38.698Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 11,
-    "object_id": "c6af0975-2903-4faf-aed9-7165afd2d49c",
-    "object_repr": "Электроника",
+    "object_id": "8c43adf8-b4b4-4e35-9762-669837b32ea1",
+    "object_repr": "Транспорт",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -55,11 +55,11 @@
   "model": "admin.logentry",
   "pk": 5,
   "fields": {
-    "action_time": "2025-03-09T11:08:08.785Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:05:46.158Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 11,
-    "object_id": "1d90a842-54ff-4fd7-a29d-aafb7b6c88ec",
-    "object_repr": "Документы",
+    "object_id": "824daf16-ccaf-4dbb-b806-2edf4984bd38",
+    "object_repr": "Канцелярия и учеба",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -68,11 +68,11 @@
   "model": "admin.logentry",
   "pk": 6,
   "fields": {
-    "action_time": "2025-03-09T11:08:15.102Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:05:57.261Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 11,
-    "object_id": "50b4278f-763c-43a0-b2c8-5b88d5aa9220",
-    "object_repr": "Транспорт",
+    "object_id": "637b8e52-aed3-468d-9b81-4843dbde6b9a",
+    "object_repr": "Развлечения и хобби",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -81,11 +81,11 @@
   "model": "admin.logentry",
   "pk": 7,
   "fields": {
-    "action_time": "2025-03-09T11:08:26.834Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:06:07.722Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 11,
-    "object_id": "0354b727-64f7-42cb-91be-2754f07bcc4e",
-    "object_repr": "Канцелярия и учеба",
+    "object_id": "21907229-450e-4f68-8869-8f34bfa7cbce",
+    "object_repr": "Дом и быт",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -94,11 +94,11 @@
   "model": "admin.logentry",
   "pk": 8,
   "fields": {
-    "action_time": "2025-03-09T11:08:35.189Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 11,
-    "object_id": "0d596dc1-c7f6-499e-aff6-76214b2afa08",
-    "object_repr": "Развлечения и хобби",
+    "action_time": "2025-03-19T18:06:52.426Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 13,
+    "object_id": "6082099f-cdbc-4383-92a8-4b8520b8ff49",
+    "object_repr": "Личные вещи -> Аксессуары",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -107,11 +107,11 @@
   "model": "admin.logentry",
   "pk": 9,
   "fields": {
-    "action_time": "2025-03-09T11:08:44.452Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 11,
-    "object_id": "0e5bef4b-fc46-4f52-b10c-639af072feb3",
-    "object_repr": "Дом и быт",
+    "action_time": "2025-03-19T18:07:00.644Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 13,
+    "object_id": "5fb8796b-3176-4b06-9e61-31eeb2e9c42b",
+    "object_repr": "Личные вещи -> Одежда",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -120,11 +120,11 @@
   "model": "admin.logentry",
   "pk": 10,
   "fields": {
-    "action_time": "2025-03-09T11:09:06.505Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:07:09.831Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 13,
-    "object_id": "cef671d8-c7d3-4c2a-8a1d-0d2d82ddf293",
-    "object_repr": "Личные вещи -> Аксессуары",
+    "object_id": "42b2956d-318b-4aa1-8ff5-44fc54c98caa",
+    "object_repr": "Электроника -> Мобильные устройства",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -133,11 +133,11 @@
   "model": "admin.logentry",
   "pk": 11,
   "fields": {
-    "action_time": "2025-03-09T11:09:17.508Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:07:19.142Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 13,
-    "object_id": "62864b30-0734-45b9-a298-2908ec56efbe",
-    "object_repr": "Личные вещи -> Одежда",
+    "object_id": "da63d846-caff-49d8-8366-3b2382a8e653",
+    "object_repr": "Электроника -> Компьютеры и аксессуары",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -146,11 +146,11 @@
   "model": "admin.logentry",
   "pk": 12,
   "fields": {
-    "action_time": "2025-03-09T11:09:27.031Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:07:28.180Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 13,
-    "object_id": "0c67f394-e2c8-4ebe-82b5-a5ae41ca2c9a",
-    "object_repr": "Электроника -> Мобильные устройства",
+    "object_id": "6d4516cf-c512-4679-8159-0567386977e7",
+    "object_repr": "Электроника -> Аудио и видео",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -159,11 +159,11 @@
   "model": "admin.logentry",
   "pk": 13,
   "fields": {
-    "action_time": "2025-03-09T11:09:37.445Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:07:38.674Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 13,
-    "object_id": "e3ba73ca-8925-4026-949f-a1ee153825dd",
-    "object_repr": "Электроника -> Компьютеры и аксессуары",
+    "object_id": "af7efa10-1693-4dc0-ac5d-3e296f71adda",
+    "object_repr": "Электроника -> Умные устройства",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -172,11 +172,11 @@
   "model": "admin.logentry",
   "pk": 14,
   "fields": {
-    "action_time": "2025-03-09T11:09:47.249Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:07:48.183Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 13,
-    "object_id": "951a58ce-1ff2-4799-9383-6c45f761e3ee",
-    "object_repr": "Электроника -> Аудио и видео",
+    "object_id": "5c5b8343-2fc0-464a-9304-007307cef0fd",
+    "object_repr": "Документы -> Удостоверения личности",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -185,11 +185,11 @@
   "model": "admin.logentry",
   "pk": 15,
   "fields": {
-    "action_time": "2025-03-09T11:09:55.995Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:08:07.664Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 13,
-    "object_id": "7e9e4d42-c322-43c8-84be-876abb3fab75",
-    "object_repr": "Электроника -> Умные устройства",
+    "object_id": "5224f364-635c-4084-99c9-bd710ef92a28",
+    "object_repr": "Документы -> Водительские документы",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -198,11 +198,11 @@
   "model": "admin.logentry",
   "pk": 16,
   "fields": {
-    "action_time": "2025-03-09T11:10:05.778Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:08:15.348Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 13,
-    "object_id": "91574d13-d55e-439d-b568-f5054828d2ad",
-    "object_repr": "Документы -> Удостоверения личности",
+    "object_id": "c410b017-d476-4413-8899-6c22b7385091",
+    "object_repr": "Документы -> Финансовые документы",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -211,11 +211,11 @@
   "model": "admin.logentry",
   "pk": 17,
   "fields": {
-    "action_time": "2025-03-09T11:10:15.171Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:08:25.895Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 13,
-    "object_id": "029008f0-1623-4914-b110-422aeced9842",
-    "object_repr": "Документы -> Водительские документы",
+    "object_id": "9b30ece9-c588-4005-81c6-8beb705975f4",
+    "object_repr": "Документы -> Образовательные документы",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -224,11 +224,11 @@
   "model": "admin.logentry",
   "pk": 18,
   "fields": {
-    "action_time": "2025-03-09T11:10:40.347Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:08:33.956Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 13,
-    "object_id": "040b6d35-f272-40d8-828e-e7220aaf9170",
-    "object_repr": "Документы -> Финансовые документы",
+    "object_id": "01280f2e-f573-4987-9bc1-679c6343b8f4",
+    "object_repr": "Транспорт -> Ключи и доступ",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -237,11 +237,11 @@
   "model": "admin.logentry",
   "pk": 19,
   "fields": {
-    "action_time": "2025-03-09T11:10:52.843Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:08:42.794Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 13,
-    "object_id": "3f81438b-0f50-432d-91c5-9088c01274ee",
-    "object_repr": "Документы -> Образовательные документы",
+    "object_id": "3dc25a1d-ba3f-4be8-8f52-f90bbfdeffa0",
+    "object_repr": "Транспорт -> Транспортные документы",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -250,11 +250,11 @@
   "model": "admin.logentry",
   "pk": 20,
   "fields": {
-    "action_time": "2025-03-09T11:11:06.148Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:08:52.945Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 13,
-    "object_id": "1db88436-34e2-4482-a857-0b386cba2e8c",
-    "object_repr": "Транспорт -> Ключи и доступ",
+    "object_id": "376d683e-1e6b-43c2-82bb-a5e2d4900939",
+    "object_repr": "Канцелярия и учеба -> Учебные принадлежности",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -263,11 +263,11 @@
   "model": "admin.logentry",
   "pk": 21,
   "fields": {
-    "action_time": "2025-03-09T11:11:15.743Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:09:06.040Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 13,
-    "object_id": "d1c87373-acce-4149-ae5a-2919b6404855",
-    "object_repr": "Транспорт -> Транспортные документы",
+    "object_id": "da5d1048-02d7-4f3d-904d-cca2515ccafe",
+    "object_repr": "Развлечения и хобби -> Игры и досуг",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -276,11 +276,11 @@
   "model": "admin.logentry",
   "pk": 22,
   "fields": {
-    "action_time": "2025-03-09T11:12:11.497Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:09:13.586Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 13,
-    "object_id": "fd67c8c2-78e3-4d39-9a88-144a1245dc18",
-    "object_repr": "Канцелярия и учеба -> Учебные принадлежности",
+    "object_id": "20130f88-76b8-4293-996d-bbd661f386e7",
+    "object_repr": "Развлечения и хобби -> Спортивные аксессуары",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -289,11 +289,11 @@
   "model": "admin.logentry",
   "pk": 23,
   "fields": {
-    "action_time": "2025-03-09T11:12:25.051Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:09:22.384Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 13,
-    "object_id": "07c64ead-2405-462a-b16a-4693c11102cd",
-    "object_repr": "Развлечения и хобби -> Игры и досуг",
+    "object_id": "86c45345-dd15-46d1-beb9-9b1fe7fbc2aa",
+    "object_repr": "Развлечения и хобби -> Гаджеты и подписки",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -302,11 +302,11 @@
   "model": "admin.logentry",
   "pk": 24,
   "fields": {
-    "action_time": "2025-03-09T11:12:35.967Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:09:32.860Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 13,
-    "object_id": "43e5a501-6c24-4d60-a77d-9ec5a686bf2a",
-    "object_repr": "Развлечения и хобби -> Спортивные аксессуары",
+    "object_id": "7869713d-27e1-4812-9107-ec7c0bcbfd3c",
+    "object_repr": "Дом и быт -> Ключи и доступ",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -315,11 +315,11 @@
   "model": "admin.logentry",
   "pk": 25,
   "fields": {
-    "action_time": "2025-03-09T11:12:46.522Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:09:41.039Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 13,
-    "object_id": "79aff88c-9fdb-41c5-a503-e9dce91b4ce6",
-    "object_repr": "Развлечения и хобби -> Гаджеты и подписки",
+    "object_id": "0d4baaf2-9fed-4a5c-8753-8bdbeaafb43b",
+    "object_repr": "Дом и быт -> Косметика и уход",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -328,11 +328,11 @@
   "model": "admin.logentry",
   "pk": 26,
   "fields": {
-    "action_time": "2025-03-09T11:12:57.771Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 13,
-    "object_id": "f3e8af48-1821-4f40-b5c8-aee1d8987418",
-    "object_repr": "Дом и быт -> Ключи и доступ",
+    "action_time": "2025-03-19T18:10:38.636Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 14,
+    "object_id": "7bd45f12-1c65-496f-ab49-c14b1fbbf457",
+    "object_repr": "Личные вещи -> Аксессуары -> Очки",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -341,11 +341,11 @@
   "model": "admin.logentry",
   "pk": 27,
   "fields": {
-    "action_time": "2025-03-09T11:13:06.610Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 13,
-    "object_id": "25d886cf-0f7d-4465-9d89-e6b6cccd670b",
-    "object_repr": "Дом и быт -> Косметика и уход",
+    "action_time": "2025-03-19T18:10:47.071Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 14,
+    "object_id": "139ecdca-c9db-446b-ab4c-aa7f01775806",
+    "object_repr": "Личные вещи -> Аксессуары -> Часы",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -354,11 +354,11 @@
   "model": "admin.logentry",
   "pk": 28,
   "fields": {
-    "action_time": "2025-03-09T11:13:56.509Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:10:55.453Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "e948b627-8599-4d6a-bd9c-fa2d3c26b31a",
-    "object_repr": "Личные вещи -> Аксессуары -> Очки",
+    "object_id": "1a7db2ce-7ac4-416a-a8ca-d7a8a43960cb",
+    "object_repr": "Личные вещи -> Аксессуары -> Украшения",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -367,11 +367,11 @@
   "model": "admin.logentry",
   "pk": 29,
   "fields": {
-    "action_time": "2025-03-09T11:14:10.827Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:11:03.974Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "48326937-f1cc-4c3b-85fb-d2368b9c278a",
-    "object_repr": "Личные вещи -> Аксессуары -> Часы",
+    "object_id": "6287b446-566f-4a75-a0d6-8eb9dfea2214",
+    "object_repr": "Личные вещи -> Аксессуары -> Сумки и рюкзаки",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -380,11 +380,11 @@
   "model": "admin.logentry",
   "pk": 30,
   "fields": {
-    "action_time": "2025-03-09T11:14:18.560Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:11:11.945Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "7bb8d60e-9f9e-4be8-a207-7ec897b77424",
-    "object_repr": "Личные вещи -> Аксессуары -> Украшения",
+    "object_id": "fab00da4-4654-4e7b-ad67-4235101fb7dc",
+    "object_repr": "Личные вещи -> Аксессуары -> Кошельки и кардхолдеры",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -393,11 +393,11 @@
   "model": "admin.logentry",
   "pk": 31,
   "fields": {
-    "action_time": "2025-03-09T11:14:28.645Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:11:19.979Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "e0b2d97f-77fd-40fd-900c-471f4c813f68",
-    "object_repr": "Личные вещи -> Аксессуары -> Сумки и рюкзаки",
+    "object_id": "8eb2b90c-22fa-41d7-9568-088fa3b1699e",
+    "object_repr": "Личные вещи -> Аксессуары -> Головные уборы",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -406,11 +406,11 @@
   "model": "admin.logentry",
   "pk": 32,
   "fields": {
-    "action_time": "2025-03-09T11:14:39.165Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:11:28.780Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "0066e3ed-bedd-45e5-8ced-f747d48955e3",
-    "object_repr": "Личные вещи -> Аксессуары -> Кошельки и кардхолдеры",
+    "object_id": "1d9c7494-9e13-480e-949e-63360a03b3ce",
+    "object_repr": "Личные вещи -> Аксессуары -> Перчатки и шарфы",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -419,11 +419,11 @@
   "model": "admin.logentry",
   "pk": 33,
   "fields": {
-    "action_time": "2025-03-09T11:14:49.751Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:11:36.420Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "4d8752cc-e375-4619-9e0b-999f6bfc7e59",
-    "object_repr": "Личные вещи -> Аксессуары -> Головные уборы",
+    "object_id": "986873ce-da24-421b-8d8b-f3c90f8061a0",
+    "object_repr": "Личные вещи -> Аксессуары -> Ремни",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -432,11 +432,11 @@
   "model": "admin.logentry",
   "pk": 34,
   "fields": {
-    "action_time": "2025-03-09T11:14:58.297Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:11:44.601Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "d3569c9b-f3e2-413c-aaa3-b9602a4811ed",
-    "object_repr": "Личные вещи -> Аксессуары -> Перчатки и шарфы",
+    "object_id": "8ae8c53d-c453-4603-adf4-e40f540dc5bc",
+    "object_repr": "Личные вещи -> Одежда -> Верхняя одежда",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -445,11 +445,11 @@
   "model": "admin.logentry",
   "pk": 35,
   "fields": {
-    "action_time": "2025-03-09T11:15:07.064Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:12:25.127Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "103ec257-2e3e-454b-adeb-1b51d95615c9",
-    "object_repr": "Личные вещи -> Аксессуары -> Ремни",
+    "object_id": "64e160e2-6add-4f58-bdea-a9eeab3567aa",
+    "object_repr": "Личные вещи -> Одежда -> Обувь",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -458,11 +458,11 @@
   "model": "admin.logentry",
   "pk": 36,
   "fields": {
-    "action_time": "2025-03-09T11:15:16.059Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:12:34.281Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "e5b87f3a-a71a-4685-9700-64c6ee448765",
-    "object_repr": "Личные вещи -> Одежда -> Верхняя одежда",
+    "object_id": "b825cc38-992d-4037-9564-db717f06fc39",
+    "object_repr": "Личные вещи -> Одежда -> Другая одежда",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -471,11 +471,11 @@
   "model": "admin.logentry",
   "pk": 37,
   "fields": {
-    "action_time": "2025-03-09T11:15:31.054Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:12:46.106Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "8fd9b65a-e256-44a9-b008-7aadc12be912",
-    "object_repr": "Личные вещи -> Одежда -> Обувь",
+    "object_id": "0ce2eb74-01d7-42ff-b02a-eacea808c815",
+    "object_repr": "Электроника -> Мобильные устройства -> Смартфоны",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -484,11 +484,11 @@
   "model": "admin.logentry",
   "pk": 38,
   "fields": {
-    "action_time": "2025-03-09T11:15:41.254Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:12:58.620Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "d35e7d1c-992b-44c6-b01b-80e7a102934b",
-    "object_repr": "Личные вещи -> Одежда -> Другая одежда",
+    "object_id": "0916141f-dbbe-49df-85fa-7e57819d61d6",
+    "object_repr": "Электроника -> Мобильные устройства -> Планшеты",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -497,11 +497,11 @@
   "model": "admin.logentry",
   "pk": 39,
   "fields": {
-    "action_time": "2025-03-09T11:15:51.782Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:13:10.290Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "caac3b97-e1d0-452e-adf0-6dbd01f8b3b0",
-    "object_repr": "Электроника -> Мобильные устройства -> Смартфоны",
+    "object_id": "b20d8683-5b30-424d-9d79-3065cbaaa2a6",
+    "object_repr": "Электроника -> Компьютеры и аксессуары -> Ноутбуки",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -510,11 +510,11 @@
   "model": "admin.logentry",
   "pk": 40,
   "fields": {
-    "action_time": "2025-03-09T11:16:01.257Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:13:20.085Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "6074f024-f16c-4e01-aa22-1bba97bddcc0",
-    "object_repr": "Электроника -> Мобильные устройства -> Планшеты",
+    "object_id": "fd214a0e-2046-4e1d-9c53-a17a4f02d4a6",
+    "object_repr": "Электроника -> Компьютеры и аксессуары -> Аксессуары",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -523,11 +523,11 @@
   "model": "admin.logentry",
   "pk": 41,
   "fields": {
-    "action_time": "2025-03-09T11:16:11.924Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:13:28.872Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "b4e4bb4e-76e6-47dd-85cf-382c97e604a2",
-    "object_repr": "Электроника -> Компьютеры и аксессуары -> Ноутбуки",
+    "object_id": "520111a7-c1e8-4241-88d4-6c6ef391813b",
+    "object_repr": "Электроника -> Аудио и видео -> Наушники",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -536,11 +536,11 @@
   "model": "admin.logentry",
   "pk": 42,
   "fields": {
-    "action_time": "2025-03-09T11:16:26.477Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:13:37.755Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "ba23c83d-05c4-437c-9da4-b725c1f248c6",
-    "object_repr": "Электроника -> Компьютеры и аксессуары -> Аксессуары",
+    "object_id": "b30614d6-bb21-440e-8098-a80d73e5779e",
+    "object_repr": "Электроника -> Аудио и видео -> Колонки",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -549,11 +549,11 @@
   "model": "admin.logentry",
   "pk": 43,
   "fields": {
-    "action_time": "2025-03-09T11:16:40.340Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:13:51.233Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "c2ba7d65-fa96-4e01-9f67-b731d09f51a1",
-    "object_repr": "Электроника -> Аудио и видео -> Наушники",
+    "object_id": "e78c6dd9-5858-4325-9126-37abcf108ce7",
+    "object_repr": "Электроника -> Аудио и видео -> Фото и видео",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -562,11 +562,11 @@
   "model": "admin.logentry",
   "pk": 44,
   "fields": {
-    "action_time": "2025-03-09T11:16:51.350Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:14:04.790Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "5520c663-913c-469b-a4e3-dc5a191387ef",
-    "object_repr": "Электроника -> Аудио и видео -> Колонки",
+    "object_id": "72d336d0-922a-469e-a6de-dd8710dfe90f",
+    "object_repr": "Электроника -> Умные устройства -> Фитнес-гаджеты",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -575,11 +575,11 @@
   "model": "admin.logentry",
   "pk": 45,
   "fields": {
-    "action_time": "2025-03-09T11:17:04.472Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:14:15.176Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "66b05a99-a520-4899-ad78-31a0a41b4984",
-    "object_repr": "Электроника -> Аудио и видео -> Фото и видео",
+    "object_id": "b22c3da0-e4a5-498f-8776-fe9488a724fa",
+    "object_repr": "Электроника -> Умные устройства -> GPS-трекеры",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -588,11 +588,11 @@
   "model": "admin.logentry",
   "pk": 46,
   "fields": {
-    "action_time": "2025-03-09T11:17:18.699Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:14:53.248Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "00f99936-4a17-45d2-9489-c50ff9a31404",
-    "object_repr": "Электроника -> Умные устройства -> Фитнес-гаджеты",
+    "object_id": "79ff0bfa-18dc-4603-8abc-7b469873728c",
+    "object_repr": "Документы -> Удостоверения личности -> Паспорт",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -601,11 +601,11 @@
   "model": "admin.logentry",
   "pk": 47,
   "fields": {
-    "action_time": "2025-03-09T11:17:47.383Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:15:11.104Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "16f1569f-1412-49d8-838c-39218572ce2a",
-    "object_repr": "Электроника -> Умные устройства -> GPS-трекеры",
+    "object_id": "7f48f0cf-7617-43af-8014-2795811688a3",
+    "object_repr": "Документы -> Водительские документы -> Водительские права",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -614,11 +614,11 @@
   "model": "admin.logentry",
   "pk": 48,
   "fields": {
-    "action_time": "2025-03-09T11:17:57.708Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:15:22.948Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "65a92c10-9333-4549-9e74-2258888c8914",
-    "object_repr": "Документы -> Удостоверения личности -> Паспорт",
+    "object_id": "64da8f4d-e377-4b59-a3a5-843e5e7ee24f",
+    "object_repr": "Документы -> Финансовые документы -> Банковские карты",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -627,11 +627,11 @@
   "model": "admin.logentry",
   "pk": 49,
   "fields": {
-    "action_time": "2025-03-09T11:18:13.211Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:15:33.777Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "90caaed4-d5f7-4fb6-ab06-fbb6936f2b3a",
-    "object_repr": "Документы -> Водительские документы -> Водительские права",
+    "object_id": "8d8994f1-8340-432b-99be-8e7c9bf642ee",
+    "object_repr": "Документы -> Финансовые документы -> Страховые документы",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -640,11 +640,11 @@
   "model": "admin.logentry",
   "pk": 50,
   "fields": {
-    "action_time": "2025-03-09T11:18:24.483Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:15:49.611Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "82eb6c4a-18ca-41ce-be47-65c811b46f72",
-    "object_repr": "Документы -> Финансовые документы -> Банковские карты",
+    "object_id": "9a01c99d-9fff-486d-bd31-219502f441cd",
+    "object_repr": "Документы -> Образовательные документы -> Студенческие документы",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -653,11 +653,11 @@
   "model": "admin.logentry",
   "pk": 51,
   "fields": {
-    "action_time": "2025-03-09T11:18:35.178Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:16:01.060Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "1fb0d9e5-1bcc-4d38-9aa2-b1d04a11245d",
-    "object_repr": "Документы -> Финансовые документы -> Страховые документы",
+    "object_id": "ea87704b-eb68-48e2-8a7d-847a4f31658d",
+    "object_repr": "Транспорт -> Ключи и доступ -> Автомобильные ключи",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -666,11 +666,11 @@
   "model": "admin.logentry",
   "pk": 52,
   "fields": {
-    "action_time": "2025-03-09T11:18:46.827Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:16:19.099Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "950d6b9d-977a-4f2f-8555-388efb464cf0",
-    "object_repr": "Документы -> Образовательные документы -> Студенческие документы",
+    "object_id": "fb921c48-7a88-41f4-9dfd-120d6573eb07",
+    "object_repr": "Транспорт -> Ключи и доступ -> Замки и аксессуары",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -679,11 +679,11 @@
   "model": "admin.logentry",
   "pk": 53,
   "fields": {
-    "action_time": "2025-03-09T11:20:04.144Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:16:30.416Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "c3a61ccc-fe89-4eb0-a53b-89d2947bb926",
-    "object_repr": "Транспорт -> Ключи и доступ -> Автомобильные ключи",
+    "object_id": "35094dbd-4b29-4e6d-aee2-0aae916ccb23",
+    "object_repr": "Транспорт -> Транспортные документы -> Регистрационные документы",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -692,11 +692,11 @@
   "model": "admin.logentry",
   "pk": 54,
   "fields": {
-    "action_time": "2025-03-09T11:20:16.227Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:16:45.167Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "95390e13-2c05-4894-8791-ebc5cd4643f2",
-    "object_repr": "Транспорт -> Ключи и доступ -> Замки и аксессуары",
+    "object_id": "084424b0-3d04-4d43-9894-0e9af0406dde",
+    "object_repr": "Транспорт -> Транспортные документы -> Проездные карты",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -705,11 +705,11 @@
   "model": "admin.logentry",
   "pk": 55,
   "fields": {
-    "action_time": "2025-03-09T11:20:26.911Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:16:59.065Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "3f0d37d7-bb34-4764-bd73-85c11fac73e3",
-    "object_repr": "Транспорт -> Транспортные документы -> Регистрационные документы",
+    "object_id": "eb73ef71-9415-4258-bb94-e13b2bf11f19",
+    "object_repr": "Канцелярия и учеба -> Учебные принадлежности -> Письменные принадлежности",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -718,11 +718,11 @@
   "model": "admin.logentry",
   "pk": 56,
   "fields": {
-    "action_time": "2025-03-09T11:20:45.174Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:17:11.744Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "e4c2f747-71f3-4b92-afba-c6ee54f7b782",
-    "object_repr": "Транспорт -> Транспортные документы -> Проездные карты",
+    "object_id": "b2e07cc7-e21c-4233-becf-bb58adc12bed",
+    "object_repr": "Канцелярия и учеба -> Учебные принадлежности -> Блокноты и книги",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -731,11 +731,11 @@
   "model": "admin.logentry",
   "pk": 57,
   "fields": {
-    "action_time": "2025-03-09T11:21:01.982Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:17:22.898Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "5444c895-190e-4020-90a3-2c695d9ae252",
-    "object_repr": "Канцелярия и учеба -> Учебные принадлежности -> Письменные принадлежности",
+    "object_id": "1cab4c2b-1a83-4e29-8848-518365403150",
+    "object_repr": "Развлечения и хобби -> Игры и досуг -> Настольные игры",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -744,11 +744,11 @@
   "model": "admin.logentry",
   "pk": 58,
   "fields": {
-    "action_time": "2025-03-09T11:21:13.750Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:17:35.312Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "52148fb4-065f-42ce-ae86-62361c84fd47",
-    "object_repr": "Канцелярия и учеба -> Учебные принадлежности -> Блокноты и книги",
+    "object_id": "19cd2af8-2d1f-40e6-950d-6030ad915bcd",
+    "object_repr": "Развлечения и хобби -> Спортивные аксессуары -> Фитнес-товары",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -757,11 +757,11 @@
   "model": "admin.logentry",
   "pk": 59,
   "fields": {
-    "action_time": "2025-03-09T11:21:32.200Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:17:50.741Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "12c2afb1-2d37-4a70-83ce-ec663734abad",
-    "object_repr": "Развлечения и хобби -> Игры и досуг -> Настольные игры",
+    "object_id": "30fd1599-ebd3-449f-b1f8-610dc7f457a7",
+    "object_repr": "Развлечения и хобби -> Гаджеты и подписки -> Развлекательные устройства",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -770,11 +770,11 @@
   "model": "admin.logentry",
   "pk": 60,
   "fields": {
-    "action_time": "2025-03-09T11:21:46.363Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:18:01.369Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "a3f5c66a-516b-486d-a3a6-d1e20962ab2e",
-    "object_repr": "Развлечения и хобби -> Спортивные аксессуары -> Фитнес-товары",
+    "object_id": "60d7da9a-a8e6-4f53-a659-c7acdeef27d1",
+    "object_repr": "Развлечения и хобби -> Гаджеты и подписки -> Билеты и абонементы",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -783,11 +783,11 @@
   "model": "admin.logentry",
   "pk": 61,
   "fields": {
-    "action_time": "2025-03-09T11:22:10.749Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:18:09.939Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "d1273201-192f-460c-a7c8-9ba5dd84f8f9",
-    "object_repr": "Развлечения и хобби -> Гаджеты и подписки -> Развлекательные устройства",
+    "object_id": "2130286c-faf6-43b1-8dfe-989c065c7772",
+    "object_repr": "Дом и быт -> Ключи и доступ -> Ключи",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -796,11 +796,11 @@
   "model": "admin.logentry",
   "pk": 62,
   "fields": {
-    "action_time": "2025-03-09T11:22:22.097Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:18:20.153Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "0a14ac81-8710-4773-a32b-50d248420208",
-    "object_repr": "Развлечения и хобби -> Гаджеты и подписки -> Билеты и абонементы",
+    "object_id": "6bd6392d-50f6-4935-aea5-de292983cd0d",
+    "object_repr": "Дом и быт -> Косметика и уход -> Парфюмерия",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -809,193 +809,11 @@
   "model": "admin.logentry",
   "pk": 63,
   "fields": {
-    "action_time": "2025-03-09T11:22:33.124Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
+    "action_time": "2025-03-19T18:18:27.856Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
     "content_type": 14,
-    "object_id": "090d04aa-7f09-44fc-8534-02c0427b6483",
-    "object_repr": "Дом и быт -> Ключи и доступ -> Ключи",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 64,
-  "fields": {
-    "action_time": "2025-03-09T11:22:43.053Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 14,
-    "object_id": "658a4b5e-0eea-49a4-a66e-cc68681c51aa",
-    "object_repr": "Дом и быт -> Косметика и уход -> Парфюмерия",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 65,
-  "fields": {
-    "action_time": "2025-03-09T11:22:52.309Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 14,
-    "object_id": "f4727c74-2b62-410c-9575-d77a5b70b4be",
+    "object_id": "133e5d04-8438-44ed-8dc3-b40d5be73d36",
     "object_repr": "Дом и быт -> Косметика и уход -> Косметика",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 66,
-  "fields": {
-    "action_time": "2025-03-09T14:08:46.334Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 12,
-    "object_id": "28f1d0c5-7e69-4e7a-ae29-eb5cb17f11e0",
-    "object_repr": "abdullovadlet",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 67,
-  "fields": {
-    "action_time": "2025-03-09T14:24:35.862Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 16,
-    "object_id": "f86a2d49-2600-44fa-9893-9f94d4db2f21",
-    "object_repr": "sdofsdjf (Электроника -> Аудио и видео)",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 68,
-  "fields": {
-    "action_time": "2025-03-09T14:45:35.757Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 17,
-    "object_id": "eb5da2ce-44a4-4a3e-b3d3-fe08bd65066a",
-    "object_repr": "Photo for sdofsdjf",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 69,
-  "fields": {
-    "action_time": "2025-03-09T15:05:32.446Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 17,
-    "object_id": "7d5b9eb6-1045-4f5a-aff7-160819ccdab3",
-    "object_repr": "Photo for sdofsdjf",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 70,
-  "fields": {
-    "action_time": "2025-03-09T15:05:32.446Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 17,
-    "object_id": "54ab8bd5-f215-4f99-becd-aa1e139b91c0",
-    "object_repr": "Photo for sdofsdjf",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 71,
-  "fields": {
-    "action_time": "2025-03-09T16:21:17.952Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 16,
-    "object_id": "f86a2d49-2600-44fa-9893-9f94d4db2f21",
-    "object_repr": "sdofsdjf (Электроника -> Аудио и видео)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 72,
-  "fields": {
-    "action_time": "2025-03-09T16:21:17.952Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 16,
-    "object_id": "e3cd8143-07ce-4b6e-9323-7e501d69fd55",
-    "object_repr": "edfed (Электроника -> Мобильные устройства)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 73,
-  "fields": {
-    "action_time": "2025-03-09T18:28:14.073Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 16,
-    "object_id": "f86a2d49-2600-44fa-9893-9f94d4db2f21",
-    "object_repr": "sdofsdjf (Электроника -> Аудио и видео)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 74,
-  "fields": {
-    "action_time": "2025-03-09T19:39:30.188Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 16,
-    "object_id": "8c9bf331-6389-488b-86f8-ddb253d1d3a6",
-    "object_repr": "edfed (Электроника -> Мобильные устройства)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 75,
-  "fields": {
-    "action_time": "2025-03-09T19:40:13.018Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 16,
-    "object_id": "8b5a7490-0231-4de0-a86c-e16e37509047",
-    "object_repr": "edfed (Электроника -> Мобильные устройства)",
-    "action_flag": 3,
-    "change_message": ""
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 76,
-  "fields": {
-    "action_time": "2025-03-10T15:30:02.678Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 12,
-    "object_id": "70956ae8-8994-4884-ad68-85f7fe55fa76",
-    "object_repr": "jonsnow",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 77,
-  "fields": {
-    "action_time": "2025-03-10T15:33:04.917Z",
-    "user": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "content_type": 21,
-    "object_id": "77c0449f-b33a-471d-aa3c-96d2c352a76c",
-    "object_repr": "abdullovadlet -> jonsnow: Hello Jon!",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -1004,360 +822,360 @@
   "model": "auth.permission",
   "pk": 1,
   "fields": {
-    "name": "Can add log entry",
+    "name": "Can add permission",
     "content_type": 1,
-    "codename": "add_logentry"
+    "codename": "add_permission"
   }
 },
 {
   "model": "auth.permission",
   "pk": 2,
   "fields": {
-    "name": "Can change log entry",
+    "name": "Can change permission",
     "content_type": 1,
-    "codename": "change_logentry"
+    "codename": "change_permission"
   }
 },
 {
   "model": "auth.permission",
   "pk": 3,
   "fields": {
-    "name": "Can delete log entry",
+    "name": "Can delete permission",
     "content_type": 1,
-    "codename": "delete_logentry"
+    "codename": "delete_permission"
   }
 },
 {
   "model": "auth.permission",
   "pk": 4,
   "fields": {
-    "name": "Can view log entry",
+    "name": "Can view permission",
     "content_type": 1,
-    "codename": "view_logentry"
+    "codename": "view_permission"
   }
 },
 {
   "model": "auth.permission",
   "pk": 5,
   "fields": {
-    "name": "Can add permission",
+    "name": "Can add group",
     "content_type": 2,
-    "codename": "add_permission"
+    "codename": "add_group"
   }
 },
 {
   "model": "auth.permission",
   "pk": 6,
   "fields": {
-    "name": "Can change permission",
+    "name": "Can change group",
     "content_type": 2,
-    "codename": "change_permission"
+    "codename": "change_group"
   }
 },
 {
   "model": "auth.permission",
   "pk": 7,
   "fields": {
-    "name": "Can delete permission",
+    "name": "Can delete group",
     "content_type": 2,
-    "codename": "delete_permission"
+    "codename": "delete_group"
   }
 },
 {
   "model": "auth.permission",
   "pk": 8,
   "fields": {
-    "name": "Can view permission",
+    "name": "Can view group",
     "content_type": 2,
-    "codename": "view_permission"
+    "codename": "view_group"
   }
 },
 {
   "model": "auth.permission",
   "pk": 9,
   "fields": {
-    "name": "Can add group",
+    "name": "Can add content type",
     "content_type": 3,
-    "codename": "add_group"
+    "codename": "add_contenttype"
   }
 },
 {
   "model": "auth.permission",
   "pk": 10,
   "fields": {
-    "name": "Can change group",
+    "name": "Can change content type",
     "content_type": 3,
-    "codename": "change_group"
+    "codename": "change_contenttype"
   }
 },
 {
   "model": "auth.permission",
   "pk": 11,
   "fields": {
-    "name": "Can delete group",
+    "name": "Can delete content type",
     "content_type": 3,
-    "codename": "delete_group"
+    "codename": "delete_contenttype"
   }
 },
 {
   "model": "auth.permission",
   "pk": 12,
   "fields": {
-    "name": "Can view group",
+    "name": "Can view content type",
     "content_type": 3,
-    "codename": "view_group"
+    "codename": "view_contenttype"
   }
 },
 {
   "model": "auth.permission",
   "pk": 13,
   "fields": {
-    "name": "Can add content type",
+    "name": "Can add session",
     "content_type": 4,
-    "codename": "add_contenttype"
+    "codename": "add_session"
   }
 },
 {
   "model": "auth.permission",
   "pk": 14,
   "fields": {
-    "name": "Can change content type",
+    "name": "Can change session",
     "content_type": 4,
-    "codename": "change_contenttype"
+    "codename": "change_session"
   }
 },
 {
   "model": "auth.permission",
   "pk": 15,
   "fields": {
-    "name": "Can delete content type",
+    "name": "Can delete session",
     "content_type": 4,
-    "codename": "delete_contenttype"
+    "codename": "delete_session"
   }
 },
 {
   "model": "auth.permission",
   "pk": 16,
   "fields": {
-    "name": "Can view content type",
+    "name": "Can view session",
     "content_type": 4,
-    "codename": "view_contenttype"
+    "codename": "view_session"
   }
 },
 {
   "model": "auth.permission",
   "pk": 17,
   "fields": {
-    "name": "Can add session",
+    "name": "Can add email address",
     "content_type": 5,
-    "codename": "add_session"
+    "codename": "add_emailaddress"
   }
 },
 {
   "model": "auth.permission",
   "pk": 18,
   "fields": {
-    "name": "Can change session",
+    "name": "Can change email address",
     "content_type": 5,
-    "codename": "change_session"
+    "codename": "change_emailaddress"
   }
 },
 {
   "model": "auth.permission",
   "pk": 19,
   "fields": {
-    "name": "Can delete session",
+    "name": "Can delete email address",
     "content_type": 5,
-    "codename": "delete_session"
+    "codename": "delete_emailaddress"
   }
 },
 {
   "model": "auth.permission",
   "pk": 20,
   "fields": {
-    "name": "Can view session",
+    "name": "Can view email address",
     "content_type": 5,
-    "codename": "view_session"
+    "codename": "view_emailaddress"
   }
 },
 {
   "model": "auth.permission",
   "pk": 21,
   "fields": {
-    "name": "Can add email address",
+    "name": "Can add email confirmation",
     "content_type": 6,
-    "codename": "add_emailaddress"
+    "codename": "add_emailconfirmation"
   }
 },
 {
   "model": "auth.permission",
   "pk": 22,
   "fields": {
-    "name": "Can change email address",
+    "name": "Can change email confirmation",
     "content_type": 6,
-    "codename": "change_emailaddress"
+    "codename": "change_emailconfirmation"
   }
 },
 {
   "model": "auth.permission",
   "pk": 23,
   "fields": {
-    "name": "Can delete email address",
+    "name": "Can delete email confirmation",
     "content_type": 6,
-    "codename": "delete_emailaddress"
+    "codename": "delete_emailconfirmation"
   }
 },
 {
   "model": "auth.permission",
   "pk": 24,
   "fields": {
-    "name": "Can view email address",
+    "name": "Can view email confirmation",
     "content_type": 6,
-    "codename": "view_emailaddress"
+    "codename": "view_emailconfirmation"
   }
 },
 {
   "model": "auth.permission",
   "pk": 25,
   "fields": {
-    "name": "Can add email confirmation",
+    "name": "Can add social account",
     "content_type": 7,
-    "codename": "add_emailconfirmation"
+    "codename": "add_socialaccount"
   }
 },
 {
   "model": "auth.permission",
   "pk": 26,
   "fields": {
-    "name": "Can change email confirmation",
+    "name": "Can change social account",
     "content_type": 7,
-    "codename": "change_emailconfirmation"
+    "codename": "change_socialaccount"
   }
 },
 {
   "model": "auth.permission",
   "pk": 27,
   "fields": {
-    "name": "Can delete email confirmation",
+    "name": "Can delete social account",
     "content_type": 7,
-    "codename": "delete_emailconfirmation"
+    "codename": "delete_socialaccount"
   }
 },
 {
   "model": "auth.permission",
   "pk": 28,
   "fields": {
-    "name": "Can view email confirmation",
+    "name": "Can view social account",
     "content_type": 7,
-    "codename": "view_emailconfirmation"
+    "codename": "view_socialaccount"
   }
 },
 {
   "model": "auth.permission",
   "pk": 29,
   "fields": {
-    "name": "Can add social account",
+    "name": "Can add social application",
     "content_type": 8,
-    "codename": "add_socialaccount"
+    "codename": "add_socialapp"
   }
 },
 {
   "model": "auth.permission",
   "pk": 30,
   "fields": {
-    "name": "Can change social account",
+    "name": "Can change social application",
     "content_type": 8,
-    "codename": "change_socialaccount"
+    "codename": "change_socialapp"
   }
 },
 {
   "model": "auth.permission",
   "pk": 31,
   "fields": {
-    "name": "Can delete social account",
+    "name": "Can delete social application",
     "content_type": 8,
-    "codename": "delete_socialaccount"
+    "codename": "delete_socialapp"
   }
 },
 {
   "model": "auth.permission",
   "pk": 32,
   "fields": {
-    "name": "Can view social account",
+    "name": "Can view social application",
     "content_type": 8,
-    "codename": "view_socialaccount"
+    "codename": "view_socialapp"
   }
 },
 {
   "model": "auth.permission",
   "pk": 33,
   "fields": {
-    "name": "Can add social application",
+    "name": "Can add social application token",
     "content_type": 9,
-    "codename": "add_socialapp"
+    "codename": "add_socialtoken"
   }
 },
 {
   "model": "auth.permission",
   "pk": 34,
   "fields": {
-    "name": "Can change social application",
+    "name": "Can change social application token",
     "content_type": 9,
-    "codename": "change_socialapp"
+    "codename": "change_socialtoken"
   }
 },
 {
   "model": "auth.permission",
   "pk": 35,
   "fields": {
-    "name": "Can delete social application",
+    "name": "Can delete social application token",
     "content_type": 9,
-    "codename": "delete_socialapp"
+    "codename": "delete_socialtoken"
   }
 },
 {
   "model": "auth.permission",
   "pk": 36,
   "fields": {
-    "name": "Can view social application",
+    "name": "Can view social application token",
     "content_type": 9,
-    "codename": "view_socialapp"
+    "codename": "view_socialtoken"
   }
 },
 {
   "model": "auth.permission",
   "pk": 37,
   "fields": {
-    "name": "Can add social application token",
+    "name": "Can add chat message",
     "content_type": 10,
-    "codename": "add_socialtoken"
+    "codename": "add_chatmessage"
   }
 },
 {
   "model": "auth.permission",
   "pk": 38,
   "fields": {
-    "name": "Can change social application token",
+    "name": "Can change chat message",
     "content_type": 10,
-    "codename": "change_socialtoken"
+    "codename": "change_chatmessage"
   }
 },
 {
   "model": "auth.permission",
   "pk": 39,
   "fields": {
-    "name": "Can delete social application token",
+    "name": "Can delete chat message",
     "content_type": 10,
-    "codename": "delete_socialtoken"
+    "codename": "delete_chatmessage"
   }
 },
 {
   "model": "auth.permission",
   "pk": 40,
   "fields": {
-    "name": "Can view social application token",
+    "name": "Can view chat message",
     "content_type": 10,
-    "codename": "view_socialtoken"
+    "codename": "view_chatmessage"
   }
 },
 {
@@ -1400,36 +1218,36 @@
   "model": "auth.permission",
   "pk": 45,
   "fields": {
-    "name": "Can add user",
+    "name": "Can add item photo",
     "content_type": 12,
-    "codename": "add_user"
+    "codename": "add_itemphoto"
   }
 },
 {
   "model": "auth.permission",
   "pk": 46,
   "fields": {
-    "name": "Can change user",
+    "name": "Can change item photo",
     "content_type": 12,
-    "codename": "change_user"
+    "codename": "change_itemphoto"
   }
 },
 {
   "model": "auth.permission",
   "pk": 47,
   "fields": {
-    "name": "Can delete user",
+    "name": "Can delete item photo",
     "content_type": 12,
-    "codename": "delete_user"
+    "codename": "delete_itemphoto"
   }
 },
 {
   "model": "auth.permission",
   "pk": 48,
   "fields": {
-    "name": "Can view user",
+    "name": "Can view item photo",
     "content_type": 12,
-    "codename": "view_user"
+    "codename": "view_itemphoto"
   }
 },
 {
@@ -1508,108 +1326,108 @@
   "model": "auth.permission",
   "pk": 57,
   "fields": {
-    "name": "Can add verification code",
+    "name": "Can add item",
     "content_type": 15,
-    "codename": "add_verificationcode"
+    "codename": "add_item"
   }
 },
 {
   "model": "auth.permission",
   "pk": 58,
   "fields": {
-    "name": "Can change verification code",
+    "name": "Can change item",
     "content_type": 15,
-    "codename": "change_verificationcode"
+    "codename": "change_item"
   }
 },
 {
   "model": "auth.permission",
   "pk": 59,
   "fields": {
-    "name": "Can delete verification code",
+    "name": "Can delete item",
     "content_type": 15,
-    "codename": "delete_verificationcode"
+    "codename": "delete_item"
   }
 },
 {
   "model": "auth.permission",
   "pk": 60,
   "fields": {
-    "name": "Can view verification code",
+    "name": "Can view item",
     "content_type": 15,
-    "codename": "view_verificationcode"
+    "codename": "view_item"
   }
 },
 {
   "model": "auth.permission",
   "pk": 61,
   "fields": {
-    "name": "Can add item",
+    "name": "Can add user",
     "content_type": 16,
-    "codename": "add_item"
+    "codename": "add_user"
   }
 },
 {
   "model": "auth.permission",
   "pk": 62,
   "fields": {
-    "name": "Can change item",
+    "name": "Can change user",
     "content_type": 16,
-    "codename": "change_item"
+    "codename": "change_user"
   }
 },
 {
   "model": "auth.permission",
   "pk": 63,
   "fields": {
-    "name": "Can delete item",
+    "name": "Can delete user",
     "content_type": 16,
-    "codename": "delete_item"
+    "codename": "delete_user"
   }
 },
 {
   "model": "auth.permission",
   "pk": 64,
   "fields": {
-    "name": "Can view item",
+    "name": "Can view user",
     "content_type": 16,
-    "codename": "view_item"
+    "codename": "view_user"
   }
 },
 {
   "model": "auth.permission",
   "pk": 65,
   "fields": {
-    "name": "Can add item photo",
+    "name": "Can add verification code",
     "content_type": 17,
-    "codename": "add_itemphoto"
+    "codename": "add_verificationcode"
   }
 },
 {
   "model": "auth.permission",
   "pk": 66,
   "fields": {
-    "name": "Can change item photo",
+    "name": "Can change verification code",
     "content_type": 17,
-    "codename": "change_itemphoto"
+    "codename": "change_verificationcode"
   }
 },
 {
   "model": "auth.permission",
   "pk": 67,
   "fields": {
-    "name": "Can delete item photo",
+    "name": "Can delete verification code",
     "content_type": 17,
-    "codename": "delete_itemphoto"
+    "codename": "delete_verificationcode"
   }
 },
 {
   "model": "auth.permission",
   "pk": 68,
   "fields": {
-    "name": "Can view item photo",
+    "name": "Can view verification code",
     "content_type": 17,
-    "codename": "view_itemphoto"
+    "codename": "view_verificationcode"
   }
 },
 {
@@ -1724,49 +1542,41 @@
   "model": "auth.permission",
   "pk": 81,
   "fields": {
-    "name": "Can add chat message",
+    "name": "Can add log entry",
     "content_type": 21,
-    "codename": "add_chatmessage"
+    "codename": "add_logentry"
   }
 },
 {
   "model": "auth.permission",
   "pk": 82,
   "fields": {
-    "name": "Can change chat message",
+    "name": "Can change log entry",
     "content_type": 21,
-    "codename": "change_chatmessage"
+    "codename": "change_logentry"
   }
 },
 {
   "model": "auth.permission",
   "pk": 83,
   "fields": {
-    "name": "Can delete chat message",
+    "name": "Can delete log entry",
     "content_type": 21,
-    "codename": "delete_chatmessage"
+    "codename": "delete_logentry"
   }
 },
 {
   "model": "auth.permission",
   "pk": 84,
   "fields": {
-    "name": "Can view chat message",
+    "name": "Can view log entry",
     "content_type": 21,
-    "codename": "view_chatmessage"
+    "codename": "view_logentry"
   }
 },
 {
   "model": "contenttypes.contenttype",
   "pk": 1,
-  "fields": {
-    "app_label": "admin",
-    "model": "logentry"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 2,
   "fields": {
     "app_label": "auth",
     "model": "permission"
@@ -1774,7 +1584,7 @@
 },
 {
   "model": "contenttypes.contenttype",
-  "pk": 3,
+  "pk": 2,
   "fields": {
     "app_label": "auth",
     "model": "group"
@@ -1782,7 +1592,7 @@
 },
 {
   "model": "contenttypes.contenttype",
-  "pk": 4,
+  "pk": 3,
   "fields": {
     "app_label": "contenttypes",
     "model": "contenttype"
@@ -1790,7 +1600,7 @@
 },
 {
   "model": "contenttypes.contenttype",
-  "pk": 5,
+  "pk": 4,
   "fields": {
     "app_label": "sessions",
     "model": "session"
@@ -1798,7 +1608,7 @@
 },
 {
   "model": "contenttypes.contenttype",
-  "pk": 6,
+  "pk": 5,
   "fields": {
     "app_label": "account",
     "model": "emailaddress"
@@ -1806,7 +1616,7 @@
 },
 {
   "model": "contenttypes.contenttype",
-  "pk": 7,
+  "pk": 6,
   "fields": {
     "app_label": "account",
     "model": "emailconfirmation"
@@ -1814,7 +1624,7 @@
 },
 {
   "model": "contenttypes.contenttype",
-  "pk": 8,
+  "pk": 7,
   "fields": {
     "app_label": "socialaccount",
     "model": "socialaccount"
@@ -1822,7 +1632,7 @@
 },
 {
   "model": "contenttypes.contenttype",
-  "pk": 9,
+  "pk": 8,
   "fields": {
     "app_label": "socialaccount",
     "model": "socialapp"
@@ -1830,10 +1640,18 @@
 },
 {
   "model": "contenttypes.contenttype",
-  "pk": 10,
+  "pk": 9,
   "fields": {
     "app_label": "socialaccount",
     "model": "socialtoken"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "chat",
+    "model": "chatmessage"
   }
 },
 {
@@ -1849,7 +1667,7 @@
   "pk": 12,
   "fields": {
     "app_label": "items",
-    "model": "user"
+    "model": "itemphoto"
   }
 },
 {
@@ -1873,23 +1691,23 @@
   "pk": 15,
   "fields": {
     "app_label": "items",
-    "model": "verificationcode"
+    "model": "item"
   }
 },
 {
   "model": "contenttypes.contenttype",
   "pk": 16,
   "fields": {
-    "app_label": "items",
-    "model": "item"
+    "app_label": "users",
+    "model": "user"
   }
 },
 {
   "model": "contenttypes.contenttype",
   "pk": 17,
   "fields": {
-    "app_label": "items",
-    "model": "itemphoto"
+    "app_label": "users",
+    "model": "verificationcode"
   }
 },
 {
@@ -1920,669 +1738,593 @@
   "model": "contenttypes.contenttype",
   "pk": 21,
   "fields": {
-    "app_label": "chat",
-    "model": "chatmessage"
+    "app_label": "admin",
+    "model": "logentry"
   }
 },
 {
   "model": "sessions.session",
-  "pk": "x336ayy3akzgewwoytnw6o16eokt3igl",
+  "pk": "fifue23zy2f504rqxqdlue8fusq9udp0",
   "fields": {
-    "session_data": ".eJxVjDkOwjAQRe_imliejFdKes4QzdgewqJEylIh7k4ipYDuS--9_1YdrUvfrXOduntRZ8U1MFiMTTEGGsstNuQlNdW1mTE5F6pRp9-MKT_rsLflQcNt1HkclunOelf0QWd9HUt9XQ7376Cnud9qEBJvTG6tqRlRHPsYUrQhEbBEYcBsIUGp3jNykMyctmGIAjKI-nwB2F1BkA:1trAVm:UShNzIoZ5bkc_OPNfQublRu3vMyF7gQlp3i7zKnE0IA",
-    "expire_date": "2025-03-23T06:51:46.056Z"
-  }
-},
-{
-  "model": "chat.chatmessage",
-  "pk": "4350f3ae-b057-402e-a045-6f2a3bd5764c",
-  "fields": {
-    "sender": "71ab09a5-15e9-45d3-a866-b4cb9a53183a",
-    "receiver": "70956ae8-8994-4884-ad68-85f7fe55fa76",
-    "message": "Hello, this is a test!",
-    "timestamp": "2025-03-10T16:00:46.880Z",
-    "is_read": false
-  }
-},
-{
-  "model": "chat.chatmessage",
-  "pk": "77c0449f-b33a-471d-aa3c-96d2c352a76c",
-  "fields": {
-    "sender": "71ab09a5-15e9-45d3-a866-b4cb9a53183a",
-    "receiver": "70956ae8-8994-4884-ad68-85f7fe55fa76",
-    "message": "Hello Jon!",
-    "timestamp": "2025-03-10T15:33:04.915Z",
-    "is_read": false
-  }
-},
-{
-  "model": "chat.chatmessage",
-  "pk": "bd146f91-398e-4e26-9251-d9124945392d",
-  "fields": {
-    "sender": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-    "receiver": "70956ae8-8994-4884-ad68-85f7fe55fa76",
-    "message": "Hello, this is a test!",
-    "timestamp": "2025-03-10T16:15:34.032Z",
-    "is_read": false
-  }
-},
-{
-  "model": "items.user",
-  "pk": "70956ae8-8994-4884-ad68-85f7fe55fa76",
-  "fields": {
-    "password": "12345",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "jonsnow",
-    "first_name": "Jon",
-    "last_name": "Snow",
-    "email": "siweirdb@gmail.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2025-03-10T15:26:40Z",
-    "phone_number": null,
-    "birthday": null,
-    "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "items.user",
-  "pk": "71ab09a5-15e9-45d3-a866-b4cb9a53183a",
-  "fields": {
-    "password": "pbkdf2_sha256$870000$NRlN7rLMYRqEzgNDYKQc3Z$H9tzF9YZgLDyI+Upc4lO/N7pETKC2zbfI9XCBAjFOHE=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "abdullovadlet",
-    "first_name": "Adilet",
-    "last_name": "Abdullov",
-    "email": "abdullovadlet@gmail.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2025-03-09T15:58:21.740Z",
-    "phone_number": "",
-    "birthday": null,
-    "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "items.user",
-  "pk": "be7b1438-d001-4b23-a6f9-e52cb39557e0",
-  "fields": {
-    "password": "pbkdf2_sha256$870000$I02px6pUpslSVZ0CYgDqM9$2t4pUKY9nsl27zFQbobwz/uD2BAtAgKVYrEzwcQe0BM=",
-    "last_login": "2025-03-09T06:51:46.054Z",
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "",
-    "last_name": "",
-    "email": "admin@gmail.com",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2025-03-09T06:51:40.090Z",
-    "phone_number": "",
-    "birthday": null,
-    "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
-    "groups": [],
-    "user_permissions": []
+    "session_data": ".eJxVy8EOgjAQhOF36VlIu-y2xaOJz0GmWxoaFROBk_HdlcSDXuef72kGbOs0bMv4GGo2R5PEFsoSGvEsDSfWJsbiGxT0DlSoK2IOvyxBL-O8230b57Uq1nqf229Y2vMN9Xr63v7shGX6wIKOUwcXvLXQEJlEckSOCoFNRB5RKWvPLD4EL06Ds-xyb706Sub1BqPrPtY:1tuxkM:iK0giRJ_4egm0nP2rrwwZYQej1UmvAfkSHTQeH1-h5A",
+    "expire_date": "2025-04-02T18:02:30.235Z"
   }
 },
 {
   "model": "items.category",
-  "pk": "0354b727-64f7-42cb-91be-2754f07bcc4e",
-  "fields": {
-    "name": "Канцелярия и учеба"
-  }
-},
-{
-  "model": "items.category",
-  "pk": "0d596dc1-c7f6-499e-aff6-76214b2afa08",
-  "fields": {
-    "name": "Развлечения и хобби"
-  }
-},
-{
-  "model": "items.category",
-  "pk": "0e5bef4b-fc46-4f52-b10c-639af072feb3",
+  "pk": "21907229-450e-4f68-8869-8f34bfa7cbce",
   "fields": {
     "name": "Дом и быт"
   }
 },
 {
   "model": "items.category",
-  "pk": "1d90a842-54ff-4fd7-a29d-aafb7b6c88ec",
+  "pk": "5c886012-5ca8-4596-a94d-b223796f618b",
   "fields": {
     "name": "Документы"
   }
 },
 {
   "model": "items.category",
-  "pk": "50b4278f-763c-43a0-b2c8-5b88d5aa9220",
-  "fields": {
-    "name": "Транспорт"
-  }
-},
-{
-  "model": "items.category",
-  "pk": "905dc346-bffb-49e4-9781-f1f334fc03c3",
+  "pk": "5d44599c-99ad-4275-9b50-cecf9df57138",
   "fields": {
     "name": "Личные вещи"
   }
 },
 {
   "model": "items.category",
-  "pk": "c6af0975-2903-4faf-aed9-7165afd2d49c",
+  "pk": "637b8e52-aed3-468d-9b81-4843dbde6b9a",
+  "fields": {
+    "name": "Развлечения и хобби"
+  }
+},
+{
+  "model": "items.category",
+  "pk": "824daf16-ccaf-4dbb-b806-2edf4984bd38",
+  "fields": {
+    "name": "Канцелярия и учеба"
+  }
+},
+{
+  "model": "items.category",
+  "pk": "8c43adf8-b4b4-4e35-9762-669837b32ea1",
+  "fields": {
+    "name": "Транспорт"
+  }
+},
+{
+  "model": "items.category",
+  "pk": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
   "fields": {
     "name": "Электроника"
   }
 },
 {
   "model": "items.subcategory",
-  "pk": "029008f0-1623-4914-b110-422aeced9842",
+  "pk": "01280f2e-f573-4987-9bc1-679c6343b8f4",
   "fields": {
-    "category": "1d90a842-54ff-4fd7-a29d-aafb7b6c88ec",
-    "name": "Водительские документы"
-  }
-},
-{
-  "model": "items.subcategory",
-  "pk": "040b6d35-f272-40d8-828e-e7220aaf9170",
-  "fields": {
-    "category": "1d90a842-54ff-4fd7-a29d-aafb7b6c88ec",
-    "name": "Финансовые документы"
-  }
-},
-{
-  "model": "items.subcategory",
-  "pk": "07c64ead-2405-462a-b16a-4693c11102cd",
-  "fields": {
-    "category": "0d596dc1-c7f6-499e-aff6-76214b2afa08",
-    "name": "Игры и досуг"
-  }
-},
-{
-  "model": "items.subcategory",
-  "pk": "0c67f394-e2c8-4ebe-82b5-a5ae41ca2c9a",
-  "fields": {
-    "category": "c6af0975-2903-4faf-aed9-7165afd2d49c",
-    "name": "Мобильные устройства"
-  }
-},
-{
-  "model": "items.subcategory",
-  "pk": "1db88436-34e2-4482-a857-0b386cba2e8c",
-  "fields": {
-    "category": "50b4278f-763c-43a0-b2c8-5b88d5aa9220",
+    "category": "8c43adf8-b4b4-4e35-9762-669837b32ea1",
     "name": "Ключи и доступ"
   }
 },
 {
   "model": "items.subcategory",
-  "pk": "25d886cf-0f7d-4465-9d89-e6b6cccd670b",
+  "pk": "0d4baaf2-9fed-4a5c-8753-8bdbeaafb43b",
   "fields": {
-    "category": "0e5bef4b-fc46-4f52-b10c-639af072feb3",
+    "category": "21907229-450e-4f68-8869-8f34bfa7cbce",
     "name": "Косметика и уход"
   }
 },
 {
   "model": "items.subcategory",
-  "pk": "3f81438b-0f50-432d-91c5-9088c01274ee",
+  "pk": "20130f88-76b8-4293-996d-bbd661f386e7",
   "fields": {
-    "category": "1d90a842-54ff-4fd7-a29d-aafb7b6c88ec",
-    "name": "Образовательные документы"
-  }
-},
-{
-  "model": "items.subcategory",
-  "pk": "43e5a501-6c24-4d60-a77d-9ec5a686bf2a",
-  "fields": {
-    "category": "0d596dc1-c7f6-499e-aff6-76214b2afa08",
+    "category": "637b8e52-aed3-468d-9b81-4843dbde6b9a",
     "name": "Спортивные аксессуары"
   }
 },
 {
   "model": "items.subcategory",
-  "pk": "62864b30-0734-45b9-a298-2908ec56efbe",
+  "pk": "376d683e-1e6b-43c2-82bb-a5e2d4900939",
   "fields": {
-    "category": "905dc346-bffb-49e4-9781-f1f334fc03c3",
-    "name": "Одежда"
+    "category": "824daf16-ccaf-4dbb-b806-2edf4984bd38",
+    "name": "Учебные принадлежности"
   }
 },
 {
   "model": "items.subcategory",
-  "pk": "79aff88c-9fdb-41c5-a503-e9dce91b4ce6",
+  "pk": "3dc25a1d-ba3f-4be8-8f52-f90bbfdeffa0",
   "fields": {
-    "category": "0d596dc1-c7f6-499e-aff6-76214b2afa08",
-    "name": "Гаджеты и подписки"
-  }
-},
-{
-  "model": "items.subcategory",
-  "pk": "7e9e4d42-c322-43c8-84be-876abb3fab75",
-  "fields": {
-    "category": "c6af0975-2903-4faf-aed9-7165afd2d49c",
-    "name": "Умные устройства"
-  }
-},
-{
-  "model": "items.subcategory",
-  "pk": "91574d13-d55e-439d-b568-f5054828d2ad",
-  "fields": {
-    "category": "1d90a842-54ff-4fd7-a29d-aafb7b6c88ec",
-    "name": "Удостоверения личности"
-  }
-},
-{
-  "model": "items.subcategory",
-  "pk": "951a58ce-1ff2-4799-9383-6c45f761e3ee",
-  "fields": {
-    "category": "c6af0975-2903-4faf-aed9-7165afd2d49c",
-    "name": "Аудио и видео"
-  }
-},
-{
-  "model": "items.subcategory",
-  "pk": "cef671d8-c7d3-4c2a-8a1d-0d2d82ddf293",
-  "fields": {
-    "category": "905dc346-bffb-49e4-9781-f1f334fc03c3",
-    "name": "Аксессуары"
-  }
-},
-{
-  "model": "items.subcategory",
-  "pk": "d1c87373-acce-4149-ae5a-2919b6404855",
-  "fields": {
-    "category": "50b4278f-763c-43a0-b2c8-5b88d5aa9220",
+    "category": "8c43adf8-b4b4-4e35-9762-669837b32ea1",
     "name": "Транспортные документы"
   }
 },
 {
   "model": "items.subcategory",
-  "pk": "e3ba73ca-8925-4026-949f-a1ee153825dd",
+  "pk": "42b2956d-318b-4aa1-8ff5-44fc54c98caa",
   "fields": {
-    "category": "c6af0975-2903-4faf-aed9-7165afd2d49c",
-    "name": "Компьютеры и аксессуары"
+    "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "name": "Мобильные устройства"
   }
 },
 {
   "model": "items.subcategory",
-  "pk": "f3e8af48-1821-4f40-b5c8-aee1d8987418",
+  "pk": "5224f364-635c-4084-99c9-bd710ef92a28",
   "fields": {
-    "category": "0e5bef4b-fc46-4f52-b10c-639af072feb3",
+    "category": "5c886012-5ca8-4596-a94d-b223796f618b",
+    "name": "Водительские документы"
+  }
+},
+{
+  "model": "items.subcategory",
+  "pk": "5c5b8343-2fc0-464a-9304-007307cef0fd",
+  "fields": {
+    "category": "5c886012-5ca8-4596-a94d-b223796f618b",
+    "name": "Удостоверения личности"
+  }
+},
+{
+  "model": "items.subcategory",
+  "pk": "5fb8796b-3176-4b06-9e61-31eeb2e9c42b",
+  "fields": {
+    "category": "5d44599c-99ad-4275-9b50-cecf9df57138",
+    "name": "Одежда"
+  }
+},
+{
+  "model": "items.subcategory",
+  "pk": "6082099f-cdbc-4383-92a8-4b8520b8ff49",
+  "fields": {
+    "category": "5d44599c-99ad-4275-9b50-cecf9df57138",
+    "name": "Аксессуары"
+  }
+},
+{
+  "model": "items.subcategory",
+  "pk": "6d4516cf-c512-4679-8159-0567386977e7",
+  "fields": {
+    "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "name": "Аудио и видео"
+  }
+},
+{
+  "model": "items.subcategory",
+  "pk": "7869713d-27e1-4812-9107-ec7c0bcbfd3c",
+  "fields": {
+    "category": "21907229-450e-4f68-8869-8f34bfa7cbce",
     "name": "Ключи и доступ"
   }
 },
 {
   "model": "items.subcategory",
-  "pk": "fd67c8c2-78e3-4d39-9a88-144a1245dc18",
+  "pk": "86c45345-dd15-46d1-beb9-9b1fe7fbc2aa",
   "fields": {
-    "category": "0354b727-64f7-42cb-91be-2754f07bcc4e",
-    "name": "Учебные принадлежности"
+    "category": "637b8e52-aed3-468d-9b81-4843dbde6b9a",
+    "name": "Гаджеты и подписки"
+  }
+},
+{
+  "model": "items.subcategory",
+  "pk": "9b30ece9-c588-4005-81c6-8beb705975f4",
+  "fields": {
+    "category": "5c886012-5ca8-4596-a94d-b223796f618b",
+    "name": "Образовательные документы"
+  }
+},
+{
+  "model": "items.subcategory",
+  "pk": "af7efa10-1693-4dc0-ac5d-3e296f71adda",
+  "fields": {
+    "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "name": "Умные устройства"
+  }
+},
+{
+  "model": "items.subcategory",
+  "pk": "c410b017-d476-4413-8899-6c22b7385091",
+  "fields": {
+    "category": "5c886012-5ca8-4596-a94d-b223796f618b",
+    "name": "Финансовые документы"
+  }
+},
+{
+  "model": "items.subcategory",
+  "pk": "da5d1048-02d7-4f3d-904d-cca2515ccafe",
+  "fields": {
+    "category": "637b8e52-aed3-468d-9b81-4843dbde6b9a",
+    "name": "Игры и досуг"
+  }
+},
+{
+  "model": "items.subcategory",
+  "pk": "da63d846-caff-49d8-8366-3b2382a8e653",
+  "fields": {
+    "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "name": "Компьютеры и аксессуары"
   }
 },
 {
   "model": "items.subsubcategory",
-  "pk": "0066e3ed-bedd-45e5-8ced-f747d48955e3",
+  "pk": "084424b0-3d04-4d43-9894-0e9af0406dde",
   "fields": {
-    "category": "905dc346-bffb-49e4-9781-f1f334fc03c3",
-    "subcategory": "cef671d8-c7d3-4c2a-8a1d-0d2d82ddf293",
-    "name": "Кошельки и кардхолдеры"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "00f99936-4a17-45d2-9489-c50ff9a31404",
-  "fields": {
-    "category": "c6af0975-2903-4faf-aed9-7165afd2d49c",
-    "subcategory": "7e9e4d42-c322-43c8-84be-876abb3fab75",
-    "name": "Фитнес-гаджеты"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "090d04aa-7f09-44fc-8534-02c0427b6483",
-  "fields": {
-    "category": "0e5bef4b-fc46-4f52-b10c-639af072feb3",
-    "subcategory": "f3e8af48-1821-4f40-b5c8-aee1d8987418",
-    "name": "Ключи"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "0a14ac81-8710-4773-a32b-50d248420208",
-  "fields": {
-    "category": "0d596dc1-c7f6-499e-aff6-76214b2afa08",
-    "subcategory": "79aff88c-9fdb-41c5-a503-e9dce91b4ce6",
-    "name": "Билеты и абонементы"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "103ec257-2e3e-454b-adeb-1b51d95615c9",
-  "fields": {
-    "category": "905dc346-bffb-49e4-9781-f1f334fc03c3",
-    "subcategory": "cef671d8-c7d3-4c2a-8a1d-0d2d82ddf293",
-    "name": "Ремни"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "12c2afb1-2d37-4a70-83ce-ec663734abad",
-  "fields": {
-    "category": "0d596dc1-c7f6-499e-aff6-76214b2afa08",
-    "subcategory": "07c64ead-2405-462a-b16a-4693c11102cd",
-    "name": "Настольные игры"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "16f1569f-1412-49d8-838c-39218572ce2a",
-  "fields": {
-    "category": "c6af0975-2903-4faf-aed9-7165afd2d49c",
-    "subcategory": "7e9e4d42-c322-43c8-84be-876abb3fab75",
-    "name": "GPS-трекеры"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "1fb0d9e5-1bcc-4d38-9aa2-b1d04a11245d",
-  "fields": {
-    "category": "1d90a842-54ff-4fd7-a29d-aafb7b6c88ec",
-    "subcategory": "040b6d35-f272-40d8-828e-e7220aaf9170",
-    "name": "Страховые документы"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "3f0d37d7-bb34-4764-bd73-85c11fac73e3",
-  "fields": {
-    "category": "50b4278f-763c-43a0-b2c8-5b88d5aa9220",
-    "subcategory": "d1c87373-acce-4149-ae5a-2919b6404855",
-    "name": "Регистрационные документы"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "48326937-f1cc-4c3b-85fb-d2368b9c278a",
-  "fields": {
-    "category": "905dc346-bffb-49e4-9781-f1f334fc03c3",
-    "subcategory": "cef671d8-c7d3-4c2a-8a1d-0d2d82ddf293",
-    "name": "Часы"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "4d8752cc-e375-4619-9e0b-999f6bfc7e59",
-  "fields": {
-    "category": "905dc346-bffb-49e4-9781-f1f334fc03c3",
-    "subcategory": "cef671d8-c7d3-4c2a-8a1d-0d2d82ddf293",
-    "name": "Головные уборы"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "52148fb4-065f-42ce-ae86-62361c84fd47",
-  "fields": {
-    "category": "0354b727-64f7-42cb-91be-2754f07bcc4e",
-    "subcategory": "fd67c8c2-78e3-4d39-9a88-144a1245dc18",
-    "name": "Блокноты и книги"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "5444c895-190e-4020-90a3-2c695d9ae252",
-  "fields": {
-    "category": "0354b727-64f7-42cb-91be-2754f07bcc4e",
-    "subcategory": "fd67c8c2-78e3-4d39-9a88-144a1245dc18",
-    "name": "Письменные принадлежности"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "5520c663-913c-469b-a4e3-dc5a191387ef",
-  "fields": {
-    "category": "c6af0975-2903-4faf-aed9-7165afd2d49c",
-    "subcategory": "951a58ce-1ff2-4799-9383-6c45f761e3ee",
-    "name": "Колонки"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "6074f024-f16c-4e01-aa22-1bba97bddcc0",
-  "fields": {
-    "category": "c6af0975-2903-4faf-aed9-7165afd2d49c",
-    "subcategory": "0c67f394-e2c8-4ebe-82b5-a5ae41ca2c9a",
-    "name": "Планшеты"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "658a4b5e-0eea-49a4-a66e-cc68681c51aa",
-  "fields": {
-    "category": "0e5bef4b-fc46-4f52-b10c-639af072feb3",
-    "subcategory": "25d886cf-0f7d-4465-9d89-e6b6cccd670b",
-    "name": "Парфюмерия"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "65a92c10-9333-4549-9e74-2258888c8914",
-  "fields": {
-    "category": "1d90a842-54ff-4fd7-a29d-aafb7b6c88ec",
-    "subcategory": "91574d13-d55e-439d-b568-f5054828d2ad",
-    "name": "Паспорт"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "66b05a99-a520-4899-ad78-31a0a41b4984",
-  "fields": {
-    "category": "c6af0975-2903-4faf-aed9-7165afd2d49c",
-    "subcategory": "951a58ce-1ff2-4799-9383-6c45f761e3ee",
-    "name": "Фото и видео"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "7bb8d60e-9f9e-4be8-a207-7ec897b77424",
-  "fields": {
-    "category": "905dc346-bffb-49e4-9781-f1f334fc03c3",
-    "subcategory": "cef671d8-c7d3-4c2a-8a1d-0d2d82ddf293",
-    "name": "Украшения"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "82eb6c4a-18ca-41ce-be47-65c811b46f72",
-  "fields": {
-    "category": "1d90a842-54ff-4fd7-a29d-aafb7b6c88ec",
-    "subcategory": "040b6d35-f272-40d8-828e-e7220aaf9170",
-    "name": "Банковские карты"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "8fd9b65a-e256-44a9-b008-7aadc12be912",
-  "fields": {
-    "category": "905dc346-bffb-49e4-9781-f1f334fc03c3",
-    "subcategory": "62864b30-0734-45b9-a298-2908ec56efbe",
-    "name": "Обувь"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "90caaed4-d5f7-4fb6-ab06-fbb6936f2b3a",
-  "fields": {
-    "category": "1d90a842-54ff-4fd7-a29d-aafb7b6c88ec",
-    "subcategory": "029008f0-1623-4914-b110-422aeced9842",
-    "name": "Водительские права"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "950d6b9d-977a-4f2f-8555-388efb464cf0",
-  "fields": {
-    "category": "1d90a842-54ff-4fd7-a29d-aafb7b6c88ec",
-    "subcategory": "3f81438b-0f50-432d-91c5-9088c01274ee",
-    "name": "Студенческие документы"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "95390e13-2c05-4894-8791-ebc5cd4643f2",
-  "fields": {
-    "category": "50b4278f-763c-43a0-b2c8-5b88d5aa9220",
-    "subcategory": "1db88436-34e2-4482-a857-0b386cba2e8c",
-    "name": "Замки и аксессуары"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "a3f5c66a-516b-486d-a3a6-d1e20962ab2e",
-  "fields": {
-    "category": "0d596dc1-c7f6-499e-aff6-76214b2afa08",
-    "subcategory": "43e5a501-6c24-4d60-a77d-9ec5a686bf2a",
-    "name": "Фитнес-товары"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "b4e4bb4e-76e6-47dd-85cf-382c97e604a2",
-  "fields": {
-    "category": "c6af0975-2903-4faf-aed9-7165afd2d49c",
-    "subcategory": "e3ba73ca-8925-4026-949f-a1ee153825dd",
-    "name": "Ноутбуки"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "ba23c83d-05c4-437c-9da4-b725c1f248c6",
-  "fields": {
-    "category": "c6af0975-2903-4faf-aed9-7165afd2d49c",
-    "subcategory": "e3ba73ca-8925-4026-949f-a1ee153825dd",
-    "name": "Аксессуары"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "c2ba7d65-fa96-4e01-9f67-b731d09f51a1",
-  "fields": {
-    "category": "c6af0975-2903-4faf-aed9-7165afd2d49c",
-    "subcategory": "951a58ce-1ff2-4799-9383-6c45f761e3ee",
-    "name": "Наушники"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "c3a61ccc-fe89-4eb0-a53b-89d2947bb926",
-  "fields": {
-    "category": "50b4278f-763c-43a0-b2c8-5b88d5aa9220",
-    "subcategory": "1db88436-34e2-4482-a857-0b386cba2e8c",
-    "name": "Автомобильные ключи"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "caac3b97-e1d0-452e-adf0-6dbd01f8b3b0",
-  "fields": {
-    "category": "c6af0975-2903-4faf-aed9-7165afd2d49c",
-    "subcategory": "0c67f394-e2c8-4ebe-82b5-a5ae41ca2c9a",
-    "name": "Смартфоны"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "d1273201-192f-460c-a7c8-9ba5dd84f8f9",
-  "fields": {
-    "category": "0d596dc1-c7f6-499e-aff6-76214b2afa08",
-    "subcategory": "79aff88c-9fdb-41c5-a503-e9dce91b4ce6",
-    "name": "Развлекательные устройства"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "d3569c9b-f3e2-413c-aaa3-b9602a4811ed",
-  "fields": {
-    "category": "905dc346-bffb-49e4-9781-f1f334fc03c3",
-    "subcategory": "cef671d8-c7d3-4c2a-8a1d-0d2d82ddf293",
-    "name": "Перчатки и шарфы"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "d35e7d1c-992b-44c6-b01b-80e7a102934b",
-  "fields": {
-    "category": "905dc346-bffb-49e4-9781-f1f334fc03c3",
-    "subcategory": "62864b30-0734-45b9-a298-2908ec56efbe",
-    "name": "Другая одежда"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "e0b2d97f-77fd-40fd-900c-471f4c813f68",
-  "fields": {
-    "category": "905dc346-bffb-49e4-9781-f1f334fc03c3",
-    "subcategory": "cef671d8-c7d3-4c2a-8a1d-0d2d82ddf293",
-    "name": "Сумки и рюкзаки"
-  }
-},
-{
-  "model": "items.subsubcategory",
-  "pk": "e4c2f747-71f3-4b92-afba-c6ee54f7b782",
-  "fields": {
-    "category": "50b4278f-763c-43a0-b2c8-5b88d5aa9220",
-    "subcategory": "d1c87373-acce-4149-ae5a-2919b6404855",
+    "category": "8c43adf8-b4b4-4e35-9762-669837b32ea1",
+    "subcategory": "3dc25a1d-ba3f-4be8-8f52-f90bbfdeffa0",
     "name": "Проездные карты"
   }
 },
 {
   "model": "items.subsubcategory",
-  "pk": "e5b87f3a-a71a-4685-9700-64c6ee448765",
+  "pk": "0916141f-dbbe-49df-85fa-7e57819d61d6",
   "fields": {
-    "category": "905dc346-bffb-49e4-9781-f1f334fc03c3",
-    "subcategory": "62864b30-0734-45b9-a298-2908ec56efbe",
-    "name": "Верхняя одежда"
+    "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "subcategory": "42b2956d-318b-4aa1-8ff5-44fc54c98caa",
+    "name": "Планшеты"
   }
 },
 {
   "model": "items.subsubcategory",
-  "pk": "e948b627-8599-4d6a-bd9c-fa2d3c26b31a",
+  "pk": "0ce2eb74-01d7-42ff-b02a-eacea808c815",
   "fields": {
-    "category": "905dc346-bffb-49e4-9781-f1f334fc03c3",
-    "subcategory": "cef671d8-c7d3-4c2a-8a1d-0d2d82ddf293",
+    "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "subcategory": "42b2956d-318b-4aa1-8ff5-44fc54c98caa",
+    "name": "Смартфоны"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "133e5d04-8438-44ed-8dc3-b40d5be73d36",
+  "fields": {
+    "category": "21907229-450e-4f68-8869-8f34bfa7cbce",
+    "subcategory": "0d4baaf2-9fed-4a5c-8753-8bdbeaafb43b",
+    "name": "Косметика"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "139ecdca-c9db-446b-ab4c-aa7f01775806",
+  "fields": {
+    "category": "5d44599c-99ad-4275-9b50-cecf9df57138",
+    "subcategory": "6082099f-cdbc-4383-92a8-4b8520b8ff49",
+    "name": "Часы"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "19cd2af8-2d1f-40e6-950d-6030ad915bcd",
+  "fields": {
+    "category": "637b8e52-aed3-468d-9b81-4843dbde6b9a",
+    "subcategory": "20130f88-76b8-4293-996d-bbd661f386e7",
+    "name": "Фитнес-товары"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "1a7db2ce-7ac4-416a-a8ca-d7a8a43960cb",
+  "fields": {
+    "category": "5d44599c-99ad-4275-9b50-cecf9df57138",
+    "subcategory": "6082099f-cdbc-4383-92a8-4b8520b8ff49",
+    "name": "Украшения"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "1cab4c2b-1a83-4e29-8848-518365403150",
+  "fields": {
+    "category": "637b8e52-aed3-468d-9b81-4843dbde6b9a",
+    "subcategory": "da5d1048-02d7-4f3d-904d-cca2515ccafe",
+    "name": "Настольные игры"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "1d9c7494-9e13-480e-949e-63360a03b3ce",
+  "fields": {
+    "category": "5d44599c-99ad-4275-9b50-cecf9df57138",
+    "subcategory": "6082099f-cdbc-4383-92a8-4b8520b8ff49",
+    "name": "Перчатки и шарфы"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "2130286c-faf6-43b1-8dfe-989c065c7772",
+  "fields": {
+    "category": "21907229-450e-4f68-8869-8f34bfa7cbce",
+    "subcategory": "7869713d-27e1-4812-9107-ec7c0bcbfd3c",
+    "name": "Ключи"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "30fd1599-ebd3-449f-b1f8-610dc7f457a7",
+  "fields": {
+    "category": "637b8e52-aed3-468d-9b81-4843dbde6b9a",
+    "subcategory": "86c45345-dd15-46d1-beb9-9b1fe7fbc2aa",
+    "name": "Развлекательные устройства"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "35094dbd-4b29-4e6d-aee2-0aae916ccb23",
+  "fields": {
+    "category": "8c43adf8-b4b4-4e35-9762-669837b32ea1",
+    "subcategory": "3dc25a1d-ba3f-4be8-8f52-f90bbfdeffa0",
+    "name": "Регистрационные документы"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "520111a7-c1e8-4241-88d4-6c6ef391813b",
+  "fields": {
+    "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "subcategory": "6d4516cf-c512-4679-8159-0567386977e7",
+    "name": "Наушники"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "60d7da9a-a8e6-4f53-a659-c7acdeef27d1",
+  "fields": {
+    "category": "637b8e52-aed3-468d-9b81-4843dbde6b9a",
+    "subcategory": "86c45345-dd15-46d1-beb9-9b1fe7fbc2aa",
+    "name": "Билеты и абонементы"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "6287b446-566f-4a75-a0d6-8eb9dfea2214",
+  "fields": {
+    "category": "5d44599c-99ad-4275-9b50-cecf9df57138",
+    "subcategory": "6082099f-cdbc-4383-92a8-4b8520b8ff49",
+    "name": "Сумки и рюкзаки"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "64da8f4d-e377-4b59-a3a5-843e5e7ee24f",
+  "fields": {
+    "category": "5c886012-5ca8-4596-a94d-b223796f618b",
+    "subcategory": "c410b017-d476-4413-8899-6c22b7385091",
+    "name": "Банковские карты"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "64e160e2-6add-4f58-bdea-a9eeab3567aa",
+  "fields": {
+    "category": "5d44599c-99ad-4275-9b50-cecf9df57138",
+    "subcategory": "5fb8796b-3176-4b06-9e61-31eeb2e9c42b",
+    "name": "Обувь"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "6bd6392d-50f6-4935-aea5-de292983cd0d",
+  "fields": {
+    "category": "21907229-450e-4f68-8869-8f34bfa7cbce",
+    "subcategory": "0d4baaf2-9fed-4a5c-8753-8bdbeaafb43b",
+    "name": "Парфюмерия"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "72d336d0-922a-469e-a6de-dd8710dfe90f",
+  "fields": {
+    "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "subcategory": "af7efa10-1693-4dc0-ac5d-3e296f71adda",
+    "name": "Фитнес-гаджеты"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "79ff0bfa-18dc-4603-8abc-7b469873728c",
+  "fields": {
+    "category": "5c886012-5ca8-4596-a94d-b223796f618b",
+    "subcategory": "5c5b8343-2fc0-464a-9304-007307cef0fd",
+    "name": "Паспорт"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "7bd45f12-1c65-496f-ab49-c14b1fbbf457",
+  "fields": {
+    "category": "5d44599c-99ad-4275-9b50-cecf9df57138",
+    "subcategory": "6082099f-cdbc-4383-92a8-4b8520b8ff49",
     "name": "Очки"
   }
 },
 {
   "model": "items.subsubcategory",
-  "pk": "f4727c74-2b62-410c-9575-d77a5b70b4be",
+  "pk": "7f48f0cf-7617-43af-8014-2795811688a3",
   "fields": {
-    "category": "0e5bef4b-fc46-4f52-b10c-639af072feb3",
-    "subcategory": "25d886cf-0f7d-4465-9d89-e6b6cccd670b",
-    "name": "Косметика"
+    "category": "5c886012-5ca8-4596-a94d-b223796f618b",
+    "subcategory": "5224f364-635c-4084-99c9-bd710ef92a28",
+    "name": "Водительские права"
   }
 },
 {
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 1,
+  "model": "items.subsubcategory",
+  "pk": "8ae8c53d-c453-4603-adf4-e40f540dc5bc",
   "fields": {
-    "user": "71ab09a5-15e9-45d3-a866-b4cb9a53183a",
-    "jti": "ebdd67e084ac4a10ab0ba6ca667eeb15",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5NTEzNjAzMiwiaWF0IjoxNzQxNTM2MDMyLCJqdGkiOiJlYmRkNjdlMDg0YWM0YTEwYWIwYmE2Y2E2NjdlZWIxNSIsInVzZXJfaWQiOiI3MWFiMDlhNS0xNWU5LTQ1ZDMtYTg2Ni1iNGNiOWE1MzE4M2EifQ._nzaY-ZGeny3cTC8AOSmHU3IT2e2b2j9x5nHn2ppBYc",
-    "created_at": "2025-03-09T16:00:32.602Z",
-    "expires_at": "2125-02-13T16:00:32Z"
+    "category": "5d44599c-99ad-4275-9b50-cecf9df57138",
+    "subcategory": "5fb8796b-3176-4b06-9e61-31eeb2e9c42b",
+    "name": "Верхняя одежда"
   }
 },
 {
-  "model": "token_blacklist.outstandingtoken",
-  "pk": 2,
+  "model": "items.subsubcategory",
+  "pk": "8d8994f1-8340-432b-99be-8e7c9bf642ee",
   "fields": {
-    "user": "71ab09a5-15e9-45d3-a866-b4cb9a53183a",
-    "jti": "1671d459e64041e29f9a53b814295ed2",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5NTIyNDkyOCwiaWF0IjoxNzQxNjI0OTI4LCJqdGkiOiIxNjcxZDQ1OWU2NDA0MWUyOWY5YTUzYjgxNDI5NWVkMiIsInVzZXJfaWQiOiI3MWFiMDlhNS0xNWU5LTQ1ZDMtYTg2Ni1iNGNiOWE1MzE4M2EifQ.96HogdORr7lm3Q5QOgJ7FEJbeYNhtlDTtv2_41xSSAI",
-    "created_at": "2025-03-10T16:42:08.153Z",
-    "expires_at": "2125-02-14T16:42:08Z"
+    "category": "5c886012-5ca8-4596-a94d-b223796f618b",
+    "subcategory": "c410b017-d476-4413-8899-6c22b7385091",
+    "name": "Страховые документы"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "8eb2b90c-22fa-41d7-9568-088fa3b1699e",
+  "fields": {
+    "category": "5d44599c-99ad-4275-9b50-cecf9df57138",
+    "subcategory": "6082099f-cdbc-4383-92a8-4b8520b8ff49",
+    "name": "Головные уборы"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "986873ce-da24-421b-8d8b-f3c90f8061a0",
+  "fields": {
+    "category": "5d44599c-99ad-4275-9b50-cecf9df57138",
+    "subcategory": "6082099f-cdbc-4383-92a8-4b8520b8ff49",
+    "name": "Ремни"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "9a01c99d-9fff-486d-bd31-219502f441cd",
+  "fields": {
+    "category": "5c886012-5ca8-4596-a94d-b223796f618b",
+    "subcategory": "9b30ece9-c588-4005-81c6-8beb705975f4",
+    "name": "Студенческие документы"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "b20d8683-5b30-424d-9d79-3065cbaaa2a6",
+  "fields": {
+    "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "subcategory": "da63d846-caff-49d8-8366-3b2382a8e653",
+    "name": "Ноутбуки"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "b22c3da0-e4a5-498f-8776-fe9488a724fa",
+  "fields": {
+    "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "subcategory": "af7efa10-1693-4dc0-ac5d-3e296f71adda",
+    "name": "GPS-трекеры"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "b2e07cc7-e21c-4233-becf-bb58adc12bed",
+  "fields": {
+    "category": "824daf16-ccaf-4dbb-b806-2edf4984bd38",
+    "subcategory": "376d683e-1e6b-43c2-82bb-a5e2d4900939",
+    "name": "Блокноты и книги"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "b30614d6-bb21-440e-8098-a80d73e5779e",
+  "fields": {
+    "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "subcategory": "6d4516cf-c512-4679-8159-0567386977e7",
+    "name": "Колонки"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "b825cc38-992d-4037-9564-db717f06fc39",
+  "fields": {
+    "category": "5d44599c-99ad-4275-9b50-cecf9df57138",
+    "subcategory": "5fb8796b-3176-4b06-9e61-31eeb2e9c42b",
+    "name": "Другая одежда"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "e78c6dd9-5858-4325-9126-37abcf108ce7",
+  "fields": {
+    "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "subcategory": "6d4516cf-c512-4679-8159-0567386977e7",
+    "name": "Фото и видео"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "ea87704b-eb68-48e2-8a7d-847a4f31658d",
+  "fields": {
+    "category": "8c43adf8-b4b4-4e35-9762-669837b32ea1",
+    "subcategory": "01280f2e-f573-4987-9bc1-679c6343b8f4",
+    "name": "Автомобильные ключи"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "eb73ef71-9415-4258-bb94-e13b2bf11f19",
+  "fields": {
+    "category": "824daf16-ccaf-4dbb-b806-2edf4984bd38",
+    "subcategory": "376d683e-1e6b-43c2-82bb-a5e2d4900939",
+    "name": "Письменные принадлежности"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "fab00da4-4654-4e7b-ad67-4235101fb7dc",
+  "fields": {
+    "category": "5d44599c-99ad-4275-9b50-cecf9df57138",
+    "subcategory": "6082099f-cdbc-4383-92a8-4b8520b8ff49",
+    "name": "Кошельки и кардхолдеры"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "fb921c48-7a88-41f4-9dfd-120d6573eb07",
+  "fields": {
+    "category": "8c43adf8-b4b4-4e35-9762-669837b32ea1",
+    "subcategory": "01280f2e-f573-4987-9bc1-679c6343b8f4",
+    "name": "Замки и аксессуары"
+  }
+},
+{
+  "model": "items.subsubcategory",
+  "pk": "fd214a0e-2046-4e1d-9c53-a17a4f02d4a6",
+  "fields": {
+    "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "subcategory": "da63d846-caff-49d8-8366-3b2382a8e653",
+    "name": "Аксессуары"
+  }
+},
+{
+  "model": "users.user",
+  "pk": "3d4beff0-0ce4-4895-a310-7f09382113c3",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$5ae5P6JzVUG80sIgaPmxHn$YaZRAd1fwnrx7U6hG7mAPpdo1PrGQAyMYvyIzP75lAg=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "admin2",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-03-19T17:43:57.207Z",
+    "email": "admin2@gmail.com",
+    "phone_number": "",
+    "birthday": null,
+    "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$Yw2H33rUHgYZ4mkegZchzZ$I7fgK6e1Nkkh1CLxDpFHZ5Kr5pImJhGM+lkKXaRBp8Q=",
+    "last_login": "2025-03-19T18:02:30.228Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-03-19T17:39:56.826Z",
+    "email": "admin@gmail.com",
+    "phone_number": "",
+    "birthday": null,
+    "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
+    "groups": [],
+    "user_permissions": []
   }
 },
 {

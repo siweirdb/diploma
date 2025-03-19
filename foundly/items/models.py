@@ -1,37 +1,6 @@
 from django.db import models
 import uuid
 from django.conf import settings
-from django.contrib.auth.models import AbstractUser
-
-
-class User(AbstractUser):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    email = models.EmailField(unique=True)
-    phone_number = models.CharField(max_length=20, default='', unique=False, null=True, blank=True)
-    birthday = models.DateField(null=True, blank=True)
-    profile_picture = models.ImageField(upload_to='profile_photo/', default='profile_photo/photo_2025-02-24 23.37.57.jpeg')
-    USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ["username"]
-    groups = models.ManyToManyField(
-        "auth.Group",
-        related_name="custom_user_set",
-        blank=True
-    )
-    user_permissions = models.ManyToManyField(
-        "auth.Permission",
-        related_name="custom_user_permissions_set",
-        blank=True
-    )
-
-
-
-class VerificationCode(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    code = models.CharField(max_length=6)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.user.email} - {self.code}"
 
 
 class Category(models.Model):
@@ -43,7 +12,7 @@ class Category(models.Model):
 
 class Subcategory(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="subcategories")
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="subcategories", null=True, blank=True)
     name = models.CharField(max_length=255)
 
     def __str__(self):
@@ -51,8 +20,8 @@ class Subcategory(models.Model):
 
 class Subsubcategory(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="subsubcategories")
-    subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE, related_name="subsubcategories")
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="subsubcategories", null=True, blank=True)
+    subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE, related_name="subcategory", null=True, blank=True)
     name = models.CharField(max_length=255)
 
     def __str__(self):
@@ -78,11 +47,12 @@ class Item(models.Model):
     date = models.DateTimeField()
     address = models.CharField(max_length=255)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="active")
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="items")
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="items")
-    subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE, related_name="items")
-    subsubcategory = models.ForeignKey(Subsubcategory, on_delete=models.CASCADE, related_name="items")
-    phone_number = models.CharField(max_length=20, unique=False, null=True, blank=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="items", null=True, blank=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="items", null=True, blank=True)
+    subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE, related_name="items", null=True, blank=True)
+    subsubcategory = models.ForeignKey(Subsubcategory, on_delete=models.CASCADE, related_name="items", null=True, blank=True)
+    phone_number = models.CharField(max_length=20, null=True, blank=True, default="")
+
 
 
 
@@ -94,7 +64,7 @@ class Item(models.Model):
 
 class ItemPhoto(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name="photos")
+    item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name="photos", null=True, blank=True)
     image = models.ImageField(upload_to="item_photos/")
 
     def __str__(self):

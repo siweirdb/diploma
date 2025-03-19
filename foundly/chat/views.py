@@ -4,11 +4,9 @@ from rest_framework.response import Response
 from django.db.models import Q
 from .models import ChatMessage
 from .serializers import ChatMessageSerializer, ChatListSerializer
-from items.models import User
+from users.models import User
 
 
-def lobby(request):
-    return render(request, 'lobby.html')
 
 class ChatListView(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]

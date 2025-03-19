@@ -41,12 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "whitenoise.runserver_nostatic",
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
 
     'chat',
     'items',
+    'users',
 
     'rest_framework',
     'rest_framework_simplejwt',
@@ -81,6 +83,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'foundly.urls'
@@ -106,7 +109,7 @@ WSGI_APPLICATION = 'foundly.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+DB_HOST = "db" if os.getenv("DOCKERIZED") else "localhost"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -159,13 +162,15 @@ SITE_ID = 1
 
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-
-STATIC_URL = "/static/"
 
 
 
@@ -200,4 +205,4 @@ EMAIL_USE_SSL = True
 EMAIL_USE_TLS = False
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-AUTH_USER_MODEL = 'items.User'
+AUTH_USER_MODEL = 'users.User'

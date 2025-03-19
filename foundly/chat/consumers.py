@@ -1,6 +1,5 @@
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
-from items.models import User
 from .models import ChatMessage
 from channels.db import database_sync_to_async
 import uuid
@@ -37,34 +36,39 @@ class ChatConsumer(AsyncWebsocketConsumer):
         if hasattr(self, "room_name"):
             await self.channel_layer.group_discard(self.room_name, self.channel_name)
 
-    async def receive(self, text_data):
-        try:
-            data = json.loads(text_data)
-            message = data.get("message")
+    async def receive(self, text_data=None, bytes_data=None):
+        if text_data:
+            try:
+                data = json.loads(text_data)
+                message = data.get("message")
 
-            if not self.receiver_id or not message:
-                return  # Ignore incomplete messages
+                if not self.receiver_id or not message:
+                    return  # Ignore incomplete messages
 
-            sender = self.user
-            receiver = await database_sync_to_async(User.objects.get)(id=self.receiver_id)
+                sender = self.user
+                receiver = await database_sync_to_async(User.objects.get)(id=self.receiver_id)
 
-            chat_message = await database_sync_to_async(ChatMessage.objects.create)(
-                sender=sender, receiver=receiver, message=message
-            )
+                chat_message = await database_sync_to_async(ChatMessage.objects.create)(
+                    sender=sender, receiver=receiver, message=message
+                )
 
-            # Send message to the correct WebSocket room
-            await self.channel_layer.group_send(
-                self.room_name,
-                {
-                    "type": "chat_message",
-                    "message": message,
-                    "sender_id": str(sender.id),
-                    "receiver_id": str(self.receiver_id),
-                    "timestamp": str(chat_message.timestamp),
-                },
-            )
-        except Exception as e:
-            print(f"[WebSocket] Error processing message: {e}")
+                # Send message to the correct WebSocket room
+                await self.channel_layer.group_send(
+                    self.room_name,
+                    {
+                        "type": "chat_message",
+                        "message": message,
+                        "sender_id": str(sender.id),
+                        "receiver_id": str(self.receiver_id),
+                        "timestamp": str(chat_message.timestamp),
+                    },
+                )
+            except Exception as e:
+                print(f"[WebSocket] Error processing message: {e}")
+
+        elif bytes_data:
+            # Optional: Handle binary data if needed
+            print("Received binary data, but no handler is implemented.")
 
     async def chat_message(self, event):
         """ Send message event to WebSocket client """

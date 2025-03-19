@@ -1,7 +1,3 @@
-System check identified some issues:
-
-WARNINGS:
-[33;1m?: (staticfiles.W004) The directory '/foundly/static' in the STATICFILES_DIRS setting does not exist.[0m
 [
 {
   "model": "admin.logentry",

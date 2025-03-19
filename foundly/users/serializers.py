@@ -17,7 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
 class QrCodeSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'profile_picture','phone_number','qr_code')
+        fields = ('first_name', 'last_name', 'profile_picture','phone_number')
 
 
 class RegisterSerializer(serializers.ModelSerializer):

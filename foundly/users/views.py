@@ -5,14 +5,14 @@ from rest_framework import status, permissions
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.utils.timezone import now
 from datetime import timedelta
-from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
+
 
 from .models import VerificationCode, User
 from .serializers import RegisterSerializer, LoginSerializer, UserSerializer, ForgotPasswordSerializer, \
-    VerifyResetCodeSerializer, ResetPasswordSerializer, LogoutSerializer
+    VerifyResetCodeSerializer, ResetPasswordSerializer, LogoutSerializer, QrCodeSerializer
 
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.core.mail import send_mail
 from rest_framework import generics
 import random
@@ -105,6 +105,15 @@ class ProfileView(APIView):
         return Response(serializer.data, status=200)
 
 
+class QrCodeView(APIView):
+    permission_classes = (AllowAny,)
+
+    def get(self, request, user_id):
+        user = get_object_or_404(User, pk=user_id)
+        serializer = QrCodeSerializer(user)
+        return Response(serializer.data, status=200)
+
+
 class ForgotPasswordView(APIView):
     permission_classes = [permissions.AllowAny]
     serializer_class = ForgotPasswordSerializer
@@ -175,14 +184,6 @@ class ResetPasswordView(APIView):
         return Response({"message": "Password reset successfully"}, status=status.HTTP_200_OK)
 
 
-def qr_code_view(request, user_id):
-    user = get_object_or_404(User, id=user_id)
-    return JsonResponse({
-        "id": str(user.id),
-        "email": user.email,
-        "phone_number": user.phone_number,
-        "birthday": user.birthday.strftime("%Y-%m-%d") if user.birthday else None,
-        "profile_picture": request.build_absolute_uri(user.profile_picture.url) if user.profile_picture else None
-    })
+
 
 

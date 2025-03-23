@@ -53,7 +53,41 @@ class QrCodeSerializer(serializers.ModelSerializer):
         fields = ('first_name', 'last_name', 'profile_picture','phone_number')
 
 
+class ChangePasswordSerializer(serializers.Serializer):
+    current_password = serializers.CharField(write_only=True)
+    new_password = serializers.CharField(write_only=True)
+    new_password_confirmation = serializers.CharField(write_only=True)
 
+    def validate(self, data):
+        user = self.instance
+
+        if not user.check_password(data["current_password"]):
+            raise serializers.ValidationError({"current_password": "Current password is incorrect."})
+
+        if data["new_password"] != data["new_password_confirmation"]:
+            raise serializers.ValidationError({"new_password": "New password and confirmation do not match."})
+
+        if user.check_password(data["new_password"]):
+            raise serializers.ValidationError({"new_password": "New password must be different from the current password."})
+        password = data["new_password"]
+        if len(password) < 8:
+            raise serializers.ValidationError({"password": "Password must be at least 8 characters long."})
+        if not re.search(r'[A-Z]', password):
+            raise serializers.ValidationError({"password": "Password must contain at least one uppercase letter."})
+        if not re.search(r'[a-z]', password):
+            raise serializers.ValidationError({"password": "Password must contain at least one lowercase letter."})
+        if not re.search(r'[0-9]', password):
+            raise serializers.ValidationError({"password": "Password must contain at least one digit."})
+        if not re.search(r'[!@#$%^&*(),.?\":{}|<>]', password):
+            raise serializers.ValidationError({"password": "Password must contain at least one special character."})
+
+        return data
+
+    def save(self, **kwargs):
+        user = self.instance
+        user.set_password(self.validated_data["new_password"])
+        user.save()
+        return user
 
 class RegisterSerializer(serializers.ModelSerializer):
     password2 = serializers.CharField(write_only=True, required=True)

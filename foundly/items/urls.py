@@ -9,6 +9,7 @@ urlpatterns = [
     path('create/', CreateItemView.as_view(), name='create_item'),
     path('map/', MapView.as_view(), name='map'),
     path('<uuid:id>/',ItemDetailView.as_view(), name='item_detail'),
+
 ]
 
 if settings.DEBUG:

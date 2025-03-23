@@ -9,9 +9,7 @@ from .serializers import CategorySerializer, SubcategorySerializer, Subsubcatego
 from rest_framework import generics
 
 
-# class ImageFieldView(generics.CreateAPIView):
-#     serializer_class = ImageSerializer
-#     permission_classes = [permissions.AllowAny]
+
 
 class ItemDetailView(APIView):
     permission_classes = [permissions.AllowAny]

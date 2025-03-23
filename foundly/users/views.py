@@ -9,7 +9,8 @@ from django.shortcuts import get_object_or_404
 
 from .models import VerificationCode, User
 from .serializers import RegisterSerializer, LoginSerializer, UserSerializer, ForgotPasswordSerializer, \
-    VerifyResetCodeSerializer, ResetPasswordSerializer, LogoutSerializer, QrCodeSerializer, EditProfileSerializer
+    VerifyResetCodeSerializer, ResetPasswordSerializer, LogoutSerializer, QrCodeSerializer, EditProfileSerializer, \
+    ChangePasswordSerializer
 
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.core.mail import send_mail
@@ -38,6 +39,19 @@ class EditProfileView(generics.RetrieveUpdateAPIView):
         })
 
 
+class ChangePasswordView(generics.UpdateAPIView):
+    serializer_class = ChangePasswordSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user
+
+    def update(self, request, *args, **kwargs):
+        serializer = self.get_serializer(instance=self.get_object(), data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+
+        return Response({"message": "User password successfully updated"})
 
 
 class LogoutView(generics.GenericAPIView):

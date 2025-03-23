@@ -1,3 +1,7 @@
+System check identified some issues:
+
+WARNINGS:
+[33;1m?: (staticfiles.W004) The directory '/foundly/static' in the STATICFILES_DIRS setting does not exist.[0m
 [
 {
   "model": "admin.logentry",
@@ -2340,15 +2344,15 @@
     "password": "pbkdf2_sha256$870000$diOWtC9mKnupDMidmdkwXG$SU7NAQwbzrvQ1rYa9gK9E2ENSSUEEnTNfA3VcvajMbQ=",
     "last_login": null,
     "is_superuser": false,
-    "username": "abdullovadlet",
+    "username": "siweirdb",
     "first_name": "Sirius",
     "last_name": "Weirden",
     "is_staff": false,
     "is_active": true,
     "date_joined": "2025-03-19T20:28:45.970Z",
     "email": "abdullovadlet@gmail.com",
-    "phone_number": "",
-    "birthday": null,
+    "phone_number": "87002177608",
+    "birthday": "2004-02-26",
     "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
     "qr_code": "qr_codes/qr_9d0b4688-94bf-46dd-a172-88bee89b56bf_YG69AEl.png",
     "groups": [],
@@ -2408,6 +2412,17 @@
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5NjAxNjI1OCwiaWF0IjoxNzQyNDE2MjU4LCJqdGkiOiJkMWI1ZWE4YWUzZGY0YWNkOTVhNjdhYmY1N2Y3NWEyYiIsInVzZXJfaWQiOiI5ZDBiNDY4OC05NGJmLTQ2ZGQtYTE3Mi04OGJlZTg5YjU2YmYifQ.hdBzaeP1ijNay6wLWofef4DstFMWHvjtmmKiV4SCI-0",
     "created_at": "2025-03-19T20:30:58.714Z",
     "expires_at": "2125-02-23T20:30:58Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 4,
+  "fields": {
+    "user": "9d0b4688-94bf-46dd-a172-88bee89b56bf",
+    "jti": "c1d6bb7663ff409fb0bf0e08760e1b4f",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5NjMxMjkzMywiaWF0IjoxNzQyNzEyOTMzLCJqdGkiOiJjMWQ2YmI3NjYzZmY0MDlmYjBiZjBlMDg3NjBlMWI0ZiIsInVzZXJfaWQiOiI5ZDBiNDY4OC05NGJmLTQ2ZGQtYTE3Mi04OGJlZTg5YjU2YmYifQ.aS0MU7967ote3QQXjpgsAhwZmOQs8vShxJo_Y-R_Ggw",
+    "created_at": "2025-03-23T06:55:33.624Z",
+    "expires_at": "2125-02-27T06:55:33Z"
   }
 },
 {

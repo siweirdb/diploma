@@ -7,10 +7,9 @@ from django.utils.timezone import now
 from datetime import timedelta
 from django.shortcuts import get_object_or_404
 
-
 from .models import VerificationCode, User
 from .serializers import RegisterSerializer, LoginSerializer, UserSerializer, ForgotPasswordSerializer, \
-    VerifyResetCodeSerializer, ResetPasswordSerializer, LogoutSerializer, QrCodeSerializer
+    VerifyResetCodeSerializer, ResetPasswordSerializer, LogoutSerializer, QrCodeSerializer, EditProfileSerializer
 
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.core.mail import send_mail
@@ -20,6 +19,24 @@ import random
 class RegisterView(generics.CreateAPIView):
     permission_classes = [permissions.AllowAny]
     serializer_class = RegisterSerializer
+
+
+class EditProfileView(generics.RetrieveUpdateAPIView):
+    queryset = User.objects.all()
+    serializer_class = EditProfileSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_object(self):
+        return self.request.user
+
+    def update(self, request, *args, **kwargs):
+        kwargs['partial'] = True
+        response = super().update(request, *args, **kwargs)
+        return Response({
+            'message': 'User information successfully updated',
+            'user': response.data
+        })
+
 
 
 

@@ -34,10 +34,10 @@ class User(AbstractUser):
         self.qr_code.save(file_name, ContentFile(buffer.getvalue()), save=False)  # Save to ImageField
 
     def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)  # Save first to get a valid user ID
-        if not self.qr_code:  # Generate QR code only if it doesn't exist
+        super().save(*args, **kwargs)
+        if not self.qr_code:
             self.generate_qr_code()
-            super().save(*args, **kwargs)  # Save again with QR code
+            super().save(*args, **kwargs)
 
 
 

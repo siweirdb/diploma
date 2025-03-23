@@ -8,8 +8,12 @@ from .serializers import CategorySerializer, SubcategorySerializer, Subsubcatego
 
 from rest_framework import generics
 
+class ItemHistoryView(generics.ListAPIView):
+    serializer_class = ItemSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
-
+    def get_queryset(self):
+        return Item.objects.filter(user=self.request.user)
 
 class ItemDetailView(APIView):
     permission_classes = [permissions.AllowAny]

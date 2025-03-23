@@ -845,6 +845,19 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 66,
+  "fields": {
+    "action_time": "2025-03-23T13:22:48.079Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 15,
+    "object_id": "12aae073-ba91-44be-bb2a-f428035b3e91",
+    "object_repr": "Iphone (Электроника -> Мобильные устройства)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -2309,6 +2322,25 @@
     "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
     "subcategory": "da63d846-caff-49d8-8366-3b2382a8e653",
     "name": "Аксессуары"
+  }
+},
+{
+  "model": "items.item",
+  "pk": "12aae073-ba91-44be-bb2a-f428035b3e91",
+  "fields": {
+    "title": "Iphone",
+    "item_type": "lost_item",
+    "description": "Lost Iphone",
+    "latitude": 50.29222,
+    "longitude": 57.224444,
+    "date": "2025-03-23T13:21:42Z",
+    "address": "fnnfnrn",
+    "status": "active",
+    "user": "9d0b4688-94bf-46dd-a172-88bee89b56bf",
+    "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "subcategory": "42b2956d-318b-4aa1-8ff5-44fc54c98caa",
+    "subsubcategory": "0916141f-dbbe-49df-85fa-7e57819d61d6",
+    "phone_number": "87002177608"
   }
 },
 {

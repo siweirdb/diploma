@@ -5,6 +5,8 @@ from django.core.files.base import ContentFile
 from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+import os
+from PIL import Image
 
 class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -27,18 +29,63 @@ class User(AbstractUser):
     )
 
     def generate_qr_code(self):
-        qr = qrcode.make(f"http://localhost:8000/qr-code/{self.id}/")  # QR code URL
+        logo_path = os.path.join(settings.MEDIA_ROOT, 'qr_logo.png')
+        print("Checking file existence...")  # Debugging
+        print("File exists:", os.path.exists(logo_path), flush=True)
+        print("Check complete.")  # Debugging
+
+        qr = qrcode.QRCode(
+            version=1,
+            error_correction=qrcode.constants.ERROR_CORRECT_H,
+            box_size=20,
+            border=4,
+        )
+        qr.add_data(f"http://localhost:8000/qr-code/{self.id}/")
+        qr.make(fit=True)
+
+        qr_img = qr.make_image(fill_color="black", back_color="white").convert('RGB')
+        if os.path.exists(logo_path):
+            try:
+                logo = Image.open(logo_path)
+                if logo.mode != 'RGBA':
+                    logo = logo.convert('RGBA')
+
+                qr_width, qr_height = qr_img.size
+                logo_size = min(qr_width, qr_height) // 5
+
+                logo = logo.resize((logo_size, logo_size), Image.Resampling.LANCZOS)
+
+                logo_bg = Image.new('RGBA', (logo_size, logo_size), 'white')
+                logo_bg.paste(logo, (0, 0), logo)
+
+                pos = ((qr_width - logo_size) // 2, (qr_height - logo_size) // 2)
+
+                qr_img.paste(logo_bg, pos)
+
+            except Exception as e:
+                print(f"Error adding logo to QR code: {e}")
+
         buffer = BytesIO()
-        qr.save(buffer, format="PNG")
+        qr_img.save(buffer, format="PNG", quality=95)
+        buffer.seek(0)
+
         file_name = f"qr_{self.id}.png"
-        self.qr_code.save(file_name, ContentFile(buffer.getvalue()), save=False)  # Save to ImageField
+        self.qr_code.save(file_name, ContentFile(buffer.getvalue()), save=False)
 
     def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
         if not self.qr_code:
-            self.generate_qr_code()
             super().save(*args, **kwargs)
+            self.generate_qr_code()
 
+        super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        if self.qr_code and self.qr_code.name:
+            qr_path = os.path.join(settings.MEDIA_ROOT, self.qr_code.name)
+            if os.path.isfile(qr_path):
+                os.remove(qr_path)
+
+        super().delete(*args, **kwargs)
 
 
 class VerificationCode(models.Model):

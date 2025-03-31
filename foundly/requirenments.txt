@@ -9,3 +9,4 @@ channels
 daphne
 whitenoise
 qrcode
+drf_yasg

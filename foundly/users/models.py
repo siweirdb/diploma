@@ -3,8 +3,10 @@ import qrcode
 from io import BytesIO
 from django.core.files.base import ContentFile
 from django.conf import settings
+import random
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.core.mail import send_mail
 import os
 from PIL import Image
 
@@ -89,10 +91,27 @@ class User(AbstractUser):
 
 
 class VerificationCode(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    email = models.EmailField(unique=True)
     code = models.CharField(max_length=6)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.user.email} - {self.code}"
+
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            self.code = str(random.randint(100000, 999999))
+            super().save(*args, **kwargs)
+            self.send_email()
+        else:
+            super().save(*args, **kwargs)
+
+    def send_email(self):
+        send_mail(
+            'Email Verification - Foundly',
+            f'Your verification code is: {self.code}',
+            'foundly@yandex.kz',
+            [self.email],
+            fail_silently=False,
+        )
 

@@ -858,6 +858,162 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 67,
+  "fields": {
+    "action_time": "2025-03-24T16:51:04.691Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "ef7ff994-224a-4ef5-be40-82eaba733168",
+    "object_repr": "210103435@stu.sdu.edu.kz",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 68,
+  "fields": {
+    "action_time": "2025-03-24T16:57:40.310Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "c3d0048e-84f2-4f11-830b-01f358cc36e5",
+    "object_repr": "210103435@stu.sdu.edu.kz",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 69,
+  "fields": {
+    "action_time": "2025-03-25T07:20:54.137Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "0b42af6b-922f-477e-9a11-0b05732257c9",
+    "object_repr": "210103435@stu.sdu.edu.kz",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 70,
+  "fields": {
+    "action_time": "2025-03-25T07:23:06.477Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "f1901f8e-f2fc-4a9e-a68a-6eee31c5d3c3",
+    "object_repr": "210103435@stu.sdu.edu.kz",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 71,
+  "fields": {
+    "action_time": "2025-03-25T07:39:57.705Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "d82b72bb-b87a-4ca0-90f3-25f341968ef8",
+    "object_repr": "210103435@stu.sdu.edu.kz",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 72,
+  "fields": {
+    "action_time": "2025-03-25T07:43:33.643Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "4feb8200-d8d2-498d-b652-0ee37fb28c8d",
+    "object_repr": "210103435@stu.sdu.edu.kz",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 73,
+  "fields": {
+    "action_time": "2025-03-25T07:45:14.342Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "abfa2c2d-4b3d-472a-b650-1366c7c7c657",
+    "object_repr": "210103435@stu.sdu.edu.kz",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 74,
+  "fields": {
+    "action_time": "2025-03-25T07:55:06.355Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "8ea9f945-5b14-4082-8410-1cd8768fbf0c",
+    "object_repr": "210103435@stu.sdu.edu.kz",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 75,
+  "fields": {
+    "action_time": "2025-03-25T07:58:32.950Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "2510d54b-3c54-4912-ad43-8b80e333bad9",
+    "object_repr": "210103435@stu.sdu.edu.kz",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 76,
+  "fields": {
+    "action_time": "2025-03-25T08:01:13.351Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "121914ec-e2f6-4c8a-8f9a-089ec2afd3f3",
+    "object_repr": "210103435@stu.sdu.edu.kz",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 77,
+  "fields": {
+    "action_time": "2025-03-25T08:05:00.729Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "32903b10-d8f6-4d94-a165-f3d72f043755",
+    "object_repr": "210103435@stu.sdu.edu.kz",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 78,
+  "fields": {
+    "action_time": "2025-03-25T08:07:32.382Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "bc3ba312-040d-436a-8098-82869d6914c7",
+    "object_repr": "210103435@stu.sdu.edu.kz",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -1785,8 +1941,8 @@
   "model": "sessions.session",
   "pk": "fifue23zy2f504rqxqdlue8fusq9udp0",
   "fields": {
-    "session_data": ".eJxVy8EOgjAQhOF36VlIu-y2xaOJz0GmWxoaFROBk_HdlcSDXuef72kGbOs0bMv4GGo2R5PEFsoSGvEsDSfWJsbiGxT0DlSoK2IOvyxBL-O8230b57Uq1nqf229Y2vMN9Xr63v7shGX6wIKOUwcXvLXQEJlEckSOCoFNRB5RKWvPLD4EL06Ds-xyb706Sub1BqPrPtY:1tuxkM:iK0giRJ_4egm0nP2rrwwZYQej1UmvAfkSHTQeH1-h5A",
-    "expire_date": "2025-04-02T18:02:30.235Z"
+    "session_data": ".eJxVy8EOgjAQhOF36VlIu-y2xaOJz0GmWxoaFROBk_HdlcSDXuef72kGbOs0bMv4GGo2R5PEFsoSGvEsDSfWJsbiGxT0DlSoK2IOvyxBL-O8230b57Uq1nqf229Y2vMN9Xr63v7shGX6wIKOUwcXvLXQEJlEckSOCoFNRB5RKWvPLD4EL06Ds-xyb706Sub1BqPrPtY:1tzAmR:x5vNkmo4UjIHnI40vSt9J4XSektauINnJGeuTxtOI1Y",
+    "expire_date": "2025-04-14T08:46:03.471Z"
   }
 },
 {
@@ -2361,6 +2517,28 @@
     "birthday": null,
     "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
     "qr_code": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": "926e174f-11ec-4a76-8865-277397120330",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$fQZw3J2Apf4SgJvhFJVR9P$oauD7+y+kRIp0Gz7DeAU0sS1cjPHjuwxlwEyulhUUak=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "210103435",
+    "first_name": "Ed",
+    "last_name": "Stark",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-03-31T08:46:03.128Z",
+    "email": "210103435@stu.sdu.edu.kz",
+    "phone_number": "+1234567890",
+    "birthday": null,
+    "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
+    "qr_code": "qr_codes/qr_926e174f-11ec-4a76-8865-277397120330_0ivkRP2.png",
     "groups": [],
     "user_permissions": []
   }

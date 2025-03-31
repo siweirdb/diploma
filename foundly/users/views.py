@@ -4,6 +4,8 @@ from rest_framework.response import Response
 from rest_framework import status, permissions
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.utils.timezone import now
+import re
+from django.utils import timezone
 from datetime import timedelta
 from django.shortcuts import get_object_or_404
 
@@ -17,9 +19,48 @@ from django.core.mail import send_mail
 from rest_framework import generics
 import random
 
-class RegisterView(generics.CreateAPIView):
-    permission_classes = [permissions.AllowAny]
+
+class RegisterEmailView(APIView):
+    def post(self, request):
+        email = request.data.get('email')
+
+        if not email:
+            return Response({"error": "Email is required"}, status=status.HTTP_400_BAD_REQUEST)
+        if User.objects.filter(email=email).exists():
+            return Response({"error": "Email already exists"}, status=status.HTTP_400_BAD_REQUEST)
+        VerificationCode.objects.filter(email=email).delete()
+
+        try:
+            verification_code = VerificationCode.objects.create(email=email)
+            return Response({"message": "Verification code sent successfully", "pk": verification_code.pk},
+                            status=status.HTTP_201_CREATED)
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class RegisterView(APIView):
     serializer_class = RegisterSerializer
+
+    def post(self, request):
+        verified_email = request.session.get('verified_email')
+
+        if not verified_email:
+            return Response({"error": "Email verification is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        request.data['email'] = verified_email
+        serializer = self.serializer_class(data=request.data)
+
+        if serializer.is_valid():
+            user = serializer.save()
+
+            del request.session['verified_email']
+
+            user_data = self.serializer_class(user).data
+
+            return Response({"message": "User registered successfully", "user": user_data},
+                            status=status.HTTP_201_CREATED)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class EditProfileView(generics.RetrieveUpdateAPIView):
@@ -91,40 +132,29 @@ class LoginView(generics.GenericAPIView):
 
 EXPIRE_TIME = timedelta(minutes=10)
 
+
 class VerifyEmailView(APIView):
-    def post(self, request):
-        email = request.data.get('email')
+    def post(self, request, email):
+        if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
+            return Response({"error": "Invalid email format."}, status=status.HTTP_400_BAD_REQUEST)
         code = request.data.get('code')
 
-        # Check if email and code are provided
-        if not email or not code:
-            return Response({"error": "Email and code are required"}, status=status.HTTP_400_BAD_REQUEST)
+        if not code:
+            return Response({"error": "Code is required"}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Get user associated with email
-        user = User.objects.filter(email=email).first()
-        if not user:
-            return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+        try:
+            verification_code = VerificationCode.objects.get(email=email)
+        except VerificationCode.DoesNotExist:
+            return Response({"error": "Invalid email or code has expired"}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Check if the user is already verified
-        if user.is_active:
-            return Response({"message": "Email already verified"}, status=status.HTTP_200_OK)
+        if timezone.now() > verification_code.created_at + timedelta(minutes=10):
+            verification_code.delete()
+            return Response({"error": "Verification code expired"}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Get verification code for user
-        verification = VerificationCode.objects.filter(user=user, code=code).first()
-        if not verification:
-            return Response({"error": "Invalid verification code"}, status=status.HTTP_400_BAD_REQUEST)
-
-        # Check if the verification code has expired
-        if verification.created_at < now() - EXPIRE_TIME:
-            verification.delete()  # Cleanup expired code
-            return Response({"error": "Verification code has expired"}, status=status.HTTP_400_BAD_REQUEST)
-
-        # Activate user and delete verification code
-        user.is_active = True
-        user.save()
-        verification.delete()
-
-        return Response({"message": "Email verified successfully"}, status=status.HTTP_200_OK)
+        if verification_code.code == code:
+            request.session['verified_email'] = verification_code.email
+            verification_code.delete()
+            return Response({"message": "Verification successful"}, status=status.HTTP_200_OK)
 
 
 class ProfileView(APIView):
@@ -155,13 +185,10 @@ class ForgotPasswordView(APIView):
         if not user:
             return Response({"error": "User with this email does not exist"}, status=status.HTTP_404_NOT_FOUND)
 
-        # Generate a random 6-digit reset code
         reset_code = str(random.randint(100000, 999999))
 
-        # Store the reset code
         VerificationCode.objects.create(user=user, code=reset_code)
 
-        # Send the reset code via email
         send_mail(
             "Password Reset Code - Foundly",
             f"Your password reset code is: {reset_code}",
@@ -183,7 +210,7 @@ class VerifyResetCodeView(APIView):
         if not email or not code:
             return Response({"error": "Email and code are required"}, status=status.HTTP_400_BAD_REQUEST)
 
-        user = User.objects.filter(email=email).first()  # Now correctly placed
+        user = User.objects.filter(email=email).first()
         if not user:
             return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
 

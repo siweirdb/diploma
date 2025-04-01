@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "whitenoise.runserver_nostatic",
+    'allauth.socialaccount.providers.google',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -71,8 +72,9 @@ CHANNEL_LAYERS = {
 
 
 AUTHENTICATION_BACKENDS = [
-    "authentication.backends.EmailBackend",  # Your custom backend
+    "authentication.backends.EmailBackend",
     "django.contrib.auth.backends.ModelBackend",
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 MIDDLEWARE = [
@@ -88,6 +90,16 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'foundly.urls'
+
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': ['profile', 'email'],
+        'AUTH_PARAMS': {'access_type': 'online'},
+    }
+}
+
 
 TEMPLATES = [
     {

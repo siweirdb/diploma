@@ -10,3 +10,4 @@ daphne
 whitenoise
 qrcode
 drf_yasg
+requests

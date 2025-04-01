@@ -22,20 +22,44 @@ import random
 
 class RegisterEmailView(APIView):
     def post(self, request):
+        is_register = request.data.get('is_register')
         email = request.data.get('email')
 
         if not email:
             return Response({"error": "Email is required"}, status=status.HTTP_400_BAD_REQUEST)
-        if User.objects.filter(email=email).exists():
-            return Response({"error": "Email already exists"}, status=status.HTTP_400_BAD_REQUEST)
-        VerificationCode.objects.filter(email=email).delete()
 
-        try:
-            verification_code = VerificationCode.objects.create(email=email)
-            return Response({"message": "Verification code sent successfully", "pk": verification_code.pk},
-                            status=status.HTTP_201_CREATED)
-        except Exception as e:
-            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        if is_register:  # Registration process
+            if User.objects.filter(email=email).exists():
+                return Response({"error": "Email already exists"}, status=status.HTTP_400_BAD_REQUEST)
+            VerificationCode.objects.filter(email=email).delete()
+
+            try:
+                verification_code = VerificationCode.objects.create(email=email)
+                return Response({"message": "Verification code sent successfully", "pk": verification_code.pk},
+                                status=status.HTTP_201_CREATED)
+            except Exception as e:
+                return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        else:  # Password reset process
+            user = User.objects.filter(email=email).first()
+            if not user:
+                return Response({"error": "User with this email does not exist"}, status=status.HTTP_404_NOT_FOUND)
+
+            reset_code = str(random.randint(100000, 999999))
+            VerificationCode.objects.create(user=user, code=reset_code)
+
+            try:
+                send_mail(
+                    "Password Reset Code - Foundly",
+                    f"Your password reset code is: {reset_code}",
+                    "foundly@yandex.kz",
+                    [user.email],
+                    fail_silently=False,
+                )
+                return Response({"message": "Reset code sent to email"}, status=status.HTTP_200_OK)
+            except Exception as e:
+                return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
 
 class RegisterView(APIView):
@@ -132,6 +156,33 @@ class LoginView(generics.GenericAPIView):
 
 EXPIRE_TIME = timedelta(minutes=10)
 
+class VerifyResetCodeView(APIView):
+    permission_classes = [permissions.AllowAny]
+    serializer_class = VerifyResetCodeSerializer
+
+    def post(self, request):
+        email = request.data.get('email')
+        code = request.data.get('code')
+
+        if not email or not code:
+            return Response({"error": "Email and code are required"}, status=status.HTTP_400_BAD_REQUEST)
+
+        user = User.objects.filter(email=email).first()
+        if not user:
+            return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        verification = VerificationCode.objects.filter(user=user, code=code).first()
+        if not verification:
+            return Response({"error": "Invalid or expired reset code"}, status=status.HTTP_400_BAD_REQUEST)
+
+        if verification.created_at < now() - EXPIRE_TIME:
+            verification.delete()
+            return Response({"error": "Reset code has expired"}, status=status.HTTP_400_BAD_REQUEST)
+
+        verification.delete()
+
+        return Response({"message": "Code verified successfully"}, status=status.HTTP_200_OK)
+
 
 class VerifyEmailView(APIView):
     def post(self, request, email):
@@ -199,32 +250,7 @@ class ForgotPasswordView(APIView):
 
         return Response({"message": "Reset code sent to email"}, status=status.HTTP_200_OK)
 
-class VerifyResetCodeView(APIView):
-    permission_classes = [permissions.AllowAny]
-    serializer_class = VerifyResetCodeSerializer
 
-    def post(self, request):
-        email = request.data.get('email')
-        code = request.data.get('code')
-
-        if not email or not code:
-            return Response({"error": "Email and code are required"}, status=status.HTTP_400_BAD_REQUEST)
-
-        user = User.objects.filter(email=email).first()
-        if not user:
-            return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
-
-        verification = VerificationCode.objects.filter(user=user, code=code).first()
-        if not verification:
-            return Response({"error": "Invalid or expired reset code"}, status=status.HTTP_400_BAD_REQUEST)
-
-        if verification.created_at < now() - EXPIRE_TIME:
-            verification.delete()
-            return Response({"error": "Reset code has expired"}, status=status.HTTP_400_BAD_REQUEST)
-
-        verification.delete()
-
-        return Response({"message": "Code verified successfully"}, status=status.HTTP_200_OK)
 
 
 class ResetPasswordView(APIView):

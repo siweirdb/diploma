@@ -1014,6 +1014,45 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 79,
+  "fields": {
+    "action_time": "2025-03-31T14:27:33.600Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 20,
+    "object_id": "2",
+    "object_repr": "localhost:8000",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 80,
+  "fields": {
+    "action_time": "2025-03-31T14:27:42.632Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Google",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 81,
+  "fields": {
+    "action_time": "2025-04-01T16:30:39.908Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Google",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -1946,6 +1985,24 @@
   }
 },
 {
+  "model": "sessions.session",
+  "pk": "yyv6pwmo4jomp56ya9cbbqp10ef3u3tu",
+  "fields": {
+    "session_data": ".eJxVjz1vgzAQQP-LZ0D-Optko2qlbh06VhU6znZxgyDFJgviv5e0LBnv3r0n3crSRBEHJJqWMbcpY_aJnVfWfINWr8_ivbm9iJ83ZOePlV3niXzaORumrziygjnMOxqXYSjY9UK-pcn59ubnGKKf_8lWCKuVVmC5qjgHYT63grW45L5dkp_b6PZiBzxIB7YEo6HUnaayroMpMeBJoAxSBWAPWod08ePdxWG4r6vjjerv5sCpavbJjzkS5jiNT4f1kOox9XsnoNKdQmEN50i21hLA1ehqQkDeSWmwJunopDUYaw0IsoJr4U7ckJAd234BokFspg:1tzeVM:I_TsWsyRumI5ui6aLw7b-Rdz2QYejl_iRKEtYuyCjRM",
+    "expire_date": "2025-04-15T16:30:24.849Z"
+  }
+},
+{
+  "model": "account.emailaddress",
+  "pk": 1,
+  "fields": {
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "email": "admin@gmail.com",
+    "verified": false,
+    "primary": false
+  }
+},
+{
   "model": "items.category",
   "pk": "21907229-450e-4f68-8869-8f34bfa7cbce",
   "fields": {
@@ -2570,7 +2627,7 @@
   "pk": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
   "fields": {
     "password": "pbkdf2_sha256$870000$Yw2H33rUHgYZ4mkegZchzZ$I7fgK6e1Nkkh1CLxDpFHZ5Kr5pImJhGM+lkKXaRBp8Q=",
-    "last_login": "2025-03-19T18:02:30.228Z",
+    "last_login": "2025-04-01T16:30:24.739Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -2637,6 +2694,14 @@
   "fields": {
     "domain": "example.com",
     "name": "example.com"
+  }
+},
+{
+  "model": "sites.site",
+  "pk": 2,
+  "fields": {
+    "domain": "localhost:8000",
+    "name": "localhost"
   }
 }
 ]

@@ -21,6 +21,7 @@ import random
 
 
 class RegisterEmailView(APIView):
+
     def post(self, request):
         is_register = request.data.get('is_register')
         email = request.data.get('email')
@@ -28,7 +29,7 @@ class RegisterEmailView(APIView):
         if not email:
             return Response({"error": "Email is required"}, status=status.HTTP_400_BAD_REQUEST)
 
-        if is_register:  # Registration process
+        if is_register:
             if User.objects.filter(email=email).exists():
                 return Response({"error": "Email already exists"}, status=status.HTTP_400_BAD_REQUEST)
             VerificationCode.objects.filter(email=email).delete()
@@ -40,7 +41,7 @@ class RegisterEmailView(APIView):
             except Exception as e:
                 return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-        else:  # Password reset process
+        else:
             user = User.objects.filter(email=email).first()
             if not user:
                 return Response({"error": "User with this email does not exist"}, status=status.HTTP_404_NOT_FOUND)
@@ -87,7 +88,7 @@ class RegisterView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class EditProfileView(generics.RetrieveUpdateAPIView):
+class EditProfileView(generics.RetrieveUpdateDestroyAPIView):
     queryset = User.objects.all()
     serializer_class = EditProfileSerializer
     permission_classes = [permissions.IsAuthenticated]
@@ -102,6 +103,11 @@ class EditProfileView(generics.RetrieveUpdateAPIView):
             'message': 'User information successfully updated',
             'user': response.data
         })
+
+    def delete(self, request, *args, **kwargs):
+        user = self.get_object()
+        user.delete()
+        return Response({'message': 'User account successfully deleted'}, status=status.HTTP_204_NO_CONTENT)
 
 
 class ChangePasswordView(generics.UpdateAPIView):

@@ -102,7 +102,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         password = data.get("password")
-        password2 = data.pop("password2", None)  # Remove password2 from data
+        password2 = data.pop("password2", None)
 
         if password != password2:
             raise serializers.ValidationError({"password2": "Passwords do not match."})
@@ -136,6 +136,8 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
+
+
 
 class LoginSerializer(serializers.Serializer):
     email = serializers.CharField(required=True)

@@ -9,7 +9,6 @@ from .serializers import CategorySerializer, SubcategorySerializer, Subsubcatego
 from rest_framework import generics
 
 class ItemHistoryView(generics.ListAPIView):
-    serializer_class = ItemSerializer
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
@@ -24,15 +23,12 @@ class ItemDetailView(APIView):
         serializer = self.serializer_class(item)
         return Response(serializer.data)
 
-class MapView(APIView):
+class MapView(generics.ListAPIView):
     permission_classes = [permissions.AllowAny]
+    serializer_class = ItemSerializer
+    def get_queryset(self):
+        return Item.objects.all()
 
-    def get(self, request, *args, **kwargs):
-        items = Item.objects.all()
-
-        return Response({
-            'items': ItemSerializer(items, many=True).data,
-        })
 
 
 

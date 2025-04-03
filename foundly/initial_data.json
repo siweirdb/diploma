@@ -1053,6 +1053,19 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 82,
+  "fields": {
+    "action_time": "2025-04-02T15:21:46.128Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "9d0b4688-94bf-46dd-a172-88bee89b56bf",
+    "object_repr": "abdullovadlet@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -1988,8 +2001,8 @@
   "model": "sessions.session",
   "pk": "yyv6pwmo4jomp56ya9cbbqp10ef3u3tu",
   "fields": {
-    "session_data": ".eJxVjz1vgzAQQP-LZ0D-Optko2qlbh06VhU6znZxgyDFJgviv5e0LBnv3r0n3crSRBEHJJqWMbcpY_aJnVfWfINWr8_ivbm9iJ83ZOePlV3niXzaORumrziygjnMOxqXYSjY9UK-pcn59ubnGKKf_8lWCKuVVmC5qjgHYT63grW45L5dkp_b6PZiBzxIB7YEo6HUnaayroMpMeBJoAxSBWAPWod08ePdxWG4r6vjjerv5sCpavbJjzkS5jiNT4f1kOox9XsnoNKdQmEN50i21hLA1ehqQkDeSWmwJunopDUYaw0IsoJr4U7ckJAd234BokFspg:1tzeVM:I_TsWsyRumI5ui6aLw7b-Rdz2QYejl_iRKEtYuyCjRM",
-    "expire_date": "2025-04-15T16:30:24.849Z"
+    "session_data": ".eJxVjz1vgzAQQP-LZ0D-Optko2qlbh06VhU6znZxgyDFJgviv5e0LBnv3r0n3crSRBEHJJqWMbcpY_aJnVfWfINWr8_ivbm9iJ83ZOePlV3niXzaORumrziygjnMOxqXYSjY9UK-pcn59ubnGKKf_8lWCKuVVmC5qjgHYT63grW45L5dkp_b6PZiBzxIB7YEo6HUnaayroMpMeBJoAxSBWAPWod08ePdxWG4r6vjjerv5sCpavbJjzkS5jiNT4f1kOox9XsnoNKdQmEN50i21hLA1ehqQkDeSWmwJunopDUYaw0IsoJr4U7ckJAd234BokFspg:1u00Np:ZNAWkydLOEfaq6wLepLItlaAU3qYlKNyyjcnYWGIrtk",
+    "expire_date": "2025-04-16T15:52:05.553Z"
   }
 },
 {
@@ -2538,25 +2551,6 @@
   }
 },
 {
-  "model": "items.item",
-  "pk": "12aae073-ba91-44be-bb2a-f428035b3e91",
-  "fields": {
-    "title": "Iphone",
-    "item_type": "lost_item",
-    "description": "Lost Iphone",
-    "latitude": 50.29222,
-    "longitude": 57.224444,
-    "date": "2025-03-23T13:21:42Z",
-    "address": "fnnfnrn",
-    "status": "active",
-    "user": "9d0b4688-94bf-46dd-a172-88bee89b56bf",
-    "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
-    "subcategory": "42b2956d-318b-4aa1-8ff5-44fc54c98caa",
-    "subsubcategory": "0916141f-dbbe-49df-85fa-7e57819d61d6",
-    "phone_number": "87002177608"
-  }
-},
-{
   "model": "users.user",
   "pk": "3d4beff0-0ce4-4895-a310-7f09382113c3",
   "fields": {
@@ -2602,28 +2596,6 @@
 },
 {
   "model": "users.user",
-  "pk": "9d0b4688-94bf-46dd-a172-88bee89b56bf",
-  "fields": {
-    "password": "pbkdf2_sha256$870000$diOWtC9mKnupDMidmdkwXG$SU7NAQwbzrvQ1rYa9gK9E2ENSSUEEnTNfA3VcvajMbQ=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "siweirdb",
-    "first_name": "Sirius",
-    "last_name": "Weirden",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2025-03-19T20:28:45.970Z",
-    "email": "abdullovadlet@gmail.com",
-    "phone_number": "87002177608",
-    "birthday": "2004-02-26",
-    "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
-    "qr_code": "qr_codes/qr_9d0b4688-94bf-46dd-a172-88bee89b56bf_YG69AEl.png",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "users.user",
   "pk": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
   "fields": {
     "password": "pbkdf2_sha256$870000$Yw2H33rUHgYZ4mkegZchzZ$I7fgK6e1Nkkh1CLxDpFHZ5Kr5pImJhGM+lkKXaRBp8Q=",
@@ -2640,6 +2612,28 @@
     "birthday": null,
     "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
     "qr_code": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": "fa06ea54-3ff2-472d-9bc5-7e54f5822086",
+  "fields": {
+    "password": "pbkdf2_sha256$870000$hqsoA8pfgYIUNb06zctNIT$4RC4z1q/yrY8WK0DO5oqBxpWOWEyL1mVf+RPE+NG+B4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "abdullovadlet",
+    "first_name": "Adilet",
+    "last_name": "Abdullov",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-04-02T15:52:05.172Z",
+    "email": "abdullovadlet@gmail.com",
+    "phone_number": "",
+    "birthday": null,
+    "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
+    "qr_code": "qr_codes/qr_fa06ea54-3ff2-472d-9bc5-7e54f5822086_6Yyft1q.png",
     "groups": [],
     "user_permissions": []
   }
@@ -2670,7 +2664,7 @@
   "model": "token_blacklist.outstandingtoken",
   "pk": 3,
   "fields": {
-    "user": "9d0b4688-94bf-46dd-a172-88bee89b56bf",
+    "user": null,
     "jti": "d1b5ea8ae3df4acd95a67abf57f75a2b",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5NjAxNjI1OCwiaWF0IjoxNzQyNDE2MjU4LCJqdGkiOiJkMWI1ZWE4YWUzZGY0YWNkOTVhNjdhYmY1N2Y3NWEyYiIsInVzZXJfaWQiOiI5ZDBiNDY4OC05NGJmLTQ2ZGQtYTE3Mi04OGJlZTg5YjU2YmYifQ.hdBzaeP1ijNay6wLWofef4DstFMWHvjtmmKiV4SCI-0",
     "created_at": "2025-03-19T20:30:58.714Z",
@@ -2681,11 +2675,22 @@
   "model": "token_blacklist.outstandingtoken",
   "pk": 4,
   "fields": {
-    "user": "9d0b4688-94bf-46dd-a172-88bee89b56bf",
+    "user": null,
     "jti": "c1d6bb7663ff409fb0bf0e08760e1b4f",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5NjMxMjkzMywiaWF0IjoxNzQyNzEyOTMzLCJqdGkiOiJjMWQ2YmI3NjYzZmY0MDlmYjBiZjBlMDg3NjBlMWI0ZiIsInVzZXJfaWQiOiI5ZDBiNDY4OC05NGJmLTQ2ZGQtYTE3Mi04OGJlZTg5YjU2YmYifQ.aS0MU7967ote3QQXjpgsAhwZmOQs8vShxJo_Y-R_Ggw",
     "created_at": "2025-03-23T06:55:33.624Z",
     "expires_at": "2125-02-27T06:55:33Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 5,
+  "fields": {
+    "user": "fa06ea54-3ff2-472d-9bc5-7e54f5822086",
+    "jti": "3e6101196cb546bdade5d4bd1339a133",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5NzI1NjQ0MCwiaWF0IjoxNzQzNjU2NDQwLCJqdGkiOiIzZTYxMDExOTZjYjU0NmJkYWRlNWQ0YmQxMzM5YTEzMyIsInVzZXJfaWQiOiJmYTA2ZWE1NC0zZmYyLTQ3MmQtOWJjNS03ZTU0ZjU4MjIwODYifQ.pA1QPyJ2kFbmxzjS70sJInfT4DxQbZo74ewLkFwLL_Q",
+    "created_at": "2025-04-03T05:00:40.678Z",
+    "expires_at": "2125-03-10T05:00:40Z"
   }
 },
 {

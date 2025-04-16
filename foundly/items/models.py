@@ -6,6 +6,7 @@ from django.conf import settings
 class Category(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=255)
+    photo = models.ImageField(upload_to='categories/')
 
     def __str__(self):
         return self.name
@@ -66,6 +67,7 @@ class ItemPhoto(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     item = models.ForeignKey(Item, on_delete=models.CASCADE, related_name="photos", null=True, blank=True)
     image = models.ImageField(upload_to="item_photos/")
+    predicted_category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return f"Photo for {self.item.title}"

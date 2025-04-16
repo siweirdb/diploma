@@ -72,7 +72,8 @@ class RegisterView(APIView):
         if not verified_email:
             return Response({"error": "Email verification is required"}, status=status.HTTP_400_BAD_REQUEST)
 
-        request.data['email'] = verified_email
+        mutable_data = request.data.copy()
+        mutable_data['email'] = verified_email
         serializer = self.serializer_class(data=request.data)
 
         if serializer.is_valid():

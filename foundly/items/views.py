@@ -1,12 +1,34 @@
-
-from rest_framework.views import APIView
-from rest_framework.response import Response
 from rest_framework import status, permissions
-from .models import Category, Subcategory, Subsubcategory, Item
+from .models import Item
 from .serializers import  CreateItemSerializer
 from .serializers import CategorySerializer, SubcategorySerializer, SubsubcategorySerializer, ItemSerializer
 
 from rest_framework import generics
+
+from rest_framework.views import APIView
+from rest_framework.parsers import MultiPartParser
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from .serializers import ImageAnalysisSerializer
+from .ai_model import ImageClassifier
+from .models import Category, Subcategory, Subsubcategory
+
+
+class AnalyzeImageView(APIView):
+    parser_classes = [MultiPartParser]
+
+    def post(self, request):
+        image_file = request.FILES['image']
+        classifier = ImageClassifier()
+
+        try:
+            image_data = image_file.read()
+            predictions = classifier.predict_category(image_data)
+            return Response({"predictions": predictions})
+
+        except Exception as e:
+            return Response({"error": str(e)}, status=500)
+
 
 class ItemHistoryView(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]

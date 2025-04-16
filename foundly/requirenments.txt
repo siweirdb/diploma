@@ -11,3 +11,8 @@ whitenoise
 qrcode
 drf_yasg
 requests
+celery
+redis
+tensorflow
+keras
+numpy

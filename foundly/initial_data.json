@@ -1066,6 +1066,175 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 83,
+  "fields": {
+    "action_time": "2025-04-06T07:44:49.896Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 11,
+    "object_id": "5d44599c-99ad-4275-9b50-cecf9df57138",
+    "object_repr": "Личные вещи",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Photo\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 84,
+  "fields": {
+    "action_time": "2025-04-06T07:45:05.985Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 11,
+    "object_id": "5d44599c-99ad-4275-9b50-cecf9df57138",
+    "object_repr": "Личные вещи",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 85,
+  "fields": {
+    "action_time": "2025-04-06T07:46:23.003Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 11,
+    "object_id": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "object_repr": "Электроника",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Photo\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 86,
+  "fields": {
+    "action_time": "2025-04-06T07:46:32.699Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 11,
+    "object_id": "8c43adf8-b4b4-4e35-9762-669837b32ea1",
+    "object_repr": "Транспорт",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Photo\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 87,
+  "fields": {
+    "action_time": "2025-04-06T07:46:54.772Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 11,
+    "object_id": "824daf16-ccaf-4dbb-b806-2edf4984bd38",
+    "object_repr": "Канцелярия и учеба",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Photo\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 88,
+  "fields": {
+    "action_time": "2025-04-06T07:47:17.645Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 11,
+    "object_id": "5c886012-5ca8-4596-a94d-b223796f618b",
+    "object_repr": "Документы",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Photo\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 89,
+  "fields": {
+    "action_time": "2025-04-06T07:47:29.469Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 11,
+    "object_id": "21907229-450e-4f68-8869-8f34bfa7cbce",
+    "object_repr": "Дом и быт",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Photo\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 90,
+  "fields": {
+    "action_time": "2025-04-06T07:48:02.194Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 11,
+    "object_id": "637b8e52-aed3-468d-9b81-4843dbde6b9a",
+    "object_repr": "Развлечения и хобби",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Photo\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 91,
+  "fields": {
+    "action_time": "2025-04-06T10:37:49.697Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "google",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 92,
+  "fields": {
+    "action_time": "2025-04-06T10:38:04.885Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "fa06ea54-3ff2-472d-9bc5-7e54f5822086",
+    "object_repr": "abdullovadlet@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 93,
+  "fields": {
+    "action_time": "2025-04-06T10:43:51.218Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "c950449e-8a2b-4373-b09b-365a3d1a089d",
+    "object_repr": "abdullovadlet@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 94,
+  "fields": {
+    "action_time": "2025-04-14T14:56:15.552Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 16,
+    "object_id": "72444f5d-d406-4e85-b473-e7f6a26e9df7",
+    "object_repr": "abdullovadlet@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 95,
+  "fields": {
+    "action_time": "2025-04-16T19:08:57.074Z",
+    "user": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "google",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -1991,6 +2160,14 @@
 },
 {
   "model": "sessions.session",
+  "pk": "25xwdsfugsn9nwk6u7ij807kq0tzrpcu",
+  "fields": {
+    "session_data": ".eJxVjMsOgjAQRf-layF02pkWd_ojZPqYQCQlkbIy_rtgWOjyPs55qYG3Og7bmp_DlNRVBewEEroGyWJjg42N90INC_eaQcAIqssvFjg-cjlYnuejbjnGZSu1_X7OeW1ve8qlTpHrtJT7Sf2pRl7H3eMcoUWRFKz1Rjv0ngxTAGey7yAC7BFSrzUBJ5MQYyCfAxF5kmjV-wP8vESz:1u4fEW:cUwLTPwGfoFvKpc7K3Mdkoj0PT7COHJfsmGE3bacTvI",
+    "expire_date": "2025-04-29T12:17:44.711Z"
+  }
+},
+{
+  "model": "sessions.session",
   "pk": "fifue23zy2f504rqxqdlue8fusq9udp0",
   "fields": {
     "session_data": ".eJxVy8EOgjAQhOF36VlIu-y2xaOJz0GmWxoaFROBk_HdlcSDXuef72kGbOs0bMv4GGo2R5PEFsoSGvEsDSfWJsbiGxT0DlSoK2IOvyxBL-O8230b57Uq1nqf229Y2vMN9Xr63v7shGX6wIKOUwcXvLXQEJlEckSOCoFNRB5RKWvPLD4EL06Ds-xyb706Sub1BqPrPtY:1tzAmR:x5vNkmo4UjIHnI40vSt9J4XSektauINnJGeuTxtOI1Y",
@@ -1999,10 +2176,10 @@
 },
 {
   "model": "sessions.session",
-  "pk": "yyv6pwmo4jomp56ya9cbbqp10ef3u3tu",
+  "pk": "o5z1qsb4mfk812ft9reklfldcniijbl1",
   "fields": {
-    "session_data": ".eJxVjz1vgzAQQP-LZ0D-Optko2qlbh06VhU6znZxgyDFJgviv5e0LBnv3r0n3crSRBEHJJqWMbcpY_aJnVfWfINWr8_ivbm9iJ83ZOePlV3niXzaORumrziygjnMOxqXYSjY9UK-pcn59ubnGKKf_8lWCKuVVmC5qjgHYT63grW45L5dkp_b6PZiBzxIB7YEo6HUnaayroMpMeBJoAxSBWAPWod08ePdxWG4r6vjjerv5sCpavbJjzkS5jiNT4f1kOox9XsnoNKdQmEN50i21hLA1ehqQkDeSWmwJunopDUYaw0IsoJr4U7ckJAd234BokFspg:1u00Np:ZNAWkydLOEfaq6wLepLItlaAU3qYlKNyyjcnYWGIrtk",
-    "expire_date": "2025-04-16T15:52:05.553Z"
+    "session_data": ".eJxVjE0OgjAQRu_StSXtMNMWd3oRMp3SQCQlkbIy3l0wLHT5_bz3Uj1vdey3dXj2U1JXFclkSOQ1OSSNEUWHkJ3mzJ1lyNBmUpdfLLI8hnKwPM9H3bDIspXafD_nvDa3PQ2lTsJ1Wsr9pP5UI6_j7sncYmzZemcMiw8IRClwCsLEJgI4DgJJOkRy3juy4q1BmzrjxEJU7w8e20Tl:1u1NbP:sCBel2EuEhIXLBdQEVJekouEzUEKcgIYs5ouEK84QI4",
+    "expire_date": "2025-04-20T10:51:47.529Z"
   }
 },
 {
@@ -2016,52 +2193,94 @@
   }
 },
 {
+  "model": "account.emailaddress",
+  "pk": 3,
+  "fields": {
+    "user": "aa9a4fc2-99bb-493f-8f2c-c8c11ccb2c53",
+    "email": "klassyreservation@gmail.com",
+    "verified": true,
+    "primary": true
+  }
+},
+{
+  "model": "socialaccount.socialaccount",
+  "pk": 2,
+  "fields": {
+    "user": "aa9a4fc2-99bb-493f-8f2c-c8c11ccb2c53",
+    "provider": "google",
+    "uid": "109785553258320642073",
+    "last_login": "2025-04-06T10:51:24.699Z",
+    "date_joined": "2025-04-06T10:51:24.699Z",
+    "extra_data": {
+      "aud": "506586332422-2vn4364q7n2jb9jouo66c4f9mljl9ip9.apps.googleusercontent.com",
+      "azp": "506586332422-2vn4364q7n2jb9jouo66c4f9mljl9ip9.apps.googleusercontent.com",
+      "exp": 1743940284,
+      "iat": 1743936684,
+      "iss": "https://accounts.google.com",
+      "sub": "109785553258320642073",
+      "name": "Oleg",
+      "email": "klassyreservation@gmail.com",
+      "at_hash": "0Egkhj6p3qKFLsELfvdfoA",
+      "picture": "https://lh3.googleusercontent.com/a/ACg8ocIQI8NsmVa5IYWYDoy6QL71ZCjgIW_NCKRbGaeSqN76jwPI1w=s96-c",
+      "given_name": "Oleg",
+      "email_verified": true
+    }
+  }
+},
+{
   "model": "items.category",
   "pk": "21907229-450e-4f68-8869-8f34bfa7cbce",
   "fields": {
-    "name": "Дом и быт"
+    "name": "Дом и быт",
+    "photo": "categories/11058969_46776.jpg"
   }
 },
 {
   "model": "items.category",
   "pk": "5c886012-5ca8-4596-a94d-b223796f618b",
   "fields": {
-    "name": "Документы"
+    "name": "Документы",
+    "photo": "categories/folders_with_files_or_documents_vector_illustrations_set.jpg"
   }
 },
 {
   "model": "items.category",
   "pk": "5d44599c-99ad-4275-9b50-cecf9df57138",
   "fields": {
-    "name": "Личные вещи"
+    "name": "Личные вещи",
+    "photo": "categories/4547226_4007.jpg"
   }
 },
 {
   "model": "items.category",
   "pk": "637b8e52-aed3-468d-9b81-4843dbde6b9a",
   "fields": {
-    "name": "Развлечения и хобби"
+    "name": "Развлечения и хобби",
+    "photo": "categories/17722717_5815512.jpg"
   }
 },
 {
   "model": "items.category",
   "pk": "824daf16-ccaf-4dbb-b806-2edf4984bd38",
   "fields": {
-    "name": "Канцелярия и учеба"
+    "name": "Канцелярия и учеба",
+    "photo": "categories/notebooks_and_writing_tools_vector_illustrations_set.jpg"
   }
 },
 {
   "model": "items.category",
   "pk": "8c43adf8-b4b4-4e35-9762-669837b32ea1",
   "fields": {
-    "name": "Транспорт"
+    "name": "Транспорт",
+    "photo": "categories/69241262_9685035.jpg"
   }
 },
 {
   "model": "items.category",
   "pk": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
   "fields": {
-    "name": "Электроника"
+    "name": "Электроника",
+    "photo": "categories/1276742_135070-OTI84P-45-01.jpg"
   }
 },
 {
@@ -2574,6 +2793,28 @@
 },
 {
   "model": "users.user",
+  "pk": "909e77ed-f88a-4bd8-8191-736619469274",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$xbZNKdafu2cxqUn5hviJJx$JT7FZvL+sAB/OmJ55XiI6goby5eljcZvu3HDInNuUx0=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "abdullovadlet",
+    "first_name": "Adilet",
+    "last_name": "Abdullov",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-04-15T12:17:44.200Z",
+    "email": "abdullovadlet@gmail.com",
+    "phone_number": "",
+    "birthday": null,
+    "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
+    "qr_code": "qr_codes/qr_909e77ed-f88a-4bd8-8191-736619469274_vlAzAcM.png",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
   "pk": "926e174f-11ec-4a76-8865-277397120330",
   "fields": {
     "password": "pbkdf2_sha256$870000$fQZw3J2Apf4SgJvhFJVR9P$oauD7+y+kRIp0Gz7DeAU0sS1cjPHjuwxlwEyulhUUak=",
@@ -2596,10 +2837,32 @@
 },
 {
   "model": "users.user",
+  "pk": "aa9a4fc2-99bb-493f-8f2c-c8c11ccb2c53",
+  "fields": {
+    "password": "!fv3oNINScL5ZrRyCgovtYYblUhFd1vIb639Na9R2",
+    "last_login": "2025-04-06T10:51:24.704Z",
+    "is_superuser": false,
+    "username": "oleg",
+    "first_name": "Oleg",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-04-06T10:51:24.564Z",
+    "email": "klassyreservation@gmail.com",
+    "phone_number": "",
+    "birthday": null,
+    "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
+    "qr_code": "qr_codes/qr_aa9a4fc2-99bb-493f-8f2c-c8c11ccb2c53_K0S7o8I.png",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
   "pk": "b50f2d57-5645-4b4c-88f6-afa91a2f23f5",
   "fields": {
-    "password": "pbkdf2_sha256$870000$Yw2H33rUHgYZ4mkegZchzZ$I7fgK6e1Nkkh1CLxDpFHZ5Kr5pImJhGM+lkKXaRBp8Q=",
-    "last_login": "2025-04-01T16:30:24.739Z",
+    "password": "pbkdf2_sha256$1000000$VQiUMiSCLTVizC9xu3hWTx$aoJB1BSKMgRkHe9mmQ/F+LhKXpuSHF0NcJCoeWlTTko=",
+    "last_login": "2025-04-14T15:05:13.331Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -2617,25 +2880,12 @@
   }
 },
 {
-  "model": "users.user",
-  "pk": "fa06ea54-3ff2-472d-9bc5-7e54f5822086",
+  "model": "users.verificationcode",
+  "pk": 20,
   "fields": {
-    "password": "pbkdf2_sha256$870000$hqsoA8pfgYIUNb06zctNIT$4RC4z1q/yrY8WK0DO5oqBxpWOWEyL1mVf+RPE+NG+B4=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "abdullovadlet",
-    "first_name": "Adilet",
-    "last_name": "Abdullov",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2025-04-02T15:52:05.172Z",
-    "email": "abdullovadlet@gmail.com",
-    "phone_number": "",
-    "birthday": null,
-    "profile_picture": "profile_photo/photo_2025-02-24 23.37.57.jpeg",
-    "qr_code": "qr_codes/qr_fa06ea54-3ff2-472d-9bc5-7e54f5822086_6Yyft1q.png",
-    "groups": [],
-    "user_permissions": []
+    "email": "abdullvadlet@gmail.com",
+    "code": "412177",
+    "created_at": "2025-04-15T12:13:47.831Z"
   }
 },
 {
@@ -2686,11 +2936,44 @@
   "model": "token_blacklist.outstandingtoken",
   "pk": 5,
   "fields": {
-    "user": "fa06ea54-3ff2-472d-9bc5-7e54f5822086",
+    "user": null,
     "jti": "3e6101196cb546bdade5d4bd1339a133",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5NzI1NjQ0MCwiaWF0IjoxNzQzNjU2NDQwLCJqdGkiOiIzZTYxMDExOTZjYjU0NmJkYWRlNWQ0YmQxMzM5YTEzMyIsInVzZXJfaWQiOiJmYTA2ZWE1NC0zZmYyLTQ3MmQtOWJjNS03ZTU0ZjU4MjIwODYifQ.pA1QPyJ2kFbmxzjS70sJInfT4DxQbZo74ewLkFwLL_Q",
     "created_at": "2025-04-03T05:00:40.678Z",
     "expires_at": "2125-03-10T05:00:40Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 6,
+  "fields": {
+    "user": "909e77ed-f88a-4bd8-8191-736619469274",
+    "jti": "0783f9d6eb204076a1a27b5d933ccd99",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5ODMxOTUyNywiaWF0IjoxNzQ0NzE5NTI3LCJqdGkiOiIwNzgzZjlkNmViMjA0MDc2YTFhMjdiNWQ5MzNjY2Q5OSIsInVzZXJfaWQiOiI5MDllNzdlZC1mODhhLTRiZDgtODE5MS03MzY2MTk0NjkyNzQifQ.gEwBj4dxeRFXYy2RPs781K0pZOjC9x2i9RlTNxZ9KUw",
+    "created_at": "2025-04-15T12:18:47.927Z",
+    "expires_at": "2125-03-22T12:18:47Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 7,
+  "fields": {
+    "user": "909e77ed-f88a-4bd8-8191-736619469274",
+    "jti": "e9c02637b3c84505904e1bf691d9598e",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5ODMzOTEwNSwiaWF0IjoxNzQ0NzM5MTA1LCJqdGkiOiJlOWMwMjYzN2IzYzg0NTA1OTA0ZTFiZjY5MWQ5NTk4ZSIsInVzZXJfaWQiOiI5MDllNzdlZC1mODhhLTRiZDgtODE5MS03MzY2MTk0NjkyNzQifQ.7pWZWVzb4UTSoPfPwzuPUvntq21z_itwyELG7OaHu7o",
+    "created_at": "2025-04-15T17:45:05.900Z",
+    "expires_at": "2125-03-22T17:45:05Z"
+  }
+},
+{
+  "model": "token_blacklist.outstandingtoken",
+  "pk": 8,
+  "fields": {
+    "user": "909e77ed-f88a-4bd8-8191-736619469274",
+    "jti": "351454029796418e912a4a8e717e0828",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6NDg5ODQyNTkxMywiaWF0IjoxNzQ0ODI1OTEzLCJqdGkiOiIzNTE0NTQwMjk3OTY0MThlOTEyYTRhOGU3MTdlMDgyOCIsInVzZXJfaWQiOiI5MDllNzdlZC1mODhhLTRiZDgtODE5MS03MzY2MTk0NjkyNzQifQ.7MbI2rka6aQ1wjAZobsDXQTiKm4Okaz5LZi-VQ9M6QM",
+    "created_at": "2025-04-16T17:51:53.059Z",
+    "expires_at": "2125-03-23T17:51:53Z"
   }
 },
 {

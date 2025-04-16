@@ -1,4 +1,17 @@
 services:
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+
   db:
     image: postgres:17
     container_name: postgres_db
@@ -35,6 +48,8 @@ services:
       DB_PASSWORD: 12345
       DB_HOST: db
       DB_PORT: 5432
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
     restart: "no"
 
   django:
@@ -51,21 +66,67 @@ services:
     depends_on:
       migration:
         condition: service_completed_successfully
+      redis:
+        condition: service_healthy
     environment:
       DB_NAME: foundly
       DB_USER: postgres
       DB_PASSWORD: 12345
       DB_HOST: db
       DB_PORT: 5432
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
     command: >
       sh -c "python manage.py migrate --noinput && python manage.py loaddata --exclude auth.permission --exclude contenttypes initial_data.json && daphne -b 0.0.0.0 -p 8000 foundly.asgi:application"
 #      sh -c "python manage.py migrate --noinput && python manage.py loaddata --exclude auth.permission --exclude contenttypes initial_data.json && python manage.py runserver"
 #      sh -c "python manage.py migrate --noinput && daphne -b 0.0.0.0 -p 8000 foundly.asgi:application"
 
+  celery:
+    build:
+      context: ./foundly
+      dockerfile: Dockerfile
+    container_name: celery_worker
+    command: celery -A foundly worker --loglevel=info
+    volumes:
+      - ./foundly:/foundly
+      - ./media:/foundly/media
+    depends_on:
+      redis:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+    environment:
+      DB_NAME: foundly
+      DB_USER: postgres
+      DB_PASSWORD: 12345
+      DB_HOST: db
+      DB_PORT: 5432
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
 
-
-
-
+  celery-beat:
+    build:
+      context: ./foundly
+      dockerfile: Dockerfile
+    container_name: celery_beat
+    command: celery -A foundly beat --loglevel=info
+    volumes:
+      - ./foundly:/foundly
+      - ./media:/foundly/media
+    depends_on:
+      redis:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+    environment:
+      DB_NAME: foundly
+      DB_USER: postgres
+      DB_PASSWORD: 12345
+      DB_HOST: db
+      DB_PORT: 5432
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
 
 volumes:
   pg_data:
+  redis_data:

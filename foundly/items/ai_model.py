@@ -5,11 +5,12 @@ from tensorflow.keras.applications.mobilenet_v2 import preprocess_input, decode_
 import numpy as np
 from PIL import Image
 import io
-
+from googletrans import Translator
 
 class ImageClassifier:
     def __init__(self):
         self.model = MobileNetV2(weights='imagenet')
+        self.translator = Translator()
 
     def predict_category(self, image_data):
         try:
@@ -20,17 +21,17 @@ class ImageClassifier:
             x = preprocess_input(x)
 
             preds = self.model.predict(x)
-            decoded_preds = decode_predictions(preds, top=3)[0]
+            decoded_preds = decode_predictions(preds, top=5)[0]
 
-            # Return only raw predictions without any mapping
-            return [
-                {
-                    "class_id": class_id,  # ImageNet class ID (e.g., 'n03180011')
-                    "class_name": class_name,  # Original ImageNet class name
-                    "confidence": float(confidence)
-                }
-                for (class_id, class_name, confidence) in decoded_preds
-            ]
+            filtered_preds = []
+            for class_id, class_name, confidence in decoded_preds:
+                if confidence >= 0.80:
+                    translated = self.translator.translate(class_name, src='en', dest='ru').text
+                    filtered_preds.append({
+                        "translated": translated,
+                    })
+
+            return filtered_preds
 
         except Exception as e:
             print(f"Prediction error: {e}")

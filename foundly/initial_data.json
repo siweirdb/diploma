@@ -2770,6 +2770,34 @@
   }
 },
 {
+  "model": "items.item",
+  "pk": "aeb9db8c-1498-4a98-b955-e200aca6d090",
+  "fields": {
+    "title": "Lost Black iPhone",
+    "item_type": "lost_item",
+    "description": "Lost near the library on 5th.",
+    "latitude": 40.73061,
+    "longitude": -73.935242,
+    "date": "2025-04-17T14:00:00Z",
+    "address": "123 Library Street, NY",
+    "status": "active",
+    "user": "909e77ed-f88a-4bd8-8191-736619469274",
+    "category": "ef8d9cf6-28da-4460-89f8-89d9ee5d24c8",
+    "subcategory": "42b2956d-318b-4aa1-8ff5-44fc54c98caa",
+    "subsubcategory": "0ce2eb74-01d7-42ff-b02a-eacea808c815",
+    "phone_number": "+1234567890"
+  }
+},
+{
+  "model": "items.itemphoto",
+  "pk": "46b347be-df78-4e34-a312-dbbf7d47dc9b",
+  "fields": {
+    "item": "aeb9db8c-1498-4a98-b955-e200aca6d090",
+    "image": "item_photos/default.jpg",
+    "predicted_category": null
+  }
+},
+{
   "model": "users.user",
   "pk": "3d4beff0-0ce4-4895-a310-7f09382113c3",
   "fields": {

@@ -24,7 +24,7 @@ class AnalyzeImageView(APIView):
         try:
             image_data = image_file.read()
             predictions = classifier.predict_category(image_data)
-            return Response({"predictions": predictions})
+            return Response(predictions)
 
         except Exception as e:
             return Response({"error": str(e)}, status=500)

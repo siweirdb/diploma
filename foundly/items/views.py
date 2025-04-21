@@ -45,6 +45,15 @@ class ItemDetailView(APIView):
         serializer = self.serializer_class(item)
         return Response(serializer.data)
 
+    def delete(self, request, *args, **kwargs):
+        item_id = self.kwargs.get('id')
+        try:
+            item = Item.objects.get(id=item_id)
+            item.delete()
+            return Response({"detail": "Item deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
+        except Item.DoesNotExist:
+            return Response({"error": "Item not found."}, status=status.HTTP_404_NOT_FOUND)
+
 class MapView(generics.ListAPIView):
     permission_classes = [permissions.AllowAny]
     serializer_class = ItemSerializer

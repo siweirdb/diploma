@@ -6,7 +6,6 @@ import random
 from django.core.mail import send_mail
 
 from items.models import Item, Category, Subcategory, Subsubcategory, ItemPhoto
-from .tasks import process_item_photo
 from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 
 class ImageAnalysisSerializer(serializers.Serializer):

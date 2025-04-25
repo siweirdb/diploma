@@ -32,9 +32,9 @@ class User(AbstractUser):
 
     def generate_qr_code(self):
         logo_path = os.path.join(settings.MEDIA_ROOT, 'qr_logo.png')
-        print("Checking file existence...")  # Debugging
+        print("Checking file existence...")
         print("File exists:", os.path.exists(logo_path), flush=True)
-        print("Check complete.")  # Debugging
+        print("Check complete.")
 
         qr = qrcode.QRCode(
             version=1,

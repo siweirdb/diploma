@@ -57,8 +57,10 @@ class ItemDetailView(APIView):
 class MapView(generics.ListAPIView):
     permission_classes = [permissions.AllowAny]
     serializer_class = ItemSerializer
-    def get_queryset(self):
-        return Item.objects.all()
+    def get(self, request):
+        items = Item.objects.all()
+        serializer = self.serializer_class(items, many=True)
+        return Response({'items': serializer.data})
 
 
 

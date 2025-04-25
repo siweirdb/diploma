@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-^wpk!mxmskb+eqjh2cr+cvn_g6^x6^w=965ae68w5^g9=ijs4)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['foundly-server1.foundly.kz', '89.35.124.235', 'localhost', '127.0.0.1']
+
 
 
 # Application definition

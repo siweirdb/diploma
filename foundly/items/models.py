@@ -53,6 +53,7 @@ class Item(models.Model):
     subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE, related_name="items", null=True, blank=True)
     subsubcategory = models.ForeignKey(Subsubcategory, on_delete=models.CASCADE, related_name="items", null=True, blank=True)
     phone_number = models.CharField(max_length=20, null=True, blank=True, default="")
+    email = models.EmailField(unique=False)
 
 
 

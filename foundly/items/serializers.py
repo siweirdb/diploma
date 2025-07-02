@@ -30,12 +30,39 @@ class ImageSerializer(serializers.ModelSerializer):
 
         return photo
 
-
+class ItemPhotoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ItemPhoto
+        fields = ['image']
 
 class ItemSerializer(serializers.ModelSerializer):
+    photos = ItemPhotoSerializer(many=True, read_only=True)
+    category = serializers.CharField(source='category.name', read_only=True)
+    subcategory = serializers.CharField(source='subcategory.name', read_only=True)
+    subsubcategory = serializers.CharField(source='subsubcategory.name', read_only=True)
+
     class Meta:
         model = Item
         fields = '__all__'
+
+class ItemEditSerilizer(serializers.ModelSerializer):
+    category_id = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all(), source='category',
+                                                     write_only=True, required=False)
+    subcategory_id = serializers.PrimaryKeyRelatedField(queryset=Subcategory.objects.all(), source='subcategory',
+                                                        write_only=True, required=False)
+    subsubcategory_id = serializers.PrimaryKeyRelatedField(queryset=Subsubcategory.objects.all(),
+                                                           source='subsubcategory', write_only=True, required=False)
+
+    photos = ItemPhotoSerializer(many=True, read_only=True)
+    category = serializers.CharField(source='category.name', read_only=True)
+    subcategory = serializers.CharField(source='subcategory.name', read_only=True)
+    subsubcategory = serializers.CharField(source='subsubcategory.name', read_only=True)
+
+    class Meta:
+        model = Item
+        fields = '__all__'
+
+
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -81,7 +108,7 @@ class CreateItemSerializer(serializers.ModelSerializer):
         fields = '__all__'
         extra_kwargs = {
             'user': {'read_only': True},
-            'category': {'required': True},  # Enforce category selection
+            'category': {'required': True},
             'subcategory': {'required': False},
             'subsubcategory': {'required': False}
         }
@@ -104,13 +131,12 @@ class CreateItemSerializer(serializers.ModelSerializer):
         photos = validated_data.pop("photos", [])
         user = self.context["request"].user
 
-        # Use unpacking for cleaner code
         item = Item.objects.create(
             user=user,
-            **{k: v for k, v in validated_data.items() if k != 'user'}
+            email= user.email,
+            **{k: v for k, v in validated_data.items() if k != 'user' and k!= 'email'}
         )
 
-        # Handle photos with bulk create
         if not photos:
             ItemPhoto.objects.create(item=item, image="item_photos/default.jpg")
         else:
@@ -118,7 +144,6 @@ class CreateItemSerializer(serializers.ModelSerializer):
                 ItemPhoto(item=item, image=photo) for photo in photos
             ])
 
-        # Removed Celery task since AI suggestions happen before submission
         return item
 
 

@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Foundly Tag Scan</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<a href="https://foundly.kz"><img src="{% static 'Frame 40.png' %}" alt="QR Code Icon" class="icon"></a>
+  <h1>Вы отсканировали метку Foundly</h1>
+  <h2>Этот предмет принадлежит:</h2>
+
+  <div class="card">
+    <div class="owner-info">
+      <div class="avatar">
+        {% if user.profile_picture %}
+          <img src="{{ user.profile_picture.url }}" alt="Avatar" style="width:64px; height:64px; border-radius: 50%;">
+        {% endif %}
+      </div>
+      <div class="name-number">
+        <div class="name">{{ user.first_name }} {{ user.last_name }}</div>
+        <div class="number">
+          <span class="phone-icon"></span>{{ user.phone_number }}
+        </div>
+        <button onclick="copyPhone()" class="copy-btn">Скопировать номер</button>
+      </div>
+    </div>
+    <div class="note">
+      <div class="note-icon"></div>
+      <div>
+        Этот контакт был безопасно передан через Foundly.<br>
+        Пожалуйста, связывайтесь только для возврата предмета.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function copyPhone() {
+      const number = '{{ user.phone_number }}';
+      navigator.clipboard.writeText(number);
+      alert('Номер скопирован!');
+    }
+  </script>
+
+</body>
+</html>

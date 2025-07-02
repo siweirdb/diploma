@@ -31,7 +31,13 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
 
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://foundly.kz",
+    "https://www.foundly.kz",
+    "http://localhost:8000",  # if testing locally
+    "http://127.0.0.1:8000",  # if testing with Docker ports
+    "http://89.35.124.235",  # if accessing with raw IP
+]
 
 
 # Application definition
@@ -52,9 +58,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'drf_yasg',
 
-    'chat',
     'items',
     'users',
+    'chat',
 
     'rest_framework',
     'rest_framework_simplejwt',
@@ -98,12 +104,24 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'foundly.urls'
 
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = 'optional'
+
+SOCIALACCOUNT_QUERY_EMAIL = True
+
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': ['profile', 'email'],
         'AUTH_PARAMS': {'access_type': 'online'},
+        'APP': {
+            'client_id': os.getenv('SOCIAL_AUTH_GOOGLE_CLIENT_ID'),
+            'secret': os.getenv('SOCIAL_AUTH_GOOGLE_SECRET'),
+            'key': ''
+        }
     }
 }
 
@@ -174,7 +192,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-SITE_ID = 2
+SITE_ID = 3
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
@@ -183,13 +201,14 @@ SITE_ID = 2
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATIC_ROOT = "/home/foundly/diploma/static/"
 
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
+
+STATICFILES_DIRS = [BASE_DIR / "users" / "static"]
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = "/home/foundly/diploma/media/"
 
 
 

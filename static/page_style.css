@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #faf9fc;
+  color: #2c115e;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  color: #2c115e;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 5%;
+  background: #fff;
+}
+
+.header-left {
+  max-width: 550px;
+}
+
+.logo img {
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.header-content h1 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.header-content p {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #5d2caa;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.header-image img {
+  max-width: 280px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.features {
+  padding: 40px 5%;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.card {
+  background: #fff;
+  border: 2px solid #e0d4f8;
+  padding: 20px;
+  border-radius: 12px;
+  width: 180px;
+  font-weight: bold;
+  color: #5d2caa;
+}
+
+.how {
+  padding: 40px 5%;
+  text-align: center;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.step {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.step span {
+  display: block;
+  font-size: 20px;
+  background: #e0d4f8;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  margin: 0 auto 10px;
+  color: #5d2caa;
+  font-weight: bold;
+}
+
+.footer {
+  background: #2c115e;
+  color: white;
+  padding: 40px 5%;
+  text-align: center;
+}
+
+.footer-title {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.store-badge img {
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* ---------- Адаптив ---------- */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-content h1 {
+    font-size: 20px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .steps {
+    justify-content: center;
+  }
+
+  .step {
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .header-image {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header-image img {
+    margin-top: 20px;
+  }
+}

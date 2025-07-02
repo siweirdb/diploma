@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foundly — приложение</title>
+  <link rel="stylesheet" href="{% static 'page_style.css' %}" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">
+        <img src="{% static 'Frame 40.png' %}" alt="Foundly logo" />
+      </div>
+      <div class="header-content">
+        <h1>Foundly — приложение, которое возвращает потерянные вещи</h1>
+        <p>Интерактивная карта, QR-коды и чат — всё, чтобы находка вернулась к владельцу как можно быстрее.</p>
+        <a href="#" class="btn">Скачать</a>
+      </div>
+    </div>
+    <div class="header-image">
+      <img src="{% static 'mockup.png' %}" alt="Foundly UI на телефоне" />
+    </div>
+  </header>
+
+  <section class="features">
+    <h2>О приложении</h2>
+    <p>
+      Foundly помогает быстро найти потерянную вещь или связаться с её владельцем. Используйте карту, чат и QR-код для быстрой передачи находки.
+    </p>
+    <div class="cards">
+      <div class="card">
+        <img src="{% static 'qr.png' %}" alt="QR Icon" /><br/>
+        Уникальные QR-коды
+      </div>
+      <div class="card">
+        <img src="{% static 'location.png' %}" alt="Map Icon" /><br/>
+        Карта с метками вещей
+      </div>
+      <div class="card">
+        <img src="{% static 'chat.png' %}" alt="Chat Icon" /><br/>
+        Встроенный чат
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <h2>Как работает</h2>
+    <div class="steps">
+      <div class="step"><span>1</span>Вы теряете или находите вещь</div>
+      <div class="step-line"></div>
+      <div class="step"><span>2</span>Добавляете её в приложение</div>
+      <div class="step-line"></div>
+      <div class="step"><span>3</span>Пользователь находит её на карте</div>
+      <div class="step-line"></div>
+      <div class="step"><span>4</span>Связь через чат</div>
+      <div class="step-line"></div>
+      <div class="step"><span>5</span>Подтверждение возврата</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-title">
+      Попробуйте Foundly уже сегодня и убедитесь, как легко вернуть или найти потерянное.
+    </p>
+    <a href="#" class="store-badge">
+      <img src="{% static 'appstore.png' %}" alt="Download on the App Store" />
+    </a>
+    <div class="contact">
+      <p>Связаться с нами</p>
+      <p>+7 702 601 95 23</p>
+      <p>foundly_support@gmail.com</p>
+    </div>
+  </footer>
+</body>
+</html>

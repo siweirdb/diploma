@@ -25,21 +25,22 @@ class EditProfileSerializer(serializers.ModelSerializer):
         first_name, last_name = data.get("first_name"), data.get("last_name")
 
         if username and User.objects.exclude(pk=self.instance.pk).filter(username=username).exists():
-            raise serializers.ValidationError({"username": "This username is already in use."})
+            raise serializers.ValidationError({"username": "Это имя пользователя уже занято."})
 
         if phone_number and User.objects.exclude(pk=self.instance.pk).filter(phone_number=phone_number).exists():
-            raise serializers.ValidationError({"phone_number": "This phone number is already in use."})
+            raise serializers.ValidationError({"phone_number": "Этот номер телефона уже используется."})
 
         if phone_number and len(phone_number) not in [11, 12]:
-            raise serializers.ValidationError({"phone_number": "Phone number has incorrect length."})
+            raise serializers.ValidationError({"phone_number": "Номер телефона имеет некорректную длину."})
 
         if phone_number and not (phone_number.startswith("+77") or phone_number.startswith("87")):
-            raise serializers.ValidationError({"phone_number": "Phone number format is incorrect."})
+            raise serializers.ValidationError({"phone_number": "Формат номера телефона некорректен."})
 
         if first_name and any(char.isdigit() for char in first_name):
-            raise serializers.ValidationError({"first_name": "First name should not contain digits."})
+            raise serializers.ValidationError({"first_name": "Имя не должно содержать цифры."})
+
         if last_name and any(char.isdigit() for char in last_name):
-            raise serializers.ValidationError({"last_name": "Last name should not contain digits."})
+            raise serializers.ValidationError({"last_name": "Фамилия не должна содержать цифры."})
 
         return data
 
@@ -62,23 +63,23 @@ class ChangePasswordSerializer(serializers.Serializer):
         user = self.instance
 
         if not user.check_password(data["current_password"]):
-            raise serializers.ValidationError({"current_password": "Current password is incorrect."})
+            raise serializers.ValidationError({"current_password": "Текущий пароль введён неверно."})
 
         if data["new_password"] != data["new_password_confirmation"]:
-            raise serializers.ValidationError({"new_password": "New password and confirmation do not match."})
+            raise serializers.ValidationError({"new_password": "Новый пароль и подтверждение не совпадают."})
 
         if user.check_password(data["new_password"]):
-            raise serializers.ValidationError({"new_password": "New password must be different from the current password."})
+            raise serializers.ValidationError({"new_password": "Новый пароль должен отличаться от текущего."})
+
         password = data["new_password"]
         if len(password) < 8:
-            raise serializers.ValidationError({"password": "Password must be at least 8 characters long."})
+            raise serializers.ValidationError({"password": "Пароль должен содержать минимум 8 символов."})
         if not re.search(r'[A-Z]', password):
-            raise serializers.ValidationError({"password": "Password must contain at least one uppercase letter."})
+            raise serializers.ValidationError({"password": "Пароль должен содержать хотя бы одну заглавную букву."})
         if not re.search(r'[a-z]', password):
-            raise serializers.ValidationError({"password": "Password must contain at least one lowercase letter."})
+            raise serializers.ValidationError({"password": "Пароль должен содержать хотя бы одну строчную букву."})
         if not re.search(r'[0-9]', password):
-            raise serializers.ValidationError({"password": "Password must contain at least one digit."})
-
+            raise serializers.ValidationError({"password": "Пароль должен содержать хотя бы одну цифру."})
 
         return data
 
@@ -108,13 +109,13 @@ class RegisterSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({"password2": "Passwords do not match."})
 
         if len(password) < 8:
-            raise serializers.ValidationError({"password": "Password must be at least 8 characters long."})
+            raise serializers.ValidationError({"password": "Пароль должен содержать минимум 8 символов."})
         if not re.search(r'[A-Z]', password):
-            raise serializers.ValidationError({"password": "Password must contain at least one uppercase letter."})
+            raise serializers.ValidationError({"password": "Пароль должен содержать хотя бы одну заглавную букву."})
         if not re.search(r'[a-z]', password):
-            raise serializers.ValidationError({"password": "Password must contain at least one lowercase letter."})
+            raise serializers.ValidationError({"password": "Пароль должен содержать хотя бы одну строчную букву."})
         if not re.search(r'[0-9]', password):
-            raise serializers.ValidationError({"password": "Password must contain at least one digit."})
+            raise serializers.ValidationError({"password": "Пароль должен содержать хотя бы одну цифру."})
 
         return data
 

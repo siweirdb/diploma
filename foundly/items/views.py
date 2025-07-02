@@ -1,7 +1,7 @@
 from rest_framework import status, permissions
 from .models import Item
 from .serializers import  CreateItemSerializer
-from .serializers import CategorySerializer, SubcategorySerializer, SubsubcategorySerializer, ItemSerializer
+from .serializers import CategorySerializer, SubcategorySerializer, SubsubcategorySerializer, ItemSerializer, ItemEditSerilizer
 
 from rest_framework import generics
 
@@ -31,10 +31,21 @@ class AnalyzeImageView(APIView):
 
 
 class ItemHistoryView(generics.ListAPIView):
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [IsAuthenticated]
+    serializer_class = ItemSerializer
 
-    def get_queryset(self):
-        return Item.objects.filter(user=self.request.user)
+
+    def list(self, request, *args, **kwargs):
+        queryset = Item.objects.filter(user=self.request.user)
+        serializer = self.serializer_class(queryset, many=True)
+        data = serializer.data
+
+        keyword = request.query_params.get('q')
+        if keyword:
+            data = [item for item in data if keyword.lower() in item['title'].lower()]
+
+
+        return Response(data)
 
 class ItemDetailView(APIView):
     permission_classes = [permissions.AllowAny]
@@ -50,9 +61,24 @@ class ItemDetailView(APIView):
         try:
             item = Item.objects.get(id=item_id)
             item.delete()
-            return Response({"detail": "Item deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
+            return Response({"detail": "Предмет успешно удалён."}, status=status.HTTP_204_NO_CONTENT)
         except Item.DoesNotExist:
-            return Response({"error": "Item not found."}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"error": "Предмет не найден."}, status=status.HTTP_404_NOT_FOUND)
+
+
+class EditItemView(generics.RetrieveUpdateAPIView):
+    queryset = Item.objects.all()
+    serializer_class = ItemEditSerilizer
+    permission_classes = [permissions.IsAuthenticated]
+
+    def update(self, request, *args, **kwargs):
+        kwargs['partial'] = True
+        response = super().update(request, *args, **kwargs)
+        return Response({
+            'message': 'Информация о предмете успешно обновлена',
+            'item': response.data
+        })
+
 
 class MapView(generics.ListAPIView):
     permission_classes = [permissions.AllowAny]

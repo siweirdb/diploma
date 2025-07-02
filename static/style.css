@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(to right, #fef8ff, #f7f0ff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.icon {
+  width: 90px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  color: #2a185e;
+  margin: 0;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #5c4c7f;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.card {
+  margin-top: 25px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(137, 89, 255, 0.2);
+  padding: 25px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  border: 2px solid #d1c4ff;
+}
+
+.owner-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #c2b6ff, #8a7aff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar::before {
+  content: '';
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px #5a47a5;
+}
+
+.name-number {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 18px;
+  color: #1e1e2f;
+}
+
+.number {
+  font-size: 16px;
+  color: #1e1e2f;
+  margin-bottom: 5px;
+}
+
+.phone-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  background-image: url('data:image/svg+xml,<svg fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.21.49 2.53.76 3.89.76a1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.36.26 2.68.76 3.89a1 1 0 01-.27 1.11l-2.2 2.2z"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+.copy-btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #fdd835;
+  border: none;
+  border-radius: 6px;
+  color: #1e1e2f;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: fit-content;
+}
+
+.copy-btn:hover {
+  background-color: #ffeb3b;
+}
+
+.note {
+  font-size: 14px;
+  color: #4d466e;
+  line-height: 1.5;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.note-icon {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  background-image: url('data:image/svg+xml,<svg fill="%23ff9800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-3.55 19.38c.56.1.77-.24.77-.54v-1.85c-3.14.68-3.8-1.52-3.8-1.52a3 3 0 00-1.26-1.66c-1.04-.71.08-.7.08-.7a2.4 2.4 0 011.75 1.18 2.4 2.4 0 003.28.93 2.4 2.4 0 01.72-1.51c-2.5-.28-5.13-1.24-5.13-5.52a4.34 4.34 0 011.16-3.01 4 4 0 01.1-2.96s.94-.3 3.07 1.15a10.6 10.6 0 015.6 0C15.94 5.7 16.88 6 16.88 6a4 4 0 01.1 2.96 4.34 4.34 0 011.16 3.01c0 4.29-2.63 5.23-5.14 5.5a2.66 2.66 0 01.76 2.07v3.06c0 .3.2.65.78.54A10 10 0 0012 2z"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}

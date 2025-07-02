@@ -66,7 +66,8 @@ services:
     restart: always
     volumes:
       - ./foundly:/foundly
-      - ./media:/foundly/media
+      - ./foundly/static:/home/foundly/diploma/static
+      - ./foundly/media:/home/foundly/diploma/media
     ports:
       - "8000:8000"
     depends_on:
@@ -85,10 +86,12 @@ services:
     env_file:
       - .env
     command: >
-      sh -c "python manage.py migrate --noinput && python manage.py loaddata --exclude auth.permission --exclude contenttypes initial_data.json && daphne -b 0.0.0.0 -p 8000 foundly.asgi:application"
-#      sh -c "python manage.py migrate --noinput && python manage.py loaddata --exclude auth.permission --exclude contenttypes initial_data.json && python manage.py runserver"
-#      sh -c "python manage.py migrate --noinput && daphne -b 0.0.0.0 -p 8000 foundly.asgi:application"
+      sh -c "python manage.py migrate --noinput && python manage.py loaddata --exclude auth.permission --exclude contenttypes initial_data.json && python manage.py runserver 0.0.0.0:8000"
+#      sh -c "python manage.py migrate --noinput && exec daphne -b 0.0.0.0 -p 8000 foundly.asgi:application"
+  
 
+
+#      sh -c "python manage.py migrate --noinput && daphne -b 0.0.0.0 -p 8000 foundly.asgi:application"
   celery:
     build:
       context: ./foundly
@@ -97,7 +100,7 @@ services:
     command: celery -A foundly worker --loglevel=info
     volumes:
       - ./foundly:/foundly
-      - ./media:/foundly/media
+      - ./foundly/media:/home/foundly/diploma/media
     depends_on:
       redis:
         condition: service_healthy
@@ -122,7 +125,7 @@ services:
     command: celery -A foundly beat --loglevel=info
     volumes:
       - ./foundly:/foundly
-      - ./media:/foundly/media
+      - ./foundly/media:/home/foundly/diploma/media
     depends_on:
       redis:
         condition: service_healthy

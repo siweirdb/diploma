@@ -42,7 +42,7 @@ class User(AbstractUser):
             box_size=20,
             border=4,
         )
-        qr.add_data(f"http://localhost:8000/qr-code/{self.id}/")
+        qr.add_data(f"https://foundly.kz/qr-code/{self.id}/")
         qr.make(fit=True)
 
         qr_img = qr.make_image(fill_color="black", back_color="white").convert('RGB')
@@ -73,13 +73,15 @@ class User(AbstractUser):
 
         file_name = f"qr_{self.id}.png"
         self.qr_code.save(file_name, ContentFile(buffer.getvalue()), save=False)
+        return True
 
     def save(self, *args, **kwargs):
-        if not self.qr_code:
-            super().save(*args, **kwargs)
-            self.generate_qr_code()
-
+        is_new = self.pk is None
         super().save(*args, **kwargs)
+
+        if is_new and not self.qr_code:
+            if self.generate_qr_code():
+                super().save(update_fields=['qr_code'])
 
     def delete(self, *args, **kwargs):
         if self.qr_code and self.qr_code.name:
@@ -96,22 +98,11 @@ class VerificationCode(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.user.email} - {self.code}"
+        return f"{self.email} - {self.code}"
 
     def save(self, *args, **kwargs):
-        if not self.pk:
+        # Automatically generate a 6-digit code only when creating a new object
+        if not self.code:
             self.code = str(random.randint(100000, 999999))
-            super().save(*args, **kwargs)
-            self.send_email()
-        else:
-            super().save(*args, **kwargs)
-
-    def send_email(self):
-        send_mail(
-            'Email Verification - Foundly',
-            f'Your verification code is: {self.code}',
-            'foundly@yandex.kz',
-            [self.email],
-            fail_silently=False,
-        )
+        super().save(*args, **kwargs)
 

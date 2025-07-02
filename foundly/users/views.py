@@ -14,10 +14,21 @@ from .serializers import RegisterSerializer, LoginSerializer, UserSerializer, Fo
     VerifyResetCodeSerializer, ResetPasswordSerializer, LogoutSerializer, QrCodeSerializer, EditProfileSerializer, \
     ChangePasswordSerializer
 
+from django.shortcuts import get_object_or_404, render
+
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.core.mail import send_mail
 from rest_framework import generics
 import random
+
+
+class AllUsersView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request, user_id):
+        user = get_object_or_404(User, pk=user_id)
+        serializer = UserSerializer(user)
+        return Response(serializer.data, status=200)
 
 
 class RegisterEmailView(APIView):
@@ -27,15 +38,31 @@ class RegisterEmailView(APIView):
         email = request.data.get('email')
 
         if not email:
-            return Response({"error": "Email is required"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "Почта обязательна"}, status=status.HTTP_400_BAD_REQUEST)
 
         if is_register:
             if User.objects.filter(email=email).exists():
-                return Response({"error": "Email already exists"}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({"error": "Такая почта уже существует"}, status=status.HTTP_400_BAD_REQUEST)
+
+            # Delete any previous code
             VerificationCode.objects.filter(email=email).delete()
 
+            # Create and save new code
+            code = str(random.randint(100000, 999999))
+            verification_code = VerificationCode.objects.create(email=email, code=code)
+
+            # Send registration email
             try:
-                verification_code = VerificationCode.objects.create(email=email)
+                send_mail(
+                    'Email Verification - Foundly',
+                    f"Добро пожаловать в Foundly!\n\n"
+                    f"Ваш код подтверждения: {code}\n\n"
+                    "Введите его в приложении в течение 5 минут, чтобы продолжить.\n\n"
+                    "Если вы не запрашивали этот код, просто проигнорируйте сообщение.",
+                    'foundly@yandex.kz',
+                    [email],
+                    fail_silently=False,
+                )
                 return Response({"message": "Verification code sent successfully", "pk": verification_code.pk},
                                 status=status.HTTP_201_CREATED)
             except Exception as e:
@@ -44,15 +71,20 @@ class RegisterEmailView(APIView):
         else:
             user = User.objects.filter(email=email).first()
             if not user:
-                return Response({"error": "User with this email does not exist"}, status=status.HTTP_404_NOT_FOUND)
+                return Response({"error": "Пользователь с этим адресом электронной почты не существует."},
+                                status=status.HTTP_404_NOT_FOUND)
 
             reset_code = str(random.randint(100000, 999999))
-            VerificationCode.objects.create(user=user, code=reset_code)
+            VerificationCode.objects.update_or_create(email=email, defaults={"code": reset_code})
 
+            # Send forgot password email
             try:
                 send_mail(
                     "Password Reset Code - Foundly",
-                    f"Your password reset code is: {reset_code}",
+                    f"Вы запросили сброс пароля.\n\n"
+                    f"Код для сброса: {reset_code}\n\n"
+                    "Введите его в приложении, чтобы создать новый пароль.\n\n"
+                    "Если вы не запрашивали сброс, просто проигнорируйте это сообщение.",
                     "foundly@yandex.kz",
                     [user.email],
                     fail_silently=False,
@@ -70,7 +102,7 @@ class RegisterView(APIView):
         verified_email = request.session.get('verified_email')
 
         if not verified_email:
-            return Response({"error": "Email verification is required"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "Сначала подтвердите почту"}, status=status.HTTP_400_BAD_REQUEST)
 
         mutable_data = request.data.copy()
         mutable_data['email'] = verified_email
@@ -145,11 +177,11 @@ class LoginView(generics.GenericAPIView):
         password = request.data.get("password")
 
         if not email or not password:
-            return Response({"detail": "Email and password are required"}, status=400)
+            return Response({"detail": "Почта и пароль обязательны"}, status=400)
 
         print(email, password)
 
-        user = authenticate(request, username=email, password=password)  # Authenticate with email
+        user = authenticate(request, username=email, password=password)
 
         if user is not None:
             refresh = RefreshToken.for_user(user)
@@ -157,7 +189,7 @@ class LoginView(generics.GenericAPIView):
                 "refresh": str(refresh),
                 "access": str(refresh.access_token),
             })
-        return Response({"detail": "Invalid credentials"}, status=401)
+        return Response({"detail": "Неверные учетные данные"}, status=401)
 
 
 
@@ -172,47 +204,47 @@ class VerifyResetCodeView(APIView):
         code = request.data.get('code')
 
         if not email or not code:
-            return Response({"error": "Email and code are required"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "Почта и код обязательны"}, status=status.HTTP_400_BAD_REQUEST)
 
         user = User.objects.filter(email=email).first()
         if not user:
-            return Response({"error": "User not found"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"error": "Пользователь не найден"}, status=status.HTTP_404_NOT_FOUND)
 
         verification = VerificationCode.objects.filter(user=user, code=code).first()
         if not verification:
-            return Response({"error": "Invalid or expired reset code"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "Неверный или просроченный код"}, status=status.HTTP_400_BAD_REQUEST)
 
         if verification.created_at < now() - EXPIRE_TIME:
             verification.delete()
-            return Response({"error": "Reset code has expired"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "Просроченный код"}, status=status.HTTP_400_BAD_REQUEST)
 
         verification.delete()
 
-        return Response({"message": "Code verified successfully"}, status=status.HTTP_200_OK)
+        return Response({"message": "Код успешно подтвержден"}, status=status.HTTP_200_OK)
 
 
 class VerifyEmailView(APIView):
     def post(self, request, email):
         if not re.match(r"[^@]+@[^@]+\.[^@]+", email):
-            return Response({"error": "Invalid email format."}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "Неверный формат почты"}, status=status.HTTP_400_BAD_REQUEST)
         code = request.data.get('code')
 
         if not code:
-            return Response({"error": "Code is required"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "Код обязательен"}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
             verification_code = VerificationCode.objects.get(email=email)
         except VerificationCode.DoesNotExist:
-            return Response({"error": "Invalid email or code has expired"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "Неверный код или почта"}, status=status.HTTP_400_BAD_REQUEST)
 
         if timezone.now() > verification_code.created_at + timedelta(minutes=10):
             verification_code.delete()
-            return Response({"error": "Verification code expired"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "Код подтверждения просрочен"}, status=status.HTTP_400_BAD_REQUEST)
 
         if verification_code.code == code:
             request.session['verified_email'] = verification_code.email
             verification_code.delete()
-            return Response({"message": "Verification successful"}, status=status.HTTP_200_OK)
+            return Response({"message": "Подтверждение прошло успешно"}, status=status.HTTP_200_OK)
 
 
 class ProfileView(APIView):
@@ -223,12 +255,20 @@ class ProfileView(APIView):
         serializer = UserSerializer(user)
         return Response(serializer.data, status=200)
 
+def landing_page(request):
+    return render(request, "page.html")
 
 class QrCodeView(APIView):
     permission_classes = (AllowAny,)
 
     def get(self, request, user_id):
         user = get_object_or_404(User, pk=user_id)
+        user_agent = request.META.get('HTTP_USER_AGENT', '').lower()
+
+        if 'iphone' in user_agent or 'android' in user_agent:
+            if 'safari' in user_agent or 'chrome' in user_agent or 'firefox' in user_agent:
+                return render(request, 'file.html', {'user': user})
+
         serializer = QrCodeSerializer(user)
         return Response(serializer.data, status=200)
 
@@ -241,7 +281,7 @@ class ForgotPasswordView(APIView):
 
         user = User.objects.filter(email=email).first()
         if not user:
-            return Response({"error": "User with this email does not exist"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"error": "Пользователь с этим адресом электронной почты не существует."}, status=status.HTTP_404_NOT_FOUND)
 
         reset_code = str(random.randint(100000, 999999))
 
